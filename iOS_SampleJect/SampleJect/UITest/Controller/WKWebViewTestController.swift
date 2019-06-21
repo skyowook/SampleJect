@@ -1,6 +1,6 @@
 //
 //  WKWebViewTestController.swift
-//  TestProject
+//  SampleJect
 //
 //  Created by IMC056 on 2018. 10. 29..
 //  Copyright © 2018년 SinKyoUk. All rights reserved.
@@ -102,7 +102,7 @@ extension WKWebViewTestController: WKNavigationDelegate, WKScriptMessageHandler 
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         debugPrint("didNavigationResponse")
         
-        if let response = navigationResponse.response.isKind(of: HTTPURLResponse.classForCoder()) as? HTTPURLResponse {
+        if let response = navigationResponse.response as? HTTPURLResponse {
             debugPrint("Code ::: \(response.statusCode)")
         }
         
@@ -125,9 +125,8 @@ extension WKWebViewTestController: WKNavigationDelegate, WKScriptMessageHandler 
         }
     }
     
-    
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        let values: [String: String] = message.body as! Dictionary
-        debugPrint("here???")
+//        let values: [String: String] = message.body as! Dictionary
+//        debugPrint("here???")
     }
 }

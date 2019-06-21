@@ -1,6 +1,6 @@
 //
 //  UIViewController_ex.swift
-//  TestProject
+//  SampleJect
 //
 //  Created by IMC056 on 2018. 10. 26..
 //  Copyright © 2018년 SinKyoUk. All rights reserved.

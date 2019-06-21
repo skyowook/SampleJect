@@ -1,6 +1,6 @@
 //
 //  ConsoleViewController.swift
-//  TestProject
+//  SampleJect
 //
 //  Created by IMC056 on 2018. 3. 21..
 //  Copyright © 2018년 SinKyoUk. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  TestProject
+//  SampleJect
 //
 //  Created by SinKyoUk on 2018. 3. 17..
 //  Copyright © 2018년 SinKyoUk. All rights reserved.

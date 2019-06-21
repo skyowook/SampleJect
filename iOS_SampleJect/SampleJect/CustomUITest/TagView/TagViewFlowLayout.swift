@@ -1,6 +1,6 @@
 //
 //  TagViewFlowLayout.swift
-//  TestProject
+//  SampleJect
 //
 //  Created by Sin's Retina on 2018. 8. 9..
 //  Copyright © 2018년 SinKyoUk. All rights reserved.
