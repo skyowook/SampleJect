@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilterTagCell" customModule="TestProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="34" height="26"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="34" height="26"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7e-jw-rae">
+                        <rect key="frame" x="11" y="6" width="0.0" height="14"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNi-tE-drU">
+                        <rect key="frame" x="13" y="0.0" width="10" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="i0w-wr-KBF"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="deleteFilter"/>
+                        <connections>
+                            <action selector="touchCloseBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Pzs-Bz-lfp"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.34901960784313724" green="0.16078431372549018" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="g7e-jw-rae" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="6" id="BQj-wS-UT8"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="FNi-tE-drU" secondAttribute="bottom" id="Bw5-Hr-5ZC"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="FNi-tE-drU" secondAttribute="trailing" constant="11" id="Gpk-Jo-UW9"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="g7e-jw-rae" secondAttribute="bottom" constant="6" id="OtW-ef-4Ao"/>
+                <constraint firstItem="g7e-jw-rae" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="11" id="S7h-Ak-3bq"/>
+                <constraint firstItem="FNi-tE-drU" firstAttribute="leading" secondItem="g7e-jw-rae" secondAttribute="trailing" constant="2" id="aJ8-SQ-EXG"/>
+                <constraint firstItem="FNi-tE-drU" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="bUH-qr-hUj"/>
+                <constraint firstItem="FNi-tE-drU" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="qlb-LE-vPD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="197" height="50"/>
+            <connections>
+                <outlet property="textLabel" destination="g7e-jw-rae" id="Lhz-PH-WHf"/>
+            </connections>
+            <point key="canvasLocation" x="98" y="52"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="deleteFilter" width="10" height="10"/>
+    </resources>
+</document>

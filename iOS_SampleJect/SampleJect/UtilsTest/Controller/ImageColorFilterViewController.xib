@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageColorFilterViewController" customModule="TestProject" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="CYk-fz-S5u" id="WCG-oR-Bua"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageColorFilter" translatesAutoresizingMaskIntoConstraints="NO" id="CYk-fz-S5u">
+                    <rect key="frame" x="117" y="40" width="140" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="Ccq-p8-Vrh"/>
+                        <constraint firstAttribute="height" constant="140" id="TRE-zH-z71"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfo-1c-Met">
+                    <rect key="frame" x="0.0" y="190" width="125" height="30"/>
+                    <state key="normal" title="Green Color"/>
+                    <connections>
+                        <action selector="touchGreenBtn:" destination="-1" eventType="touchUpInside" id="6ZD-8M-FYL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B83-UN-I4i">
+                    <rect key="frame" x="125" y="190" width="125" height="30"/>
+                    <state key="normal" title="Blue Color"/>
+                    <connections>
+                        <action selector="touchBlueBtn:" destination="-1" eventType="touchUpInside" id="uNX-GF-LcB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcs-Ni-B9s">
+                    <rect key="frame" x="250" y="190" width="125" height="30"/>
+                    <state key="normal" title="Origin Color"/>
+                    <connections>
+                        <action selector="touchOriginBtn:" destination="-1" eventType="touchUpInside" id="iDc-nr-7jT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Rfo-1c-Met" firstAttribute="top" secondItem="CYk-fz-S5u" secondAttribute="bottom" constant="10" id="21h-6h-mgK"/>
+                <constraint firstItem="Rfo-1c-Met" firstAttribute="width" secondItem="B83-UN-I4i" secondAttribute="width" id="6bv-2T-WS8"/>
+                <constraint firstItem="tcs-Ni-B9s" firstAttribute="leading" secondItem="B83-UN-I4i" secondAttribute="trailing" id="H0e-UQ-CqT"/>
+                <constraint firstItem="B83-UN-I4i" firstAttribute="width" secondItem="tcs-Ni-B9s" secondAttribute="width" id="Sl8-Fj-Qfb"/>
+                <constraint firstItem="CYk-fz-S5u" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Tdd-9z-wHB"/>
+                <constraint firstItem="tcs-Ni-B9s" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ULU-1P-gw7"/>
+                <constraint firstItem="B83-UN-I4i" firstAttribute="top" secondItem="Rfo-1c-Met" secondAttribute="top" id="Wdc-fE-tkg"/>
+                <constraint firstItem="B83-UN-I4i" firstAttribute="leading" secondItem="Rfo-1c-Met" secondAttribute="trailing" id="jUE-lR-mZd"/>
+                <constraint firstItem="CYk-fz-S5u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="sM3-hr-FdX"/>
+                <constraint firstItem="Rfo-1c-Met" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tMW-8T-Hsp"/>
+                <constraint firstItem="tcs-Ni-B9s" firstAttribute="top" secondItem="B83-UN-I4i" secondAttribute="top" id="twg-JR-Qh9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="imageColorFilter" width="70" height="70"/>
+    </resources>
+</document>
