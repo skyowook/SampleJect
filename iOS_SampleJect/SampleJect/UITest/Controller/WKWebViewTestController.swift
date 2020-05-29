@@ -41,7 +41,25 @@ class WKWebViewTestController: UIViewController {
     
     /// html 로드 - 네이티브 스크립트 테스트를 위함
     @IBAction private func touchHtmlLoadButton(_ sender: AnyObject) {
-        let htmlString = "<html><head><script type=\"text/javascript\" charset=\"UTF-8\"> function callNative() { console.log(\"adf\"); try{ window.webkit.messageHandlers.CoochaClient2.postMessage({did: '입력값', sid:'입력값', shopName:'입력값', url : '입력값' }); } catch(err) {console.log(err); } } </script> </head> <body> <input type=\"button\" onclick=\"callNative()\" value=\"네이티브\" /> </body> </html>"
+        let htmlString = """
+            <html><head><script type=\"text/javascript\" charset=\"UTF-8\">
+            function callNative() {
+                console.log(\"adf\");
+                var jsonObject = {
+                    did: "111",
+                    sid: "222",
+                    shopName: "333",
+                    url: "asdfasd"
+                };
+                try{
+                    //window.webkit.messageHandlers.CoochaClient2.postMessage(\"{\"did\": \"입력값\", \"sid\":\"입력값\", \"shopName\":\"입력값\", \"url\" : \"입력값\"}\");
+                    window.webkit.messageHandlers.CoochaClient2.postMessage(jsonObject);
+                } catch(err) {
+                    console.log(err);
+                }
+            }
+            </script> </head> <body> <input type=\"button\" onclick=\"callNative()\" value=\"네이티브\" /> </body> </html>
+        """
         
         webView.loadHTMLString(htmlString, baseURL: nil)
     }
@@ -126,7 +144,8 @@ extension WKWebViewTestController: WKNavigationDelegate, WKScriptMessageHandler 
     }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-//        let values: [String: String] = message.body as! Dictionary
-//        debugPrint("here???")
+        let values: [String: String] = message.body as! Dictionary
+
+        debugPrint("here???")
     }
 }
