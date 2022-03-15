@@ -34,6 +34,8 @@
 		1BEBE4FF2085CD1D000C8975 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEBE4FD2085CD1D000C8975 /* TagViewController.swift */; };
 		1BEBE5002085CD1D000C8975 /* TagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BEBE4FE2085CD1D000C8975 /* TagViewController.xib */; };
 		1BEBE5042085CD74000C8975 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEBE5032085CD74000C8975 /* TagView.swift */; };
+		B531AF8827DF824600E37355 /* BottomSheetContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531AF8627DF824600E37355 /* BottomSheetContentController.swift */; };
+		B531AF8927DF824600E37355 /* BottomSheetContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B531AF8727DF824600E37355 /* BottomSheetContentController.xib */; };
 		E1D0840BB49A7CD6AC29A950 /* Pods_SampleJect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633B27C07BC8610FD5257150 /* Pods_SampleJect.framework */; };
 		EA05C86821141B7500C5B9CD /* StackViewTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05C86621141B7500C5B9CD /* StackViewTestController.swift */; };
 		EA05C86921141B7500C5B9CD /* StackViewTestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA05C86721141B7500C5B9CD /* StackViewTestController.xib */; };
@@ -81,6 +83,8 @@
 		481CB2F67ED253ABA1C187F9 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		633B27C07BC8610FD5257150 /* Pods_SampleJect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleJect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DF8676A14A464CB8691CF2 /* Pods-SampleJect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleJect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleJect/Pods-SampleJect.debug.xcconfig"; sourceTree = "<group>"; };
+		B531AF8627DF824600E37355 /* BottomSheetContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentController.swift; sourceTree = "<group>"; };
+		B531AF8727DF824600E37355 /* BottomSheetContentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetContentController.xib; sourceTree = "<group>"; };
 		EA05C86621141B7500C5B9CD /* StackViewTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewTestController.swift; sourceTree = "<group>"; };
 		EA05C86721141B7500C5B9CD /* StackViewTestController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackViewTestController.xib; sourceTree = "<group>"; };
 		EA817886205D099B006668D8 /* SampleJect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleJect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +236,8 @@
 				EA05C86721141B7500C5B9CD /* StackViewTestController.xib */,
 				1B139EF32186A94B00AAFF5D /* WKWebViewTestController.swift */,
 				1B139EF42186A94B00AAFF5D /* WKWebViewTestController.xib */,
+				B531AF8627DF824600E37355 /* BottomSheetContentController.swift */,
+				B531AF8727DF824600E37355 /* BottomSheetContentController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				1BEBE5002085CD1D000C8975 /* TagViewController.xib in Resources */,
 				1B139EFA2187037900AAFF5D /* RunLoopViewController.xib in Resources */,
 				EA817891205D099B006668D8 /* Assets.xcassets in Resources */,
+				B531AF8927DF824600E37355 /* BottomSheetContentController.xib in Resources */,
 				EA05C86921141B7500C5B9CD /* StackViewTestController.xib in Resources */,
 				1BB6C5CC2085DE7A0041995A /* RelationKeywordTagCell.xib in Resources */,
 				1BB6C5D02085DFBF0041995A /* FilterTagCell.xib in Resources */,
@@ -390,16 +397,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleJect/Pods-SampleJect-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,6 +450,7 @@
 				1BAFFA72212EA05B0022E02B /* PINRemoteImageViewController.swift in Sources */,
 				1BB027102060E3E3002AA021 /* UITestViewController.swift in Sources */,
 				EA05C86821141B7500C5B9CD /* StackViewTestController.swift in Sources */,
+				B531AF8827DF824600E37355 /* BottomSheetContentController.swift in Sources */,
 				1BB6C5CB2085DE7A0041995A /* RelationKeywordTagCell.swift in Sources */,
 				1BEBE4FF2085CD1D000C8975 /* TagViewController.swift in Sources */,
 				1B6F178F2060EC4D00A135AB /* RefreshContentView.swift in Sources */,

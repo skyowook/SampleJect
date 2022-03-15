@@ -4,5 +4,5 @@ use_frameworks!
 
 target 'SampleJect' do
     pod 'Alamofire', '~> 4.5.1'
-    pod 'PINRemoteImage', '~> 2.1.4'
+    pod 'MaterialComponents/BottomSheet'
 end

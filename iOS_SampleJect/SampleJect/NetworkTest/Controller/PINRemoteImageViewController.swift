@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PINCache
 
 class PINRemoteImageViewController: UIViewController {
     
@@ -64,58 +63,58 @@ class PINRemoteImageViewController: UIViewController {
         self.imageView.currentUrl = url.absoluteString
         
         if index < 4 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                PINRemoteImageManager.shared().downloadImage(with: url) { (result) in
-                    if let image = result.image {
-                        DispatchQueue.main.async {
-                            debugPrint(url.absoluteString)
-                            
-                            if self.imageView.currentUrl == url.absoluteString {
-                                debugPrint("OK")
-                                self.imageView.image = image
-                            } else {
-                                debugPrint("NO")
-                            }
-                        }
-                    }
-                }
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                PINRemoteImageManager.shared().downloadImage(with: url) { (result) in
+//                    if let image = result.image {
+//                        DispatchQueue.main.async {
+//                            debugPrint(url.absoluteString)
+//                            
+//                            if self.imageView.currentUrl == url.absoluteString {
+//                                debugPrint("OK")
+//                                self.imageView.image = image
+//                            } else {
+//                                debugPrint("NO")
+//                            }
+//                        }
+//                    }
+//                }
+//            }
             
             return
         }
         
-        PINRemoteImageManager.shared().downloadImage(with: url) { (result) in
-            if let image = result.image {
-                DispatchQueue.main.async {
-                    debugPrint(url.absoluteString)
-
-                    if self.imageView.currentUrl == url.absoluteString {
-                        debugPrint("OK")
-                        self.imageView.image = image
-                    } else {
-                        debugPrint("NO")
-                    }
-                }
-                
-                PINCache.shared().setObject(image, forKey: url.absoluteString)
-            }
-        }
+//        PINRemoteImageManager.shared().downloadImage(with: url) { (result) in
+//            if let image = result.image {
+//                DispatchQueue.main.async {
+//                    debugPrint(url.absoluteString)
+//
+//                    if self.imageView.currentUrl == url.absoluteString {
+//                        debugPrint("OK")
+//                        self.imageView.image = image
+//                    } else {
+//                        debugPrint("NO")
+//                    }
+//                }
+//
+//                PINCache.shared().setObject(image, forKey: url.absoluteString)
+//            }
+//        }
     }
     
     func loadCacheImg(_ url: URL, withIndex index: Int) {
         self.imageView.currentUrl = url.absoluteString
         
-        PINCache.shared().object(forKey: url.absoluteString) { (cache, key, object) in
-            if self.imageView.currentUrl == key {
-                debugPrint("key" + key)
-                debugPrint("OK")
-                DispatchQueue.main.async {
-                    self.imageView.image = object as? UIImage
-                }
-            } else {
-                debugPrint("NO")
-            }
-        }
+//        PINCache.shared().object(forKey: url.absoluteString) { (cache, key, object) in
+//            if self.imageView.currentUrl == key {
+//                debugPrint("key" + key)
+//                debugPrint("OK")
+//                DispatchQueue.main.async {
+//                    self.imageView.image = object as? UIImage
+//                }
+//            } else {
+//                debugPrint("NO")
+//            }
+//        }
     }
     
 

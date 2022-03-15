@@ -9,8 +9,4 @@
 #ifndef SampleJect_Bridging_Header_h
 #define SampleJect_Bridging_Header_h
 
-// #.PINRemoteImage
-#import <PINRemoteImage/PINRemoteImage.h>
-#import <PINRemoteImage/PINImageView+PINRemoteImage.h>
-
 #endif /* SampleJect_Bridging_Header_h */

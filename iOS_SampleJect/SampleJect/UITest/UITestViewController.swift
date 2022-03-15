@@ -43,6 +43,10 @@ class UITestViewController: UITableViewController {
             self.present(svc, animated: true, completion: nil)
         case 4: // Alert
             showAlertTest()
+            return
+        case 5: // Material Bottom Sheet
+            BottomSheetContentController.open(from: self)
+            return
         default:
             return
         }

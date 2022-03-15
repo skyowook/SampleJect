@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIViewController {
     /// 네비게이션 바 뒤로가기 타이틀 변경
