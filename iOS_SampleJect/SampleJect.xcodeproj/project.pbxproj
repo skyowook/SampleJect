@@ -36,6 +36,8 @@
 		1BEBE5042085CD74000C8975 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEBE5032085CD74000C8975 /* TagView.swift */; };
 		B531AF8827DF824600E37355 /* BottomSheetContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531AF8627DF824600E37355 /* BottomSheetContentController.swift */; };
 		B531AF8927DF824600E37355 /* BottomSheetContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B531AF8727DF824600E37355 /* BottomSheetContentController.xib */; };
+		B573AD2527E036600087EE20 /* DismissPanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B573AD2327E036600087EE20 /* DismissPanViewController.swift */; };
+		B573AD2627E036600087EE20 /* DismissPanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B573AD2427E036600087EE20 /* DismissPanViewController.xib */; };
 		E1D0840BB49A7CD6AC29A950 /* Pods_SampleJect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633B27C07BC8610FD5257150 /* Pods_SampleJect.framework */; };
 		EA05C86821141B7500C5B9CD /* StackViewTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05C86621141B7500C5B9CD /* StackViewTestController.swift */; };
 		EA05C86921141B7500C5B9CD /* StackViewTestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA05C86721141B7500C5B9CD /* StackViewTestController.xib */; };
@@ -85,6 +87,8 @@
 		B1DF8676A14A464CB8691CF2 /* Pods-SampleJect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleJect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleJect/Pods-SampleJect.debug.xcconfig"; sourceTree = "<group>"; };
 		B531AF8627DF824600E37355 /* BottomSheetContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentController.swift; sourceTree = "<group>"; };
 		B531AF8727DF824600E37355 /* BottomSheetContentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetContentController.xib; sourceTree = "<group>"; };
+		B573AD2327E036600087EE20 /* DismissPanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissPanViewController.swift; sourceTree = "<group>"; };
+		B573AD2427E036600087EE20 /* DismissPanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DismissPanViewController.xib; sourceTree = "<group>"; };
 		EA05C86621141B7500C5B9CD /* StackViewTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewTestController.swift; sourceTree = "<group>"; };
 		EA05C86721141B7500C5B9CD /* StackViewTestController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackViewTestController.xib; sourceTree = "<group>"; };
 		EA817886205D099B006668D8 /* SampleJect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleJect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +242,8 @@
 				1B139EF42186A94B00AAFF5D /* WKWebViewTestController.xib */,
 				B531AF8627DF824600E37355 /* BottomSheetContentController.swift */,
 				B531AF8727DF824600E37355 /* BottomSheetContentController.xib */,
+				B573AD2327E036600087EE20 /* DismissPanViewController.swift */,
+				B573AD2427E036600087EE20 /* DismissPanViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				EA817894205D099B006668D8 /* LaunchScreen.storyboard in Resources */,
 				1BEBE5002085CD1D000C8975 /* TagViewController.xib in Resources */,
 				1B139EFA2187037900AAFF5D /* RunLoopViewController.xib in Resources */,
+				B573AD2627E036600087EE20 /* DismissPanViewController.xib in Resources */,
 				EA817891205D099B006668D8 /* Assets.xcassets in Resources */,
 				B531AF8927DF824600E37355 /* BottomSheetContentController.xib in Resources */,
 				EA05C86921141B7500C5B9CD /* StackViewTestController.xib in Resources */,
@@ -437,6 +444,7 @@
 				1BB6C5C02085D4460041995A /* BaseTagCell.swift in Sources */,
 				1B6F1797206243CA00A135AB /* ConsoleTestViewController.swift in Sources */,
 				1BC33C482182E9A000DDDEAC /* UIViewController_ex.swift in Sources */,
+				B573AD2527E036600087EE20 /* DismissPanViewController.swift in Sources */,
 				1BB6C5CF2085DFBF0041995A /* FilterTagCell.swift in Sources */,
 				1B6F178D2060EB5C00A135AB /* ContentViewType.swift in Sources */,
 				1B6F17882060E8AD00A135AB /* BaseTableViewCell.swift in Sources */,

@@ -47,6 +47,9 @@ class UITestViewController: UITableViewController {
         case 5: // Material Bottom Sheet
             BottomSheetContentController.open(from: self)
             return
+        case 6: // Dismiss Pan
+            DismissPanViewController.open(from: self)
+            return
         default:
             return
         }
