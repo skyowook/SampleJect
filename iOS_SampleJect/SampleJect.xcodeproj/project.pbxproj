@@ -36,6 +36,11 @@
 		1BEBE5042085CD74000C8975 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEBE5032085CD74000C8975 /* TagView.swift */; };
 		B531AF8827DF824600E37355 /* BottomSheetContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531AF8627DF824600E37355 /* BottomSheetContentController.swift */; };
 		B531AF8927DF824600E37355 /* BottomSheetContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B531AF8727DF824600E37355 /* BottomSheetContentController.xib */; };
+		B55C476428C045D1005ED3A6 /* BaseHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C476328C045D1005ED3A6 /* BaseHostingViewController.swift */; };
+		B55C476628C04996005ED3A6 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C476528C04996005ED3A6 /* NotificationType.swift */; };
+		B55C476828C04A7F005ED3A6 /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C476728C04A7F005ED3A6 /* KeyboardInfo.swift */; };
+		B55C476B28C04A9F005ED3A6 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C476A28C04A9F005ED3A6 /* SegueType.swift */; };
+		B55C476D28C05037005ED3A6 /* TestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C476C28C05037005ED3A6 /* TestUIView.swift */; };
 		B573AD2527E036600087EE20 /* DismissPanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B573AD2327E036600087EE20 /* DismissPanViewController.swift */; };
 		B573AD2627E036600087EE20 /* DismissPanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B573AD2427E036600087EE20 /* DismissPanViewController.xib */; };
 		E1D0840BB49A7CD6AC29A950 /* Pods_SampleJect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633B27C07BC8610FD5257150 /* Pods_SampleJect.framework */; };
@@ -87,6 +92,11 @@
 		B1DF8676A14A464CB8691CF2 /* Pods-SampleJect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleJect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleJect/Pods-SampleJect.debug.xcconfig"; sourceTree = "<group>"; };
 		B531AF8627DF824600E37355 /* BottomSheetContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentController.swift; sourceTree = "<group>"; };
 		B531AF8727DF824600E37355 /* BottomSheetContentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetContentController.xib; sourceTree = "<group>"; };
+		B55C476328C045D1005ED3A6 /* BaseHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHostingViewController.swift; sourceTree = "<group>"; };
+		B55C476528C04996005ED3A6 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		B55C476728C04A7F005ED3A6 /* KeyboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
+		B55C476A28C04A9F005ED3A6 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
+		B55C476C28C05037005ED3A6 /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
 		B573AD2327E036600087EE20 /* DismissPanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissPanViewController.swift; sourceTree = "<group>"; };
 		B573AD2427E036600087EE20 /* DismissPanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DismissPanViewController.xib; sourceTree = "<group>"; };
 		EA05C86621141B7500C5B9CD /* StackViewTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewTestController.swift; sourceTree = "<group>"; };
@@ -127,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				1B6F178C2060EB5C00A135AB /* ContentViewType.swift */,
+				B55C476528C04996005ED3A6 /* NotificationType.swift */,
+				B55C476728C04A7F005ED3A6 /* KeyboardInfo.swift */,
+				B55C476A28C04A9F005ED3A6 /* SegueType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -231,6 +244,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B55C476228C045BE005ED3A6 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				B55C476328C045D1005ED3A6 /* BaseHostingViewController.swift */,
+				B55C476C28C05037005ED3A6 /* TestUIView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		EA05C86521141B0800C5B9CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +291,7 @@
 		EA817888205D099B006668D8 /* SampleJect */ = {
 			isa = PBXGroup;
 			children = (
+				B55C476228C045BE005ED3A6 /* SwiftUI */,
 				1B6F178B2060EB5C00A135AB /* Common */,
 				1BB0270E2060E3BD002AA021 /* UITest */,
 				EAD19100211C016D0072FC61 /* ConsoleTest */,
@@ -445,16 +468,21 @@
 				1B6F1797206243CA00A135AB /* ConsoleTestViewController.swift in Sources */,
 				1BC33C482182E9A000DDDEAC /* UIViewController_ex.swift in Sources */,
 				B573AD2527E036600087EE20 /* DismissPanViewController.swift in Sources */,
+				B55C476828C04A7F005ED3A6 /* KeyboardInfo.swift in Sources */,
 				1BB6C5CF2085DFBF0041995A /* FilterTagCell.swift in Sources */,
 				1B6F178D2060EB5C00A135AB /* ContentViewType.swift in Sources */,
 				1B6F17882060E8AD00A135AB /* BaseTableViewCell.swift in Sources */,
 				1B139EF52186A94B00AAFF5D /* WKWebViewTestController.swift in Sources */,
 				1B139EF92187037900AAFF5D /* RunLoopViewController.swift in Sources */,
 				EAD19109211C1AD40072FC61 /* ImageColorFilterViewController.swift in Sources */,
+				B55C476428C045D1005ED3A6 /* BaseHostingViewController.swift in Sources */,
 				1B6F178A2060EB0A00A135AB /* BaseContentView.swift in Sources */,
 				1BEBE4FB2085CC9E000C8975 /* CustomUITestViewController.swift in Sources */,
 				1BEBE5042085CD74000C8975 /* TagView.swift in Sources */,
+				B55C476628C04996005ED3A6 /* NotificationType.swift in Sources */,
 				EAD19103211C155B0072FC61 /* TagViewFlowLayout.swift in Sources */,
+				B55C476B28C04A9F005ED3A6 /* SegueType.swift in Sources */,
+				B55C476D28C05037005ED3A6 /* TestUIView.swift in Sources */,
 				1BAFFA72212EA05B0022E02B /* PINRemoteImageViewController.swift in Sources */,
 				1BB027102060E3E3002AA021 /* UITestViewController.swift in Sources */,
 				EA05C86821141B7500C5B9CD /* StackViewTestController.swift in Sources */,
@@ -542,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -595,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -611,14 +639,14 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WLDXZV795D;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleJect/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sins.test.SampleJect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e23011e5-c105-41d4-b2eb-38a36b52fbf4";
 				PROVISIONING_PROFILE_SPECIFIER = wildcard_provisioning;
 				SWIFT_OBJC_BRIDGING_HEADER = "SampleJect/SampleJect-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -631,14 +659,14 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WLDXZV795D;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleJect/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sins.test.SampleJect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e23011e5-c105-41d4-b2eb-38a36b52fbf4";
 				PROVISIONING_PROFILE_SPECIFIER = wildcard_provisioning;
 				SWIFT_OBJC_BRIDGING_HEADER = "SampleJect/SampleJect-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -14,33 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if self.window?.rootViewController == nil {
             self.window?.rootViewController = UIViewController()
         }
-        
-        // Add ShortCut (3D Touch)
-        if launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem != nil {
-            // 호출 타이밍이 어떻게 되는지 확인 필요
-            let alert = UIAlertController(title: "Test", message: "ShortCutItem is not empty", preferredStyle: .alert)
-            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
-            return false
-        }
-        
-        let alert = UIAlertController(title: "Test", message: "ShortCutItem is not empty", preferredStyle: .alert)
-        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
-        
-        // 숏컷 아이템이 없으면 숏컷 추가
-        if let shortcutItems = application.shortcutItems, shortcutItems.isEmpty {
-            let shortcutInfo1 = ["testInfo" : "shortcut1"]
-            let shortcut1 = UIMutableApplicationShortcutItem(type: "shortcutType1", localizedTitle: "Title", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .audio), userInfo: shortcutInfo1)
-            
-            application.shortcutItems = [shortcut1]
-            
-            debugPrint("ShortCut Init")
-        }
-        
         
         return true
     }

@@ -17,7 +17,7 @@ extension String {
     ///     - font: 폰트
     func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return ceil(boundingBox.height)
     }
@@ -32,7 +32,7 @@ extension String {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect,
                                             options: .usesLineFragmentOrigin,
-                                            attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.paragraphStyle : paragraphStyle],
+                                            attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle : paragraphStyle],
                                             context: nil)
         
         return ceil(boundingBox.height)
@@ -44,7 +44,7 @@ extension String {
     func width(font: UIFont) -> CGFloat {
         let width: CGFloat = .greatestFiniteMagnitude
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return ceil(boundingBox.width)
     }

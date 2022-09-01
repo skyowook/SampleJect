@@ -90,7 +90,7 @@ extension UITableViewTestController: BaseContentViewDelegate {
         
         tableView.beginUpdates()
         //tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: UITableViewRowAnimation.fade)
-        tableView.reloadSections(IndexSet([1]), with: UITableViewRowAnimation.none)
+        tableView.reloadSections(IndexSet([1]), with: .none)
         tableView.endUpdates()
     }
 }
