@@ -3,6 +3,6 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'SampleJect' do
-    pod 'Alamofire', '~> 4.5.1'
+    pod 'Alamofire'
     pod 'MaterialComponents/BottomSheet'
 end

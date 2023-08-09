@@ -103,24 +103,47 @@ class TestClass {
     }
 }
 
+extension Character: Strideable {
+    public typealias Stride = Int
+
+    public func distance(to other: Character) -> Character.Stride {
+        let stride = Int(String(self).unicodeScalars.first!.value) - Int(String(other).unicodeScalars.first!.value)
+        return abs(stride)
+    }
+
+    public func advanced(by n: Character.Stride) -> Character {
+        return Character(UnicodeScalar(String(self).unicodeScalars.first!.value + UInt32(n))!)
+    }
+}
+
+extension ClosedRange where Element == Character {
+    var characters: [Character] { return Array(self) }
+}
 
 // MARK: - iOS Console Test Funcs
 extension ConsoleTestViewController {
     func testCase1() {
-        let string: NSString = "모바일 핫딜쇼핑 포털 쿠폰모아"
-        
-        //encodeString.addingPercentEncoding(withAllowedCharacters: )
-        let encodeString = string.addingPercentEscapes(using: 4)
-
-        print(encodeString)
-        
-        let encodeString2 = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        print(encodeString2)
-        
-        print(NSCharacterSet.urlQueryAllowed)
-        
-        print("test case 1")
-        
+//        let string: NSString = "모바일 핫딜쇼핑 포털 쿠폰모아"
+//        
+//        //encodeString.addingPercentEncoding(withAllowedCharacters: )
+//        let encodeString = string.addingPercentEscapes(using: 4)
+//
+//        print(encodeString)
+//        
+//        let encodeString2 = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+//        print(encodeString2)
+//        
+//        print(NSCharacterSet.urlQueryAllowed)
+//        
+//        print("test case 1")
+        var letters: [Character] = ("A"..."Z").characters
+        letters.append(contentsOf: ("a"..."z").characters)
+        letters.append(contentsOf: ("0"..."9").characters)
+        var randomKey = ""
+        for _ in 0..<16 {
+            randomKey += letters.randomElement()?.description ?? ""
+        }
+        debugPrint(randomKey)
     }
     
     func testCase2() {
