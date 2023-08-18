@@ -13,7 +13,6 @@ struct TestUIView: View {
         VStack(alignment: .leading, spacing: 5) {
             var text = Text("Placeholder")
             text.bold()
-            
             Text("안녕하세요 안녕하 세 요 안 녕 하 세 요 안녕하세요안 녕하세요안녕하세 요안녕하세요안녕하세 요 안 녕 하세요안녕하세 요 안 녕 하 세 요 안 녕 하 세 요 안 녕 하 세 요 ").multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
         }
