@@ -7,18 +7,28 @@
 
 import SwiftUI
 
+protocol TestProtocol {
+    
+}
+
+struct TestStruct : TestProtocol {
+    
+}
+
+struct Test2Struct : TestProtocol {
+    
+}
+
 @main
 struct SwiftUISampleApp: App {
-    @Environment(\.scenePhase) var scenePhase
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification), perform: didBecomeActiveNotification(_:))
+            MainView()
         }
     }
     
     func didBecomeActiveNotification(_ center: NotificationCenter.Publisher.Output) {
-        
+    
     }
     
     func contentViewLifeCycle() {

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B926A772A93346800A333CD /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B926A762A93346800A333CD /* Theme.xcassets */; };
+		0B926A7B2A93483F00A333CD /* ColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B926A7A2A93483F00A333CD /* ColorEx.swift */; };
+		0B926A7D2A934BD700A333CD /* FontEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B926A7C2A934BD700A333CD /* FontEx.swift */; };
 		0BC13C802A8DDCB300F7F7CD /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */; };
-		0BC13C822A8DDCB300F7F7CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C812A8DDCB300F7F7CD /* ContentView.swift */; };
+		0BC13C822A8DDCB300F7F7CD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C812A8DDCB300F7F7CD /* MainView.swift */; };
 		0BC13C842A8DDCB500F7F7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC13C832A8DDCB500F7F7CD /* Assets.xcassets */; };
 		0BC13C882A8DDCB500F7F7CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC13C872A8DDCB500F7F7CD /* Preview Assets.xcassets */; };
 		0BC13C922A8DDCB500F7F7CD /* SwiftUISampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C912A8DDCB500F7F7CD /* SwiftUISampleTests.swift */; };
@@ -34,9 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B926A762A93346800A333CD /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		0B926A7A2A93483F00A333CD /* ColorEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEx.swift; sourceTree = "<group>"; };
+		0B926A7C2A934BD700A333CD /* FontEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontEx.swift; sourceTree = "<group>"; };
 		0BC13C7C2A8DDCB300F7F7CD /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleApp.swift; sourceTree = "<group>"; };
-		0BC13C812A8DDCB300F7F7CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0BC13C812A8DDCB300F7F7CD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0BC13C832A8DDCB500F7F7CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BC13C852A8DDCB500F7F7CD /* SwiftUISample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUISample.entitlements; sourceTree = "<group>"; };
 		0BC13C872A8DDCB500F7F7CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -72,6 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B926A782A9339DE00A333CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BC13C812A8DDCB300F7F7CD /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B926A792A93482F00A333CD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0B926A7A2A93483F00A333CD /* ColorEx.swift */,
+				0B926A7C2A934BD700A333CD /* FontEx.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0BC13C732A8DDCB300F7F7CD = {
 			isa = PBXGroup;
 			children = (
@@ -95,11 +118,13 @@
 		0BC13C7E2A8DDCB300F7F7CD /* SwiftUISample */ = {
 			isa = PBXGroup;
 			children = (
+				0B926A792A93482F00A333CD /* Extension */,
+				0B926A782A9339DE00A333CD /* View */,
 				0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */,
-				0BC13C812A8DDCB300F7F7CD /* ContentView.swift */,
 				0BC13C832A8DDCB500F7F7CD /* Assets.xcassets */,
 				0BC13C852A8DDCB500F7F7CD /* SwiftUISample.entitlements */,
 				0BC13C862A8DDCB500F7F7CD /* Preview Content */,
+				0B926A762A93346800A333CD /* Theme.xcassets */,
 			);
 			path = SwiftUISample;
 			sourceTree = "<group>";
@@ -233,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B926A772A93346800A333CD /* Theme.xcassets in Resources */,
 				0BC13C882A8DDCB500F7F7CD /* Preview Assets.xcassets in Resources */,
 				0BC13C842A8DDCB500F7F7CD /* Assets.xcassets in Resources */,
 			);
@@ -259,8 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BC13C822A8DDCB300F7F7CD /* ContentView.swift in Sources */,
+				0BC13C822A8DDCB300F7F7CD /* MainView.swift in Sources */,
 				0BC13C802A8DDCB300F7F7CD /* SwiftUISampleApp.swift in Sources */,
+				0B926A7B2A93483F00A333CD /* ColorEx.swift in Sources */,
+				0B926A7D2A934BD700A333CD /* FontEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
