@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import IAssistKit
 
 struct MainView: View {
     var textBackgroundColor: Color = .res("testColor")

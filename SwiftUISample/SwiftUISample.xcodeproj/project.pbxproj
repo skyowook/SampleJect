@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B69FCA42A94497F0048719D /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B69FCA32A94497F0048719D /* IAssistKit */; };
 		0B926A772A93346800A333CD /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B926A762A93346800A333CD /* Theme.xcassets */; };
-		0B926A7B2A93483F00A333CD /* ColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B926A7A2A93483F00A333CD /* ColorEx.swift */; };
-		0B926A7D2A934BD700A333CD /* FontEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B926A7C2A934BD700A333CD /* FontEx.swift */; };
+		0BA7675B2A944A980078066C /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA7675A2A944A980078066C /* IAssistKit */; };
 		0BC13C802A8DDCB300F7F7CD /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */; };
 		0BC13C822A8DDCB300F7F7CD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C812A8DDCB300F7F7CD /* MainView.swift */; };
 		0BC13C842A8DDCB500F7F7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC13C832A8DDCB500F7F7CD /* Assets.xcassets */; };
@@ -38,8 +38,6 @@
 
 /* Begin PBXFileReference section */
 		0B926A762A93346800A333CD /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
-		0B926A7A2A93483F00A333CD /* ColorEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEx.swift; sourceTree = "<group>"; };
-		0B926A7C2A934BD700A333CD /* FontEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontEx.swift; sourceTree = "<group>"; };
 		0BC13C7C2A8DDCB300F7F7CD /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleApp.swift; sourceTree = "<group>"; };
 		0BC13C812A8DDCB300F7F7CD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -58,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA7675B2A944A980078066C /* IAssistKit in Frameworks */,
+				0B69FCA42A94497F0048719D /* IAssistKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,15 +86,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0B926A792A93482F00A333CD /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				0B926A7A2A93483F00A333CD /* ColorEx.swift */,
-				0B926A7C2A934BD700A333CD /* FontEx.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		0BC13C732A8DDCB300F7F7CD = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +109,6 @@
 		0BC13C7E2A8DDCB300F7F7CD /* SwiftUISample */ = {
 			isa = PBXGroup;
 			children = (
-				0B926A792A93482F00A333CD /* Extension */,
 				0B926A782A9339DE00A333CD /* View */,
 				0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */,
 				0BC13C832A8DDCB500F7F7CD /* Assets.xcassets */,
@@ -170,6 +160,10 @@
 			dependencies = (
 			);
 			name = SwiftUISample;
+			packageProductDependencies = (
+				0B69FCA32A94497F0048719D /* IAssistKit */,
+				0BA7675A2A944A980078066C /* IAssistKit */,
+			);
 			productName = SwiftUISample;
 			productReference = 0BC13C7C2A8DDCB300F7F7CD /* SwiftUISample.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +236,8 @@
 				Base,
 			);
 			mainGroup = 0BC13C732A8DDCB300F7F7CD;
+			packageReferences = (
+			);
 			productRefGroup = 0BC13C7D2A8DDCB300F7F7CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -287,8 +283,6 @@
 			files = (
 				0BC13C822A8DDCB300F7F7CD /* MainView.swift in Sources */,
 				0BC13C802A8DDCB300F7F7CD /* SwiftUISampleApp.swift in Sources */,
-				0B926A7B2A93483F00A333CD /* ColorEx.swift in Sources */,
-				0B926A7D2A934BD700A333CD /* FontEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +639,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B69FCA32A94497F0048719D /* IAssistKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IAssistKit;
+		};
+		0BA7675A2A944A980078066C /* IAssistKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IAssistKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0BC13C742A8DDCB300F7F7CD /* Project object */;
 }
