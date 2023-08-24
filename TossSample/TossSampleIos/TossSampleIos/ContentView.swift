@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    var tossWeb = TossWebViewWrapper()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            tossWeb.onAppear(perform: {
+                tossWeb.tossLoad()
+            })
         }
-        .padding()
     }
 }
 

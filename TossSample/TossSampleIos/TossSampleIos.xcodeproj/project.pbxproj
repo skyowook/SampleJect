@@ -7,19 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6DCB8F2A95EDAD00083D00 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6DCB8E2A95EDAD00083D00 /* Alamofire */; };
+		0B6DCB912A95F69B00083D00 /* TossWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6DCB902A95F69B00083D00 /* TossWebView.swift */; };
 		0B825B312A94AE1D00552C82 /* TossSampleIosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B825B302A94AE1D00552C82 /* TossSampleIosApp.swift */; };
 		0B825B332A94AE1D00552C82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B825B322A94AE1D00552C82 /* ContentView.swift */; };
 		0B825B352A94AE1F00552C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B825B342A94AE1F00552C82 /* Assets.xcassets */; };
 		0B825B392A94AE1F00552C82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B825B382A94AE1F00552C82 /* Preview Assets.xcassets */; };
+		0B9B30CA2A96DE4000921268 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30C92A96DE4000921268 /* AppConstants.swift */; };
+		0B9B30CC2A96DECB00921268 /* TossRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CB2A96DECB00921268 /* TossRes.swift */; };
+		0B9B30CE2A96E3C400921268 /* TossReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CD2A96E3C400921268 /* TossReq.swift */; };
+		0B9B30D02A96E71200921268 /* TossWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CF2A96E71200921268 /* TossWebViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6DCB902A95F69B00083D00 /* TossWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossWebView.swift; sourceTree = "<group>"; };
 		0B825B2D2A94AE1D00552C82 /* TossSampleIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TossSampleIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B825B302A94AE1D00552C82 /* TossSampleIosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossSampleIosApp.swift; sourceTree = "<group>"; };
 		0B825B322A94AE1D00552C82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B825B342A94AE1F00552C82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B825B362A94AE1F00552C82 /* TossSampleIos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TossSampleIos.entitlements; sourceTree = "<group>"; };
 		0B825B382A94AE1F00552C82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0B9B30C92A96DE4000921268 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		0B9B30CB2A96DECB00921268 /* TossRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossRes.swift; sourceTree = "<group>"; };
+		0B9B30CD2A96E3C400921268 /* TossReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossReq.swift; sourceTree = "<group>"; };
+		0B9B30CF2A96E71200921268 /* TossWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossWebViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6DCB8F2A95EDAD00083D00 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +66,11 @@
 			children = (
 				0B825B302A94AE1D00552C82 /* TossSampleIosApp.swift */,
 				0B825B322A94AE1D00552C82 /* ContentView.swift */,
+				0B6DCB902A95F69B00083D00 /* TossWebView.swift */,
+				0B9B30CF2A96E71200921268 /* TossWebViewWrapper.swift */,
+				0B9B30C92A96DE4000921268 /* AppConstants.swift */,
+				0B9B30CB2A96DECB00921268 /* TossRes.swift */,
+				0B9B30CD2A96E3C400921268 /* TossReq.swift */,
 				0B825B342A94AE1F00552C82 /* Assets.xcassets */,
 				0B825B362A94AE1F00552C82 /* TossSampleIos.entitlements */,
 				0B825B372A94AE1F00552C82 /* Preview Content */,
@@ -85,6 +102,9 @@
 			dependencies = (
 			);
 			name = TossSampleIos;
+			packageProductDependencies = (
+				0B6DCB8E2A95EDAD00083D00 /* Alamofire */,
+			);
 			productName = TossSampleIos;
 			productReference = 0B825B2D2A94AE1D00552C82 /* TossSampleIos.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +133,9 @@
 				Base,
 			);
 			mainGroup = 0B825B242A94AE1D00552C82;
+			packageReferences = (
+				0B6DCB8D2A95EDAD00083D00 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0B825B2E2A94AE1D00552C82 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,7 +163,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B825B332A94AE1D00552C82 /* ContentView.swift in Sources */,
+				0B9B30CE2A96E3C400921268 /* TossReq.swift in Sources */,
+				0B9B30D02A96E71200921268 /* TossWebViewWrapper.swift in Sources */,
+				0B6DCB912A95F69B00083D00 /* TossWebView.swift in Sources */,
 				0B825B312A94AE1D00552C82 /* TossSampleIosApp.swift in Sources */,
+				0B9B30CC2A96DECB00921268 /* TossRes.swift in Sources */,
+				0B9B30CA2A96DE4000921268 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +387,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B6DCB8D2A95EDAD00083D00 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B6DCB8E2A95EDAD00083D00 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B6DCB8D2A95EDAD00083D00 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B825B252A94AE1D00552C82 /* Project object */;
 }
