@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.webkit.JavascriptInterface
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.skw.tosssampleaos.databinding.ActivityMainBinding
@@ -122,7 +123,12 @@ class MainActivity : AppCompatActivity(), TossAuthInterface {
     }
 
     private fun testLogs(personalData: TossPersonalData, session: TossCertSession) {
-        Log.i("toss test", session.decrypt(personalData.name))
+        val ciDecrypt = session.decrypt(personalData.ci)
+        Log.i("toss test", "ci ::: $ciDecrypt")
+
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage(ciDecrypt)
+        builder.create().show()
     }
 
     @JavascriptInterface
@@ -136,7 +142,6 @@ class MainActivity : AppCompatActivity(), TossAuthInterface {
                 /* 인증 성공 */
                 Log.i("toss", "Auth Success")
                 requestSignAuthResult(authorization)
-                finish()
             }
             WindowMessages.TOSS_AUTH_FAIL -> {
                 /* 인증 실패 */
