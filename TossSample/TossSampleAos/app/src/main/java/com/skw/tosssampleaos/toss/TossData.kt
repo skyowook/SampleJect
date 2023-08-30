@@ -1,7 +1,28 @@
-package com.skw.tosssampleaos
+package com.skw.tosssampleaos.toss
 
 import com.google.gson.annotations.SerializedName
 
+////////////////////////////////////////////////////////
+// Request
+////////////////////////////////////////////////////////
+/**
+ * 토스 본인인증 표준창 정보 요청 필드
+ */
+data class TossSignAuthReq(
+    val requestType: String
+)
+
+/**
+ * 토스 본인인증 결과 요청 필드
+ */
+data class TossSignAuthResultReq(
+    val txId: String,
+    val sessionKey: String
+)
+
+////////////////////////////////////////////////////////
+// Response
+////////////////////////////////////////////////////////
 /**
  * 토스 AccessToken
  */
@@ -16,7 +37,11 @@ data class TossTokenRes(
 
     @SerializedName("expires_in")
     val expiresIn: Int
-)
+) {
+    fun getAuthorization(): String {
+        return "$tokenType $token"
+    }
+}
 
 /**
  * 토스 API 통신 결과 기본 형태

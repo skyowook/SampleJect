@@ -1,4 +1,4 @@
-package com.skw.tosssampleaos
+package com.skw.tosssampleaos.toss
 
 import android.content.ActivityNotFoundException
 import android.content.Context
