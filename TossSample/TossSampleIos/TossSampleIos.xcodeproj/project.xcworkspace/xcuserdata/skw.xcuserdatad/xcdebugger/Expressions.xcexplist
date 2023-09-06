@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "TossCertSessionGenerator.rsaEncrypt(_:):TossCertSessionGenerator.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AESCipher.init(_:_:_:):AESCipher.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "iv.base64Decoded()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TossWebView.requestSignAuthResult(_:):TossWebView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "params">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static TossCertSessionGenerator.encrypt(_:_:):TossCertSessionGenerator.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TossCertSessionGenerator.generate(_:_:_:):TossCertSessionGenerator.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "randomIv">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static TossCertSessionGenerator.encrypt(string:publicKey:):TossCertSessionGenerator.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TossCertSession.decrypt(_:):TossCertSession.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

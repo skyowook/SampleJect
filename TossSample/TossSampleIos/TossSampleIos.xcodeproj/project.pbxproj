@@ -17,6 +17,13 @@
 		0B9B30CC2A96DECB00921268 /* TossRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CB2A96DECB00921268 /* TossRes.swift */; };
 		0B9B30CE2A96E3C400921268 /* TossReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CD2A96E3C400921268 /* TossReq.swift */; };
 		0B9B30D02A96E71200921268 /* TossWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CF2A96E71200921268 /* TossWebViewWrapper.swift */; };
+		0BA5802B2AA5C9D50072BF10 /* TossUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5802A2AA5C9D50072BF10 /* TossUtils.swift */; };
+		0BA5802D2AA6A7F40072BF10 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5802C2AA6A7F40072BF10 /* HMAC.swift */; };
+		0BA580302AA6A9940072BF10 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA5802F2AA6A9940072BF10 /* CryptoSwift */; };
+		0BA580322AA6ABD00072BF10 /* TossCertSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA580312AA6ABD00072BF10 /* TossCertSession.swift */; };
+		0BA580342AA6AF070072BF10 /* AESCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA580332AA6AF070072BF10 /* AESCipher.swift */; };
+		0BA580362AA6DECF0072BF10 /* SecureKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA580352AA6DECF0072BF10 /* SecureKeyGenerator.swift */; };
+		0BA580382AA6E3810072BF10 /* TossCertSessionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA580372AA6E3810072BF10 /* TossCertSessionGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,12 @@
 		0B9B30CB2A96DECB00921268 /* TossRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossRes.swift; sourceTree = "<group>"; };
 		0B9B30CD2A96E3C400921268 /* TossReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossReq.swift; sourceTree = "<group>"; };
 		0B9B30CF2A96E71200921268 /* TossWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossWebViewWrapper.swift; sourceTree = "<group>"; };
+		0BA5802A2AA5C9D50072BF10 /* TossUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossUtils.swift; sourceTree = "<group>"; };
+		0BA5802C2AA6A7F40072BF10 /* HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
+		0BA580312AA6ABD00072BF10 /* TossCertSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossCertSession.swift; sourceTree = "<group>"; };
+		0BA580332AA6AF070072BF10 /* AESCipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESCipher.swift; sourceTree = "<group>"; };
+		0BA580352AA6DECF0072BF10 /* SecureKeyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureKeyGenerator.swift; sourceTree = "<group>"; };
+		0BA580372AA6E3810072BF10 /* TossCertSessionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossCertSessionGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6DCB8F2A95EDAD00083D00 /* Alamofire in Frameworks */,
+				0BA580302AA6A9940072BF10 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +78,7 @@
 		0B825B2F2A94AE1D00552C82 /* TossSampleIos */ = {
 			isa = PBXGroup;
 			children = (
+				0BA580292AA5C9A80072BF10 /* TossUtils */,
 				0B825B302A94AE1D00552C82 /* TossSampleIosApp.swift */,
 				0B825B322A94AE1D00552C82 /* ContentView.swift */,
 				0B6DCB902A95F69B00083D00 /* TossWebView.swift */,
@@ -86,6 +101,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0BA580292AA5C9A80072BF10 /* TossUtils */ = {
+			isa = PBXGroup;
+			children = (
+				0BA5802A2AA5C9D50072BF10 /* TossUtils.swift */,
+				0BA5802C2AA6A7F40072BF10 /* HMAC.swift */,
+				0BA580312AA6ABD00072BF10 /* TossCertSession.swift */,
+				0BA580332AA6AF070072BF10 /* AESCipher.swift */,
+				0BA580352AA6DECF0072BF10 /* SecureKeyGenerator.swift */,
+				0BA580372AA6E3810072BF10 /* TossCertSessionGenerator.swift */,
+			);
+			path = TossUtils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,6 +132,7 @@
 			name = TossSampleIos;
 			packageProductDependencies = (
 				0B6DCB8E2A95EDAD00083D00 /* Alamofire */,
+				0BA5802F2AA6A9940072BF10 /* CryptoSwift */,
 			);
 			productName = TossSampleIos;
 			productReference = 0B825B2D2A94AE1D00552C82 /* TossSampleIos.app */;
@@ -135,6 +164,7 @@
 			mainGroup = 0B825B242A94AE1D00552C82;
 			packageReferences = (
 				0B6DCB8D2A95EDAD00083D00 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0BA5802E2AA6A9940072BF10 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 			);
 			productRefGroup = 0B825B2E2A94AE1D00552C82 /* Products */;
 			projectDirPath = "";
@@ -164,9 +194,15 @@
 			files = (
 				0B825B332A94AE1D00552C82 /* ContentView.swift in Sources */,
 				0B9B30CE2A96E3C400921268 /* TossReq.swift in Sources */,
+				0BA580382AA6E3810072BF10 /* TossCertSessionGenerator.swift in Sources */,
+				0BA580362AA6DECF0072BF10 /* SecureKeyGenerator.swift in Sources */,
 				0B9B30D02A96E71200921268 /* TossWebViewWrapper.swift in Sources */,
 				0B6DCB912A95F69B00083D00 /* TossWebView.swift in Sources */,
+				0BA580342AA6AF070072BF10 /* AESCipher.swift in Sources */,
+				0BA5802B2AA5C9D50072BF10 /* TossUtils.swift in Sources */,
+				0BA580322AA6ABD00072BF10 /* TossCertSession.swift in Sources */,
 				0B825B312A94AE1D00552C82 /* TossSampleIosApp.swift in Sources */,
+				0BA5802D2AA6A7F40072BF10 /* HMAC.swift in Sources */,
 				0B9B30CC2A96DECB00921268 /* TossRes.swift in Sources */,
 				0B9B30CA2A96DE4000921268 /* AppConstants.swift in Sources */,
 			);
@@ -397,6 +433,14 @@
 				version = 5.7.1;
 			};
 		};
+		0BA5802E2AA6A9940072BF10 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -404,6 +448,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B6DCB8D2A95EDAD00083D00 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		0BA5802F2AA6A9940072BF10 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BA5802E2AA6A9940072BF10 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

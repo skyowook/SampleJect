@@ -11,3 +11,8 @@ import Foundation
 struct TossSignAuthReq: Codable {
     var requestType: String = ""
 }
+
+struct TossSignAuthResultReq: Codable {
+    var txId: String = ""
+    var sessionKey: String = ""
+}
