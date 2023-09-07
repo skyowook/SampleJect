@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CryptoKit
+import CryptoSwift
 
 class AESCipher {
     private let secretKeySpec: [UInt8]
