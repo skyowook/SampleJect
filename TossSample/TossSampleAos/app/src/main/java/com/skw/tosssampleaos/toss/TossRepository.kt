@@ -5,7 +5,9 @@ import com.google.gson.Gson
 import com.skw.tosssampleaos.AppConstants
 import com.skw.tosssampleaos.getSecurePref
 import dagger.hilt.android.qualifiers.ApplicationContext
+import retrofit2.HttpException
 import retrofit2.await
+import java.net.HttpURLConnection
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -41,12 +43,15 @@ class TossRepository @Inject constructor(@ApplicationContext val context: Contex
     suspend fun requestSignAuth(isRetry: Boolean = false): TossApiRes<TossSignAuthInfo>? {
         val authorization = getTossToken().getAuthorization()
         val params = TossSignAuthReq("USER_NONE")
-        val res = tossApi.requestSignAuth(authorization, params).await()
-        if (isTokenErrorCheck(res.error)) {
-            return if (!isRetry) requestSignAuth(true) else null
+        try {
+            return tossApi.requestSignAuth(authorization, params).await()
+        } catch (e: HttpException) {
+            if (isTokenErrorCheck(e)) {
+                return if (!isRetry) requestSignAuth(true) else null
+            }
         }
 
-        return res
+        return null
     }
 
     /**
@@ -54,19 +59,22 @@ class TossRepository @Inject constructor(@ApplicationContext val context: Contex
      */
     suspend fun requestSignResult(params: TossSignAuthResultReq, isRetry: Boolean = false): TossApiRes<TossSignAuthResult>? {
         val authorization = getTossToken().getAuthorization()
-        val res = tossApi.requestSignResult(authorization, params).await()
-        if (isTokenErrorCheck(res.error)) {
-            return if (!isRetry) requestSignResult(params, true) else null
+        try {
+            return tossApi.requestSignResult(authorization, params).await()
+        } catch (e: HttpException) {
+            if (isTokenErrorCheck(e)) {
+                return if (!isRetry) requestSignResult(params, true) else null
+            }
         }
 
-        return res
+        return null
     }
 
     /**
      * 토큰 Expire 체크
      */
-    private suspend fun isTokenErrorCheck(res: TossApiError?): Boolean {
-        if (res?.errorCode == ERROR_TOKEN) {
+    private suspend fun isTokenErrorCheck(e: HttpException): Boolean {
+        if (e.code() == HttpURLConnection.HTTP_UNAUTHORIZED) {
             requestAccessToken()
             return true
         }
