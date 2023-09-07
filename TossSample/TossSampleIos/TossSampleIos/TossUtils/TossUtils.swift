@@ -8,8 +8,7 @@
 import Foundation
 
 enum AESAlgorithm: String {
-    case aes_cbc = "AES/CBC/PKCS5Padding"
-    case aes_gcm = "AES/GCM/NoPadding"
+    case AES_GCM = "AES/GCM/NoPadding"
 }
 
 class TossUtils {

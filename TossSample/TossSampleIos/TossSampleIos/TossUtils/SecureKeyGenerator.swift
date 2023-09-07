@@ -6,16 +6,13 @@
 //
 
 import Foundation
-import CryptoSwift
 
 class SecureKeyGenerator {
-    class func generateKey(_ aesKeyBitLength: Int) -> String {
-        let randomIv = AES.randomIV(aesKeyBitLength / 8)
-        return Data(randomIv).base64EncodedString()
-    }
-
     class func generateRandomBytes(_ lengthInBits: Int) -> String {
-        let randomIv = AES.randomIV(lengthInBits / 8)
-        return Data(randomIv).base64EncodedString()
+        return Data(createRandomValue(lengthInBits / 8)).base64EncodedString()
+    }
+    
+    private class func createRandomValue(_ count: Int) -> [UInt8] {
+        return (0..<count).map({ _ in UInt8.random(in: 0...UInt8.max) })
     }
 }

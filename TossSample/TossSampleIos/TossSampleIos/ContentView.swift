@@ -12,21 +12,15 @@ struct ContentView: View {
     var body: some View {
         VStack {
             tossWeb.onAppear(perform: {
-                tossWeb.tossLoad()
-//                test()
+//                tossWeb.tossLoad()
+                test()
             })
         }
     }
     
     func test() {
         let cipher = AESCipher("RgmEkDlZYMIfBa9BQlC9l36FlzG5X9Vz+3ZK6yyLPZg=", "4efcrC76ZCwrt+pT")
-        let encrypt = cipher.encrypt("test")
-        let decrypt = cipher.decrypt(encrypt ?? "")
-        
-//        let encoded = "test".data(using: .utf8)?.base64EncodedString()
-//        debugPrint("encode ::: \(encoded) decode ::: \(decoded)")
-        debugPrint("encrypt ::: \(encrypt) decrypt ::: \(decrypt)")
-        debugPrint(cipher.decrypt("kbULrpYE9kFSFJ9PjBagqhiKxSK5YwDzBA=="))
+        debugPrint(cipher.decrypt("D2n4NwqsWqM7Uk0q3+eAGy55rL0="))
     }
 }
 

@@ -112,11 +112,8 @@ class TossWebView: WKWebView {
         }
     }
     
-    let sessionKey = "v1_0.0.11$3cafedae-c1a3-4f43-b248-d0b10d98011c$W8jpHYIhhDi8zN3xoM+fK/h/ntHznTP1PZ3TXp4wtKOGP3d4AUYB6jOO7Pt7Vd853e2MXzVQVT5fqYX1lO0pk3pvV6TXCw3m0ybIeSx9QdciePemWKiZNJK11EmNPKGkm5YJqyQ7yBugoBYzBqNVl85SLnGuA48YB9yyC2FvtkSlQXiraBdxSnPWqkLxd4/J3wK23xguv0dz1A9rzwwsPtxfk0OVCncGM1p8sNuUYcQpvxA+7HIeWHuAzahEef6kb+cr5Q9J8qQ5kxXVfz6zll4aAp48JbrxbyyGVnXe1MPorGw18gqTQfN5kEX43sRnt7uhiRqYnRKxXOZFaq5JsPnTpSTTS6heiPg2Nk3AOxE7vAqlKbK2fulcls2r+MqGLsyboX5vbeRYw7BwQaVFuw80ffoHpP53vs0hNpoXN9Gj4YLt834tvZuhTyoRddvn0sO+W0GrufnMNZ0ojPF5HBJqefegsAFIuQqCsIrp57jMh3523o/aOf6cJq4DvzGw+asNPnNWpOClzvydj58n8hYVBhdqUbsqEzvjIfEYwfZaeKKUMKvYWrTS6nd6Ko5ruqAoxSHRDxUCz5Spz2P98QSwhgVnGfp4Le8dwVLakhdrauwelawCaeHpHnfaV/dF3GPz8qoS62yQ8k4yDsq9WbmsD7RlDPAZ3JUttBaCX7w="
-    
     private func requestSignAuthResult(_ authorization: String) {
         let session = TossCertSessionGenerator().generate()
-        debugPrint(session.sessionKey)
         let params = [
             "txId" : self.txID,
             "sessionKey" : session.sessionKey
@@ -129,21 +126,12 @@ class TossWebView: WKWebView {
             switch response.result {
             case .success(let data):
                 debugPrint("과연??")
-//                debugPrint(self.testDecrypt(data.success?.personalData?.name ?? ""))
-//                debugPrint(session.decrypt(data.success?.personalData?.name ?? "") ?? "")
+                debugPrint(session.decrypt(data.success?.personalData?.name ?? "") ?? "")
             case .failure(let error):
                 debugPrint(error.errorDescription ?? "")
                 // TODO: 에러처리
             }
         }
-    }
-    
-    /// AES Cipher까진 정상 동작 확인 완료
-    /// Android에서 생성한 SessionKey와 secretKey, Iv를 활용한 복호화는 성공
-    private func testDecrypt(_ encrypted: String) -> String? {
-        let cipher = AESCipher("RgmEkDlZYMIfBa9BQlC9l36FlzG5X9Vz+3ZK6yyLPZg=", "4efcrC76ZCwrt+pT")
-        let result = cipher.decrypt(encrypted.components(separatedBy: "$")[2])
-        return result
     }
 }
 

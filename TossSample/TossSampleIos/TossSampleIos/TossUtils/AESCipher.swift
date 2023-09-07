@@ -6,22 +6,17 @@
 //
 
 import Foundation
-import CryptoSwift
+import CryptoKit
 
 class AESCipher {
     private let secretKeySpec: [UInt8]
     private let ivSpec: BlockMode
     private var algorithm: AESAlgorithm
     
-    init(_ secretKey: String, _ iv: String, _ algorithm: AESAlgorithm = .aes_gcm) {
+    init(_ secretKey: String, _ iv: String, _ algorithm: AESAlgorithm = .AES_GCM) {
         self.secretKeySpec = secretKey.base64Decode()!.bytes
-        if algorithm == .aes_gcm {
-            ivSpec = GCM(iv: iv.base64Decode()!.bytes, additionalAuthenticatedData: secretKeySpec, mode: .combined)
-        } else {
-            ivSpec = CBC(iv: iv.base64Decode()!.bytes)
-        }
-        
         self.algorithm = algorithm
+        self.ivSpec = GCM(iv: iv.base64Decode()!.bytes, additionalAuthenticatedData: secretKeySpec, mode: .combined)
     }
     
     func encrypt(_ plainText: String) -> String? {
@@ -44,6 +39,6 @@ class AESCipher {
     }
     
     private func getCipher() -> AES? {
-        return try? AES(key: self.secretKeySpec, blockMode: self.ivSpec, padding: self.algorithm == .aes_cbc ? .pkcs5 : .noPadding)
+        return try? AES(key: self.secretKeySpec, blockMode: self.ivSpec, padding: .noPadding)
     }
 }

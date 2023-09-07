@@ -7,9 +7,9 @@
 
 import Foundation
 
+/// 토스 인증 세션
 class TossCertSession {
     static let SEPARATOR = "$"
-    static let SEPARATOR_REG_EX = "\\$"
     
     private let version: String
     private let id: String
@@ -37,8 +37,7 @@ class TossCertSession {
     
     func encrypt(_ plainText: String) -> String {
         let encrypted = aesCipher.encrypt(plainText) ?? ""
-        let hash = calculateHash(plainText)
-        return addMeta(TossUtils.join(TossCertSession.SEPARATOR, [encrypted, hash]))
+        return addMeta(encrypted)
     }
     
     func decrypt(_ encryptedText: String) -> String? {
@@ -52,35 +51,11 @@ class TossCertSession {
         }
         
         let plainText = aesCipher.decrypt(items[2])
-        verify(plainText, items)
         return plainText
     }
     
     func serializeSession() -> String {
         return TossUtils.join(TossCertSession.SEPARATOR, [version, id, algorithm.rawValue, secretKey, iv])
-    }
-    
-    private func verify(_ plainText: String?, _ items: [String]) {
-        if algorithm == .aes_gcm{
-            return
-        } else if plainText == nil {
-            debugPrint("AES_CBC 무결성 검증 실패 PlainText is nil")
-            return
-        }
-        
-        let calculatedHash = HMAC.calculateHash(secretKey, plainText!)
-        if items.count != 4 || calculatedHash != items[3] {
-            debugPrint("AES_CBC 무결성 검증 실패")
-        }
-    }
-    
-    
-    private func calculateHash(_ plainText: String) -> String {
-        if algorithm == .aes_gcm {
-            return ""
-        } else {
-            return HMAC.calculateHash(secretKey, plainText)
-        }
     }
     
     private func addMeta(_ data: String) -> String {

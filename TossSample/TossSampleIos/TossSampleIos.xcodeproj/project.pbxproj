@@ -18,7 +18,6 @@
 		0B9B30CE2A96E3C400921268 /* TossReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CD2A96E3C400921268 /* TossReq.swift */; };
 		0B9B30D02A96E71200921268 /* TossWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B30CF2A96E71200921268 /* TossWebViewWrapper.swift */; };
 		0BA5802B2AA5C9D50072BF10 /* TossUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5802A2AA5C9D50072BF10 /* TossUtils.swift */; };
-		0BA5802D2AA6A7F40072BF10 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5802C2AA6A7F40072BF10 /* HMAC.swift */; };
 		0BA580302AA6A9940072BF10 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA5802F2AA6A9940072BF10 /* CryptoSwift */; };
 		0BA580322AA6ABD00072BF10 /* TossCertSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA580312AA6ABD00072BF10 /* TossCertSession.swift */; };
 		0BA580342AA6AF070072BF10 /* AESCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA580332AA6AF070072BF10 /* AESCipher.swift */; };
@@ -39,7 +38,6 @@
 		0B9B30CD2A96E3C400921268 /* TossReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossReq.swift; sourceTree = "<group>"; };
 		0B9B30CF2A96E71200921268 /* TossWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossWebViewWrapper.swift; sourceTree = "<group>"; };
 		0BA5802A2AA5C9D50072BF10 /* TossUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossUtils.swift; sourceTree = "<group>"; };
-		0BA5802C2AA6A7F40072BF10 /* HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
 		0BA580312AA6ABD00072BF10 /* TossCertSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossCertSession.swift; sourceTree = "<group>"; };
 		0BA580332AA6AF070072BF10 /* AESCipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESCipher.swift; sourceTree = "<group>"; };
 		0BA580352AA6DECF0072BF10 /* SecureKeyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureKeyGenerator.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				0BA5802A2AA5C9D50072BF10 /* TossUtils.swift */,
-				0BA5802C2AA6A7F40072BF10 /* HMAC.swift */,
 				0BA580312AA6ABD00072BF10 /* TossCertSession.swift */,
 				0BA580332AA6AF070072BF10 /* AESCipher.swift */,
 				0BA580352AA6DECF0072BF10 /* SecureKeyGenerator.swift */,
@@ -202,7 +199,6 @@
 				0BA5802B2AA5C9D50072BF10 /* TossUtils.swift in Sources */,
 				0BA580322AA6ABD00072BF10 /* TossCertSession.swift in Sources */,
 				0B825B312A94AE1D00552C82 /* TossSampleIosApp.swift in Sources */,
-				0BA5802D2AA6A7F40072BF10 /* HMAC.swift in Sources */,
 				0B9B30CC2A96DECB00921268 /* TossRes.swift in Sources */,
 				0B9B30CA2A96DE4000921268 /* AppConstants.swift in Sources */,
 			);
@@ -348,7 +344,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -386,7 +382,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
