@@ -9,7 +9,7 @@ import SwiftUI
 import IAssistKit
 
 struct MainView: View {
-    var textBackgroundColor: Color = .res("testColor")
+//    var textBackgroundColor: Color = .res("testColor")
     var body: some View {
         VStack {
             HStack {
@@ -23,7 +23,7 @@ struct MainView: View {
                     .padding(.all, 10)
                     .border(.black)
                     .padding(.all, 20)
-                    .background(textBackgroundColor)
+//                    .background(textBackgroundColor)
                 Text("Test3")
                     .background(.white)
                 
