@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,18 +33,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="SIZ-Sh-vFx"/>
                     <connections>
-                        <segue destination="pgd-On-vXk" kind="unwind" unwindAction="unwindBack:" id="jzf-Yz-0TX"/>
+                        <segue destination="arl-j2-i60" kind="show" id="CnW-sY-h9A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="pgd-On-vXk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="860" y="248"/>
         </scene>
-        <!--Second View Controller-->
+        <!--First View Controller-->
         <scene sceneID="u5u-Jw-Cb5">
             <objects>
-                <viewController id="arl-j2-i60" customClass="SecondViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="arl-j2-i60" customClass="FirstViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P2Y-OY-Aan">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,9 +53,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="&lt; Back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-WF-ZFh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-WF-ZFh">
                                 <rect key="frame" x="70" y="143" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
@@ -66,13 +64,13 @@
                         <constraints>
                             <constraint firstItem="DUl-hU-267" firstAttribute="leading" secondItem="3qd-Zo-Y6o" secondAttribute="leading" constant="16" id="5jb-Qu-wmb"/>
                             <constraint firstItem="DUl-hU-267" firstAttribute="top" secondItem="3qd-Zo-Y6o" secondAttribute="top" id="VGk-Ze-j41"/>
+                            <constraint firstItem="Um7-WF-ZFh" firstAttribute="top" secondItem="DUl-hU-267" secondAttribute="bottom" constant="49" id="a4b-RM-96n"/>
+                            <constraint firstItem="3qd-Zo-Y6o" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Um7-WF-ZFh" secondAttribute="trailing" symbolic="YES" id="cKu-Mw-SSr"/>
                             <constraint firstItem="3qd-Zo-Y6o" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="DUl-hU-267" secondAttribute="trailing" constant="300" id="gmy-Lt-d8m"/>
+                            <constraint firstItem="Um7-WF-ZFh" firstAttribute="leading" secondItem="3qd-Zo-Y6o" secondAttribute="leading" constant="70" id="mFg-xD-nua"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Wk-9k-zrc"/>
-                    <connections>
-                        <segue destination="9Qp-Ok-o2j" kind="show" id="nwH-ku-OYz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHO-yM-lEp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +81,7 @@
             <objects>
                 <viewController id="9Qp-Ok-o2j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jq6-pl-5f9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIi-yE-hXE">
@@ -109,6 +107,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NPD-Db-e87">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MeR-5K-p3V"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNd-yF-TFp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
