@@ -9,25 +9,15 @@ import SwiftUI
 import IAssistKit
 
 struct MainView: View {
-//    var textBackgroundColor: Color = .res("testColor")
+    @State var mainValue = 10
     var body: some View {
         VStack {
-            HStack {
-                Text("Test1asdfwerasdfqwerasdfqeradfqewradsfqweradsfqwerasdfqwer")
-                    .lineLimit(1)
-                    .background(.blue)
-                Text("Test2")
-                    .font(.appleSDGothic(50, .heavy))
-                    .padding(.all, 10)
-                    .border(.yellow)
-                    .padding(.all, 10)
-                    .border(.black)
-                    .padding(.all, 20)
-//                    .background(textBackgroundColor)
-                Text("Test3")
-                    .background(.white)
-                
-            }.background(.red)
+            NavigationView {
+                NavigationLink(destination: TextSampleView().environment(\.mainValue, mainValue)
+                ) {
+                    Text("go to test1")
+                }
+            }
         }
     }
 }
