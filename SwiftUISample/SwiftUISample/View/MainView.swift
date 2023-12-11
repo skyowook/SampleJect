@@ -9,13 +9,11 @@ import SwiftUI
 import IAssistKit
 
 struct MainView: View {
-    @State var mainValue = 10
     var body: some View {
         VStack {
             NavigationView {
-                NavigationLink(destination: TextSampleView().environment(\.mainValue, mainValue)
-                ) {
-                    Text("go to test1")
+                NavigationLink(destination: BasicComponentsView()) {
+                    Text("GO BasicSample")
                 }
             }
         }

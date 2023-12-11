@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8044D72B26D8F0007248E8 /* BasicComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8044D62B26D8F0007248E8 /* BasicComponentsView.swift */; };
+		0B8044D92B26D9AC007248E8 /* ButtonSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8044D82B26D9AC007248E8 /* ButtonSampleView.swift */; };
+		0B8044DB2B26DA17007248E8 /* TextSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8044DA2B26DA17007248E8 /* TextSampleView.swift */; };
 		0B926A772A93346800A333CD /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B926A762A93346800A333CD /* Theme.xcassets */; };
-		0B9F23882AE8EB0C007BB45D /* TextSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F23872AE8EB0C007BB45D /* TextSampleView.swift */; };
-		0BADFBAE2AF3633000EDA148 /* RotateMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADFBAD2AF3633000EDA148 /* RotateMenuView.swift */; };
-		0BBDAD842AF0E5AE00620B0E /* SampleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDAD832AF0E5AE00620B0E /* SampleItemView.swift */; };
 		0BC13C802A8DDCB300F7F7CD /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */; };
 		0BC13C822A8DDCB300F7F7CD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC13C812A8DDCB300F7F7CD /* MainView.swift */; };
 		0BC13C842A8DDCB500F7F7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC13C832A8DDCB500F7F7CD /* Assets.xcassets */; };
@@ -39,10 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B8044D62B26D8F0007248E8 /* BasicComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicComponentsView.swift; sourceTree = "<group>"; };
+		0B8044D82B26D9AC007248E8 /* ButtonSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSampleView.swift; sourceTree = "<group>"; };
+		0B8044DA2B26DA17007248E8 /* TextSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSampleView.swift; sourceTree = "<group>"; };
 		0B926A762A93346800A333CD /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
-		0B9F23872AE8EB0C007BB45D /* TextSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSampleView.swift; sourceTree = "<group>"; };
-		0BADFBAD2AF3633000EDA148 /* RotateMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateMenuView.swift; sourceTree = "<group>"; };
-		0BBDAD832AF0E5AE00620B0E /* SampleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleItemView.swift; sourceTree = "<group>"; };
 		0BC13C7C2A8DDCB300F7F7CD /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC13C7F2A8DDCB300F7F7CD /* SwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleApp.swift; sourceTree = "<group>"; };
 		0BC13C812A8DDCB300F7F7CD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -86,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				0BC13C812A8DDCB300F7F7CD /* MainView.swift */,
-				0B9F23872AE8EB0C007BB45D /* TextSampleView.swift */,
-				0BBDAD832AF0E5AE00620B0E /* SampleItemView.swift */,
-				0BADFBAD2AF3633000EDA148 /* RotateMenuView.swift */,
+				0B8044D62B26D8F0007248E8 /* BasicComponentsView.swift */,
+				0B8044D82B26D9AC007248E8 /* ButtonSampleView.swift */,
+				0B8044DA2B26DA17007248E8 /* TextSampleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -290,9 +290,9 @@
 			files = (
 				0BC13C822A8DDCB300F7F7CD /* MainView.swift in Sources */,
 				0BC13C802A8DDCB300F7F7CD /* SwiftUISampleApp.swift in Sources */,
-				0B9F23882AE8EB0C007BB45D /* TextSampleView.swift in Sources */,
-				0BBDAD842AF0E5AE00620B0E /* SampleItemView.swift in Sources */,
-				0BADFBAE2AF3633000EDA148 /* RotateMenuView.swift in Sources */,
+				0B8044D92B26D9AC007248E8 /* ButtonSampleView.swift in Sources */,
+				0B8044DB2B26DA17007248E8 /* TextSampleView.swift in Sources */,
+				0B8044D72B26D8F0007248E8 /* BasicComponentsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

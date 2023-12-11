@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B11DBD62AD5109A0063D8E4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11DBD52AD5109A0063D8E4 /* FirstViewController.swift */; };
+		0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */; };
 		0B4271B32AD7E53C0058A98E /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4271B22AD7E53C0058A98E /* Theme.xcassets */; };
 		0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */; };
 		0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D412AD4EB1000C209FC /* SceneDelegate.swift */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B11DBD52AD5109A0063D8E4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SslPinningViewController.swift; sourceTree = "<group>"; };
 		0B4271B22AD7E53C0058A98E /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		0BA32D3C2AD4EB1000C209FC /* UIKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		0BA32D5C2AD503E400C209FC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0B11DBD52AD5109A0063D8E4 /* FirstViewController.swift */,
+				0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */,
 				0BA32D5D2AD503FF00C209FC /* SecondViewController.swift */,
 			);
 			path = ViewController;
@@ -190,7 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA32D5E2AD503FF00C209FC /* SecondViewController.swift in Sources */,
-				0B11DBD62AD5109A0063D8E4 /* FirstViewController.swift in Sources */,
+				0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */,
 				0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */,
 				0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */,
 			);
