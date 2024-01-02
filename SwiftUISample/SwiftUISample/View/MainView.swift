@@ -10,11 +10,26 @@ import IAssistKit
 
 struct MainView: View {
     var body: some View {
-        VStack {
-            NavigationView {
-                NavigationLink(destination: BasicComponentsView()) {
-                    Text("GO BasicSample")
+        NavigationView {
+            VStack {
+                HStack {
+                    NavigationLink(destination: StackSampleView()) {
+                        Text("StackSample")
+                    }
+                    Spacer()
+                    
+                    NavigationLink(destination: ButtonSampleView()) {
+                        Text("ButtonSample")
+                    }
+                    Spacer()
+                    
+                    NavigationLink(destination: TextSampleView()) {
+                        Text("TextSample")
+                    }
                 }
+                .padding(EdgeInsets.hPadding(20))
+                
+                Spacer()
             }
         }
     }
