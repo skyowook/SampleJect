@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StackSampleView: View {
-    @State var flag: Bool = false
+    @State var flag: Bool = true
     var body: some View {
         VStack {
             HStack {
@@ -30,18 +30,30 @@ struct StackSampleView: View {
             }
             
             Spacer()
+            
+            stackViewBorder.border(.black)
         }
     }
     
     var sampleHStack: some View {
         return HStack {
-            Text("test01")
+            Text("Text01")
+            Text("Text02")
+            Text("Text03")
         }
     }
     
     var sampleVStack: some View {
         return VStack {
-            Text("test02")
+            Text("Text01")
+            Text("Text02").padding([.top, .bottom], 50)
+            Text("Text03")
+        }
+    }
+    
+    var stackViewBorder: some View {
+        return VStack {
+            EmptyView()
         }
     }
 }
