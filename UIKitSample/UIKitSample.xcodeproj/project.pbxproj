@@ -58,6 +58,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B63477F2B50F3A3000E5323 /* certificate */ = {
+			isa = PBXGroup;
+			children = (
+				0BC8D5352AFDAEDF00CE00FD /* test.cer */,
+				0BC8D5372AFDAEDF00CE00FD /* test.der */,
+				0BC8D5362AFDAEDF00CE00FD /* test.pem */,
+				0BC8D5392AFDAEDF00CE00FD /* test2.cer */,
+				0BC8D5382AFDAEDF00CE00FD /* test2.der */,
+			);
+			path = certificate;
+			sourceTree = "<group>";
+		};
 		0BA32D332AD4EB1000C209FC = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +89,8 @@
 		0BA32D3E2AD4EB1000C209FC /* UIKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				0B63477F2B50F3A3000E5323 /* certificate */,
 				0BC8D53F2AFDFCFA00CE00FD /* UIKitSample.entitlements */,
-				0BC8D5352AFDAEDF00CE00FD /* test.cer */,
-				0BC8D5372AFDAEDF00CE00FD /* test.der */,
-				0BC8D5362AFDAEDF00CE00FD /* test.pem */,
-				0BC8D5392AFDAEDF00CE00FD /* test2.cer */,
-				0BC8D5382AFDAEDF00CE00FD /* test2.der */,
 				0BA32D5C2AD503E400C209FC /* ViewController */,
 				0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */,
 				0BA32D412AD4EB1000C209FC /* SceneDelegate.swift */,
