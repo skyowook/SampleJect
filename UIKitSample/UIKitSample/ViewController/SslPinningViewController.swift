@@ -19,18 +19,19 @@ class SslPinningViewController : IAViewController {
         super.viewDidLoad()
         
         // Api통신에 사용될 Session을 만들기위한 Certificate 생성
-        let secCertificate = SecCertificate.loadCertificate("test")!
+        let secCertificate = SecCertificate.loadCertificate("test2")!
         let pinnedCertificates = PinnedCertificatesTrustEvaluator(certificates: [secCertificate])
         let certificates = [
                 "smart.kisb.co.kr" : pinnedCertificates
         ]
 
         // Alamofire Session 생성
-        let serverTrustPolicy = ServerTrustManager(allHostsMustBeEvaluated: true, evaluators: certificates)
+        let serverTrustPolicy = ServerTrustManager(allHostsMustBeEvaluated: false, evaluators: certificates)
         sessionManager = Session(serverTrustManager: serverTrustPolicy)
 
         // SslPinning이 필요한 사이트 접근을 위한 테스트
         let url = URL(string: "https://smart.kisb.co.kr")
+//        let url = URL(string: "https://m.naver.com")
         webview.navigationDelegate = self
         webview.load(URLRequest(url: url!))
     }
@@ -73,14 +74,27 @@ class SslPinningViewController : IAViewController {
 extension SslPinningViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         
-        // 인증서 로딩 후 체크
-        if let file = Bundle.main.path(forResource: "test", ofType: "cer"), let clientCert = NSData(contentsOfFile: file) {
-            if challenge.checkSSLPinning(with: clientCert) {
-                completionHandler(URLSession.AuthChallengeDisposition.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
-                return
-            }
+        guard let serverTrust = challenge.protectionSpace.serverTrust else {
+            completionHandler(.performDefaultHandling, nil)
+            return
         }
         
-        completionHandler(URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
+        // TODO: - Host 체크 들어가야함.
+        if challenge.protectionSpace.host.contains("smart.kisb.co.kr") {
+            do {
+                let secCertificate = SecCertificate.loadCertificate("test")!
+                let evaluator = PinnedCertificatesTrustEvaluator(certificates: [secCertificate])
+                let loadedHost = challenge.protectionSpace.host
+                
+                try evaluator.evaluate(serverTrust, forHost: loadedHost)
+                
+                completionHandler(URLSession.AuthChallengeDisposition.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+            } catch {
+                debugPrint(error.localizedDescription)
+                completionHandler(URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
+            }
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
     }
 }
