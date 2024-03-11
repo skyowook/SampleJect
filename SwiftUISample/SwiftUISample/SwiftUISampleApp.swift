@@ -6,15 +6,23 @@
 //
 
 import SwiftUI
+import IAssistKit
 
 @main
 struct SwiftUISampleApp: App {
     // 비활성으로 갈때 inactive > background
     // 활성으로 갈 때 inactive > active
     @Environment(\.scenePhase) var scenePhase
+    
+    @State var isSplashScreen: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            if isSplashScreen {
+                
+            } else {
+                MainView()
+            }
         }.onChange(of: scenePhase) { newPhase in
             switch newPhase {
             case .active:
