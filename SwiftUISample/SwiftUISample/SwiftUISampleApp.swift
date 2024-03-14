@@ -14,15 +14,9 @@ struct SwiftUISampleApp: App {
     // 활성으로 갈 때 inactive > active
     @Environment(\.scenePhase) var scenePhase
     
-    @State var isSplashScreen: Bool = true
-    
     var body: some Scene {
         WindowGroup {
-            if isSplashScreen {
-                
-            } else {
-                MainView()
-            }
+            MainView()
         }.onChange(of: scenePhase) { newPhase in
             switch newPhase {
             case .active:
