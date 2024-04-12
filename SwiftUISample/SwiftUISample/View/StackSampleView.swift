@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct StackSampleView: View {
-    @State var flag: Bool = true
+    // HStack, Vstack View Flag
+    @State var stackFlag: Bool = true
+    @State var testValue: String = "1234"
+    
     var body: some View {
         VStack {
             HStack {
                 Button("HStack") {
-                    flag = true
-                }.disabled(flag)
+                    stackFlag = true
+                }.disabled(stackFlag)
                 
                 Button("VStack") {
-                    flag = false
-                }.disabled(!flag)
+                    stackFlag = false
+                }.disabled(!stackFlag)
             }
             borderStack
             shadowStack
             Spacer().frame(height: 20)
             ZStack {
-                if flag {
+                if stackFlag {
                     sampleHStack
                 } else {
                     sampleVStack
                 }
             }
-            
             Spacer()
             
             stackViewBorder.border(.black)
@@ -68,24 +70,18 @@ struct StackSampleView: View {
         .border(Color.hex("8000ff00"), width: 5)
     }
     
-    @State var testValue: String = "1234"
+    
     var shadowStack: some View {
         return ZStack {
-            Text(testValue)
+            Text(testValue).padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)).lineLimit(1)
         }
-        .frame(width: 200, height: 50)
-        .background(RoundedRectangle(cornerRadius: 25.0)
-            .fill(.white)
-            .shadow(color: .black, radius: 3, x: 3, y: 3))
-        .background(RoundedRectangle(cornerRadius: 25.0).stroke(.black).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/))
+        .frame(width: 200, height: 50, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 25.0).stroke(.black))
+        .background(RoundedRectangle(cornerRadius: 25.0).fill(.white).shadow(color: .black, radius: 5, x: 1, y: 1))
         .onTapGesture {
-            testValue = "Tesadfkasjdflkjasklasdasdfffjklted"
+            testValue = "Tesated"
             debugPrint("Test")
         }
-        
-        
-        
-        
     }
 }
 

@@ -79,7 +79,7 @@ extension SslPinningViewController: WKNavigationDelegate {
             return
         }
         
-        // TODO: - Host 체크 들어가야함.
+        // TODO: - Host 체크 들어가야함. (해당 URL이 포함될 때 SSL Pinning 진행)
         if challenge.protectionSpace.host.contains("smart.kisb.co.kr") {
             do {
                 let secCertificate = SecCertificate.loadCertificate("test")!
