@@ -47,12 +47,12 @@ struct StackSampleView: View {
         }
     }
     
+    @ViewBuilder
     var sampleVStack: some View {
-        return VStack {
-            Text("Text01")
-            Text("Text02").padding([.top, .bottom], 50)
-            Text("Text03")
-        }
+        Text("Text01")
+        Text("Text02").padding([.top, .bottom], 50)
+        Text("Text03")
+        Text("Text03")
     }
     
     var stackViewBorder: some View {
