@@ -30,7 +30,7 @@ struct StackSampleView: View {
                 if stackFlag {
                     sampleHStack
                 } else {
-                    sampleVStack
+                    VStack { sampleVStack }
                 }
             }
             Spacer()
