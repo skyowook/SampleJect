@@ -36,6 +36,10 @@ struct StackSampleView: View {
             Spacer()
             
             stackViewBorder.border(.black)
+            spacingStack
+            
+            Spacer()
+            
         }
     }
     
@@ -55,19 +59,25 @@ struct StackSampleView: View {
         Text("Text03")
     }
     
+    /// Empty일때는 border가 나오지 않음? 컨텐츠가 없으면 사이즈가 생성되지 않는거 같기도
     var stackViewBorder: some View {
         return VStack {
             EmptyView()
-        }
+        }.frame(width: 100, height: 100)
     }
     
     var borderStack: some View {
-        return HStack {
+        var test = HStack {
             Text("Border\nStackView")
                 .multilineTextAlignment(.center)
         }
         .frame(width: 200, height: 70)
-        .border(Color.hex("8000ff00"), width: 5)
+        
+        return if stackFlag {
+            test.border(.black, width: 5)
+        } else {
+            test.border(Color.hex("8000ff00"), width: 5)
+        }
     }
     
     
@@ -81,6 +91,14 @@ struct StackSampleView: View {
         .onTapGesture {
             testValue = "Tesated"
             debugPrint("Test")
+        }
+    }
+    
+    /// 기본 간격을 지울때는 생성할 당시에 spacing값을 주어야한다.
+    var spacingStack: some View {
+        HStack(spacing: 0) {
+            Text("간격 0")
+            Text("간격 0")
         }
     }
 }
