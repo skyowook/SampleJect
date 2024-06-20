@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct CreatingAndCombiningViews: View {
+    var data: Landmark?
     var body: some View {
         VStack {
             section05
@@ -16,14 +17,15 @@ struct CreatingAndCombiningViews: View {
             VStack {
                 section04
                 section03
-            }.offset(y: -130)
+            }
+            .offset(y: -130)
             Spacer()
         }
     }
     
     // Customize the text view
     var section02: some View {
-        Text("Turtle Rock")
+        Text(data?.name ?? "")
             .font(.title)
             .foregroundColor(.green)
     }
@@ -31,28 +33,30 @@ struct CreatingAndCombiningViews: View {
     // Combine views using stacks
     var section03: some View {
         VStack(alignment: .leading) {
-            Text("Turtle Rock")
+            Text(data?.name ?? "111")
                 .font(.title)
             HStack {
-                Text("Joshua Tree National Park")
+                Text(data?.park ?? "111")
                     .font(.subheadline)
                 Spacer()
-                Text("Califonia")
+                Text(data?.state ?? "111")
                     .font(.subheadline)
             }
             
             Divider()
             
-            Text("About Turtle Rock")
+            Text("About \(data?.name ?? "1111")")
                 .font(.title2)
-            Text("Descriptive text gose here")
+            Text(data?.description ?? "afasasdfasdfasdfasdfasdfsdfasdfasfkjaslkdjfl;kadajsdfkl;jasl;kfjdl;aksdjfl;kasjfkl;dajslaskdjflka;sjdfl;kasjdfl;kasjdfkl;ajsdl;fkjsak;dlfjl;sadfjkl;adjs;lkjal;skdfjl;kasjdfasdfasdfasdfasdfasfasdfasdfasds")
         }
         .padding()
+        .background(.blue)
     }
     
     // Create a custom image view
     var section04: some View {
-        Image("TurtleRock")
+//        data?.image
+        Image("turtlerock")
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.black, lineWidth: 4)

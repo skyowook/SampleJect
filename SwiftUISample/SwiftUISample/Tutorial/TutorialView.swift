@@ -13,9 +13,15 @@ struct TutorialView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: CreatingAndCombiningViews()) {
+                NavigationLink(destination: CreatingAndCombiningViews(data: landMarks.first)) {
                     Text("CreatingAndCombiningViews")
                 }
+                
+                Divider()
+                NavigationLink(destination: BuildingListsAndNavigation()) {
+                    Text("BuildingListsAndNavigation")
+                }
+                
                 Spacer()
             }
         }

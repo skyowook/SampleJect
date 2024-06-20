@@ -16,7 +16,8 @@ struct SwiftUISampleApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+//            MainView()
+            TutorialView()
         }.onChange(of: scenePhase) { newPhase in
             switch newPhase {
             case .active:
