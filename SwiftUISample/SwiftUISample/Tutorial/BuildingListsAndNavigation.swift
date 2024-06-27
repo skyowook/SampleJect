@@ -22,7 +22,7 @@ struct BuildingListsAndNavigation: View {
                 ZStack {
                     LandmarkRow(landmark: value)
                     NavigationLink {
-                        CreatingAndCombiningViews(data: value)
+                        CreatingAndCombiningViews(data: value, isSel: .constant(false))
                     } label: {
                         EmptyView()
                     }.opacity(0)

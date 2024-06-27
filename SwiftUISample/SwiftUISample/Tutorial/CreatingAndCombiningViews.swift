@@ -19,7 +19,9 @@ struct BackButtonStyle: ButtonStyle {
 
 struct CreatingAndCombiningViews: View {
     @Environment(\.dismiss) var dismiss
-    var data: Landmark?
+    var data: Landmark
+    @Binding var isSel: Bool
+    
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -43,7 +45,7 @@ struct CreatingAndCombiningViews: View {
     
     // Customize the text view
     var section02: some View {
-        Text(data?.name ?? "")
+        Text(data.name)
             .font(.title)
             .foregroundColor(.green)
     }
@@ -51,33 +53,47 @@ struct CreatingAndCombiningViews: View {
     // Combine views using stacks
     var section03: some View {
         VStack(alignment: .leading) {
-            Text(data?.name ?? "")
-                .font(.title)
             HStack {
-                Text(data?.park ?? "")
+                Text(data.name)
+                    .font(.title)
+                favoriteButton
+            }
+            
+            HStack {
+                Text(data.park)
                     .font(.subheadline)
                 Spacer()
-                Text(data?.state ?? "")
+                Text(data.state)
                     .font(.subheadline)
             }
             
             Divider()
             
-            Text("About \(data?.name ?? "")")
+            Text("About \(data.name)")
                 .font(.title2)
-            Text(data?.description ?? "")
+            Text(data.description)
         }
         .padding()
     }
     
     // Create a custom image view
     var section04: some View {
-        data?.image
+        data.image
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.black, lineWidth: 4)
             }
             .shadow(radius: 10)
+    }
+    
+    var favoriteButton: some View {
+        Button {
+            isSel.toggle()
+        } label: {
+            Label("Toggle Favorite", systemImage: isSel ? "star.fill" : "star")
+                .labelStyle(.iconOnly)
+                .foregroundStyle(isSel ? .yellow : .gray)
+        }
     }
     
     
@@ -93,5 +109,5 @@ struct CreatingAndCombiningViews: View {
 }
 
 #Preview {
-    CreatingAndCombiningViews(data: landMarks[0])
+    CreatingAndCombiningViews(data: landMarks[0], isSel: .constant(true))
 }

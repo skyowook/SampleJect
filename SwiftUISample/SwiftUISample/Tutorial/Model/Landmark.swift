@@ -5,6 +5,7 @@
 //  Created by skw on 6/24/24.
 //
 
+import Foundation
 import SwiftUI
 import MapKit
 
@@ -30,6 +31,11 @@ struct Landmark: Hashable, Codable, Identifiable {
         var latitude: Double
         var longitude: Double
     }
+}
+
+@Observable
+class LandMarkModel {
+    var landMarks: [Landmark] = load("landmarkData.json")
 }
 
 var landMarks: [Landmark] = load("landmarkData.json")
