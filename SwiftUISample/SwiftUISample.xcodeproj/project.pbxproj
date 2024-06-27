@@ -10,6 +10,8 @@
 		0B1D23BC2C06EF7C00758658 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D23BB2C06EF7C00758658 /* TutorialView.swift */; };
 		0B1D23C72C07074500758658 /* CreatingAndCombiningViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D23C62C07074500758658 /* CreatingAndCombiningViews.swift */; };
 		0B1D23CA2C070C0700758658 /* BuildingListsAndNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D23C92C070C0700758658 /* BuildingListsAndNavigation.swift */; };
+		0B47AC302C29026700E220A4 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B47AC2F2C29026700E220A4 /* Landmark.swift */; };
+		0B47AC322C2903BF00E220A4 /* HandlingUserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B47AC312C2903BF00E220A4 /* HandlingUserInput.swift */; };
 		0B7BBFC42C083B680014BC8A /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BBFC32C083B680014BC8A /* landmarkData.json */; };
 		0B8044D92B26D9AC007248E8 /* ButtonSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8044D82B26D9AC007248E8 /* ButtonSampleView.swift */; };
 		0B8044DB2B26DA17007248E8 /* TextSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8044DA2B26DA17007248E8 /* TextSampleView.swift */; };
@@ -46,6 +48,8 @@
 		0B1D23BB2C06EF7C00758658 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		0B1D23C62C07074500758658 /* CreatingAndCombiningViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingAndCombiningViews.swift; sourceTree = "<group>"; };
 		0B1D23C92C070C0700758658 /* BuildingListsAndNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingListsAndNavigation.swift; sourceTree = "<group>"; };
+		0B47AC2F2C29026700E220A4 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		0B47AC312C2903BF00E220A4 /* HandlingUserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingUserInput.swift; sourceTree = "<group>"; };
 		0B7BBFC32C083B680014BC8A /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		0B8044D82B26D9AC007248E8 /* ButtonSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSampleView.swift; sourceTree = "<group>"; };
 		0B8044DA2B26DA17007248E8 /* TextSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSampleView.swift; sourceTree = "<group>"; };
@@ -93,10 +97,12 @@
 		0B1D23BD2C06F4C700758658 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				0B47AC2E2C29024900E220A4 /* Model */,
 				0B1D23CB2C070D0A00758658 /* Resources */,
 				0B1D23BB2C06EF7C00758658 /* TutorialView.swift */,
 				0B1D23C62C07074500758658 /* CreatingAndCombiningViews.swift */,
 				0B1D23C92C070C0700758658 /* BuildingListsAndNavigation.swift */,
+				0B47AC312C2903BF00E220A4 /* HandlingUserInput.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -107,6 +113,14 @@
 				0B7BBFC32C083B680014BC8A /* landmarkData.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0B47AC2E2C29024900E220A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B47AC2F2C29026700E220A4 /* Landmark.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0B926A782A9339DE00A333CD /* View */ = {
@@ -322,6 +336,8 @@
 				0BC13C802A8DDCB300F7F7CD /* SwiftUISampleApp.swift in Sources */,
 				0B1D23BC2C06EF7C00758658 /* TutorialView.swift in Sources */,
 				0B8044D92B26D9AC007248E8 /* ButtonSampleView.swift in Sources */,
+				0B47AC302C29026700E220A4 /* Landmark.swift in Sources */,
+				0B47AC322C2903BF00E220A4 /* HandlingUserInput.swift in Sources */,
 				0BEDB5FC2B27DEA800261AD4 /* StackSampleView.swift in Sources */,
 				0B1D23CA2C070C0700758658 /* BuildingListsAndNavigation.swift in Sources */,
 				0B8044DB2B26DA17007248E8 /* TextSampleView.swift in Sources */,

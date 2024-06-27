@@ -9,14 +9,28 @@ import SwiftUI
 import CoreLocation
 
 struct BuildingListsAndNavigation: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        List(landMarks) { value in
-            NavigationLink {
-                CreatingAndCombiningViews(data: value)
-            } label: {
-                LandmarkRow(landmark: value)
+        VStack(alignment: .leading) {
+            Button("") {
+                dismiss()
             }
+            .buttonStyle(BackButtonStyle())
+            
+            List(landMarks) { value in
+                ZStack {
+                    LandmarkRow(landmark: value)
+                    NavigationLink {
+                        CreatingAndCombiningViews(data: value)
+                    } label: {
+                        EmptyView()
+                    }.opacity(0)
+                }
+            }
+            .listStyle(.plain)
         }
+        .navigationBarHidden(true)
     }
 }
 
@@ -34,30 +48,6 @@ struct LandmarkRow: View {
     }
 }
 
-struct Landmark: Hashable, Codable, Identifiable {
-    var id: Int
-    var name: String
-    var park: String
-    var state: String
-    var description: String
-    
-    private var imageName: String
-    var image: Image {
-        Image(imageName)
-    }
-    
-    private var coordinates: Coordinates
-    var locationCoordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
-    }
-    
-    struct Coordinates: Hashable, Codable {
-        var latitude: Double
-        var longitude: Double
-    }
-}
-
-var landMarks: [Landmark] = load("landmarkData.json")
 func load<T: Decodable>(_ fileName: String) -> T {
     guard let file = Bundle.main.url(forResource: fileName, withExtension: nil) else {
         fatalError("Couldn't find \(fileName) in main bundle.")

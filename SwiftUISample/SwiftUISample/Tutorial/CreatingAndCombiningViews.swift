@@ -8,19 +8,37 @@
 import SwiftUI
 import MapKit
 
+struct BackButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Image(systemName: "arrowshape.left.fill")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 60, height: 30)
+    }
+}
+
 struct CreatingAndCombiningViews: View {
+    @Environment(\.dismiss) var dismiss
     var data: Landmark?
+    
     var body: some View {
-        VStack {
-            section05
-                .frame(height: 300)
+        ZStack(alignment: .topLeading) {
             VStack {
+                section05
+                .frame(height: 300)
                 section04
+                .offset(y: -130)
+                .padding(.bottom, -130)
                 section03
+                Spacer()
             }
-            .offset(y: -130)
-            Spacer()
+            
+            Button("") {
+                dismiss()
+            }
+            .buttonStyle(BackButtonStyle())
         }
+        .navigationBarHidden(true)
     }
     
     // Customize the text view
@@ -33,30 +51,28 @@ struct CreatingAndCombiningViews: View {
     // Combine views using stacks
     var section03: some View {
         VStack(alignment: .leading) {
-            Text(data?.name ?? "111")
+            Text(data?.name ?? "")
                 .font(.title)
             HStack {
-                Text(data?.park ?? "111")
+                Text(data?.park ?? "")
                     .font(.subheadline)
                 Spacer()
-                Text(data?.state ?? "111")
+                Text(data?.state ?? "")
                     .font(.subheadline)
             }
             
             Divider()
             
-            Text("About \(data?.name ?? "1111")")
+            Text("About \(data?.name ?? "")")
                 .font(.title2)
-            Text(data?.description ?? "afasasdfasdfasdfasdfasdfsdfasdfasfkjaslkdjfl;kadajsdfkl;jasl;kfjdl;aksdjfl;kasjfkl;dajslaskdjflka;sjdfl;kasjdfl;kasjdfkl;ajsdl;fkjsak;dlfjl;sadfjkl;adjs;lkjal;skdfjl;kasjdfasdfasdfasdfasdfasfasdfasdfasds")
+            Text(data?.description ?? "")
         }
         .padding()
-        .background(.blue)
     }
     
     // Create a custom image view
     var section04: some View {
-//        data?.image
-        Image("turtlerock")
+        data?.image
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.black, lineWidth: 4)
@@ -73,12 +89,9 @@ struct CreatingAndCombiningViews: View {
     var section05: some View {
         Map(coordinateRegion: $region)
             .ignoresSafeArea()
-        
-        // IOS 17.0
-        // Map(initialPosition: .region(region))
     }
 }
 
 #Preview {
-    CreatingAndCombiningViews()
+    CreatingAndCombiningViews(data: landMarks[0])
 }
