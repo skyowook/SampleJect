@@ -23,13 +23,37 @@ struct TutorialView: View {
                 }
                 
                 Divider()
-                NavigationLink(destination: HandlingUserInput().environment(LandMarkModel())) {
+                NavigationLink(destination: HandlingUserInput().environment(TutorialModelData())) {
                     Text("HandlingUserInput")
+                }
+                
+                Divider()
+                NavigationLink(destination: Badge()) {
+                    Text("DrawingPathsAndShapes")
+                }
+                
+                Divider()
+                NavigationLink(destination: EmptyView()) {
+                    Text("AnimatingViewsAndTransitions")
                 }
                 
                 Spacer()
             }
         }
+    }
+}
+
+func loadTutorialData<T: Decodable>(_ fileName: String) -> T {
+    guard let file = Bundle.main.url(forResource: fileName, withExtension: nil) else {
+        fatalError("Couldn't find \(fileName) in main bundle.")
+    }
+    
+    do {
+        let data = try Data(contentsOf: file)
+        let decoder = JSONDecoder()
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        fatalError("Fail decode")
     }
 }
 

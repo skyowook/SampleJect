@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HandlingUserInput: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(LandMarkModel.self) var modelData
+    @Environment(TutorialModelData.self) var modelData
     @State private var isFilteredList = false
     
     var filteredLandmarks: [Landmark] {
@@ -71,5 +71,5 @@ struct LandmarkRow2: View {
 
 
 #Preview {
-    HandlingUserInput().environment(LandMarkModel())
+    HandlingUserInput().environment(TutorialModelData())
 }

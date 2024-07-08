@@ -48,20 +48,6 @@ struct LandmarkRow: View {
     }
 }
 
-func load<T: Decodable>(_ fileName: String) -> T {
-    guard let file = Bundle.main.url(forResource: fileName, withExtension: nil) else {
-        fatalError("Couldn't find \(fileName) in main bundle.")
-    }
-    
-    do {
-        let data = try Data(contentsOf: file)
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
-    } catch {
-        fatalError("Fail decode")
-    }
-}
-
 #Preview {
     BuildingListsAndNavigation()
 }
