@@ -18,7 +18,8 @@
         <activity
             android:name=".activity.SSLTestActivity"
             android:exported="true"
-            android:theme="@style/Theme.SampleJectAOS">
+            android:theme="@style/Theme.SampleJectAOS"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,6 +1,11 @@
-package com.skw.samplejectaos
+package com.skw.samplejectaos.data
 
 import com.google.gson.annotations.SerializedName
+
+data class PemCertificateData(
+    var old: String,
+    var new: String
+)
 
 data class RawAppVersion(
 

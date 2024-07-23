@@ -10,17 +10,36 @@ import UIKit
 import Alamofire
 import WebKit
 
+/// 테스트용으로 만든 데이터 모델 Pem의 old인증서와 new인증서 데이터를 파싱해서 사용한다.
+class PemCertificateModel: Decodable {
+    var old: String
+    var new: String
+}
+
 // SSL Pinning 테스트 뷰
 class SslPinningViewController : IAViewController {
-    var sessionManager: Session?
     @IBOutlet private weak var webview: WKWebView!
+    @IBOutlet private weak var certificateSwitch: UISwitch!
+    
+    private var sessionManager: Session?
+    private var certificates: [SecCertificate] = []
+    private var certificateModel: PemCertificateModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requestCertificateData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    private func initCertificate(_ pemString: String) {
         // Api통신에 사용될 Session을 만들기위한 Certificate 생성
-        let secCertificate = SecCertificate.loadCertificate("test2")!
-        let pinnedCertificates = PinnedCertificatesTrustEvaluator(certificates: [secCertificate])
+        certificates = SecCertificate.createCertificatesForPem(pemString)
+        let pinnedCertificates = PinnedCertificatesTrustEvaluator(certificates: certificates)
         let certificates = [
                 "smart.kisb.co.kr" : pinnedCertificates
         ]
@@ -28,17 +47,47 @@ class SslPinningViewController : IAViewController {
         // Alamofire Session 생성
         let serverTrustPolicy = ServerTrustManager(allHostsMustBeEvaluated: false, evaluators: certificates)
         sessionManager = Session(serverTrustManager: serverTrustPolicy)
-
+    }
+    
+    private func requestCertificateData() {
+        let urlString: URLConvertible = "https://hosting-4e3b6.web.app/certificate_test.json"
+        AF.request(urlString, method: .post)
+            .responseDecodable(of: PemCertificateModel.self, completionHandler: { response in
+                switch response.result {
+                case .success(let model):
+                    print(
+                    """
+                    ======= CERTIFICATE_NEW
+                    \(model.new)
+                    ======= CERTIFICATE_OLD
+                    \(model.old)
+                    """
+                    )
+                    self.certificateModel = model
+                    self.initCertificate(model.new)
+                    self.certificateSwitch.isOn = true
+                case .failure(let error):
+                    debugPrint("Error :: \(error.localizedDescription)")
+                }
+            })
+    }
+    
+    @IBAction private func changeSwitch(_ sender: UISwitch) {
+        guard let model = certificateModel else { return }
+        if sender.isOn {
+            initCertificate(model.new)
+        } else {
+            initCertificate(model.old)
+        }
+    }
+    
+    /// 웹 로드 버튼 터치
+    @IBAction private func touchLoadWebBtn(_ sender: UIButton) {
         // SslPinning이 필요한 사이트 접근을 위한 테스트
         let url = URL(string: "https://smart.kisb.co.kr")
 //        let url = URL(string: "https://m.naver.com")
         webview.navigationDelegate = self
         webview.load(URLRequest(url: url!))
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
     }
     
     /// Ssl Api 테스트 함수
@@ -82,8 +131,7 @@ extension SslPinningViewController: WKNavigationDelegate {
         // TODO: - Host 체크 들어가야함. (해당 URL이 포함될 때 SSL Pinning 진행)
         if challenge.protectionSpace.host.contains("smart.kisb.co.kr") {
             do {
-                let secCertificate = SecCertificate.loadCertificate("test")!
-                let evaluator = PinnedCertificatesTrustEvaluator(certificates: [secCertificate])
+                let evaluator = PinnedCertificatesTrustEvaluator(certificates: certificates)
                 let loadedHost = challenge.protectionSpace.host
                 
                 try evaluator.evaluate(serverTrust, forHost: loadedHost)

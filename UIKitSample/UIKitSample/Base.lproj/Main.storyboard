@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fN-v8-Ut0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23077.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fN-v8-Ut0">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23068.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,21 +33,40 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBQ-CI-E2t">
+                                <rect key="frame" x="164" y="52" width="65" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="LoadWeb"/>
+                                <connections>
+                                    <action selector="touchLoadWebBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhl-vN-svx"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mQh-q6-0JH">
+                                <rect key="frame" x="11" y="51" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="uYY-gb-VAP"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ZBQ-CI-E2t" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2CX-7O-kvc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="mQh-q6-0JH" secondAttribute="top" constant="8" id="D8H-PR-ENP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ddj-pU-LuV" secondAttribute="bottom" id="HS4-v5-LPE"/>
                             <constraint firstItem="uSy-zI-pJS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IcR-7c-gKQ"/>
+                            <constraint firstItem="mQh-q6-0JH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="KeI-qL-SdV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uSy-zI-pJS" secondAttribute="trailing" constant="16" id="bnm-Rv-NYS"/>
                             <constraint firstItem="Ddj-pU-LuV" firstAttribute="top" secondItem="uSy-zI-pJS" secondAttribute="bottom" id="fbV-8o-7B2"/>
                             <constraint firstItem="Ddj-pU-LuV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gqY-g2-qrg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ddj-pU-LuV" secondAttribute="trailing" id="jJO-FD-jgK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ZBQ-CI-E2t" secondAttribute="top" constant="7" id="kgd-BK-WSF"/>
                             <constraint firstItem="uSy-zI-pJS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="xbQ-G0-PiL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SIZ-Sh-vFx"/>
                     <connections>
+                        <outlet property="certificateSwitch" destination="mQh-q6-0JH" id="a6O-hc-Rp1"/>
                         <outlet property="webview" destination="Ddj-pU-LuV" id="Iy8-Z8-EoA"/>
                     </connections>
                 </viewController>
