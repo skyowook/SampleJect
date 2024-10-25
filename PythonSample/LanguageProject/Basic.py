@@ -1,37 +1,51 @@
 ######## 자습서 3
-
+#. 기본 출력
 print("Hellow Python")
-
-#. 주석은 '#'으로 시작하면 주석
-
 
 #. 문자열 앞에 r을 붙이면 \ 특수기호를 무시할 수 있음. 
 print("C:\some\name")
 print(r"C:\some\name")
 
-#. 다음과같이 멀티라인 입력도 가능하고 이때 엔터는 개행으로 인식된다. 
+#. strip 사용하여 공백 제거
+stripTest = "             a            "
+#. 좌우 여백 제거
+print(stripTest.strip())
+#. 우측 여백 제거
+print(stripTest.rstrip())
+#. 좌측 여백 제거
+print(stripTest.lstrip())
+
+#. 다음과같이 멀티라인 입력도 가능하고 이때 엔터는 개행으로 인식된다.
 print("""
-      이런식으로 여러줄 입력 가능
-      문자열 여러줄 입력 
-      테스트
-      """)
+여러줄 입력 가능
+문자열 여러줄 입력 
+테스트
+""".strip())
 
 #. 문자열 연산에서 *를 사용하면 문자열이 반복되고 +를 사용하면 문자열을 결합 할 수 있다. 
 print("test" * 3 + "number")
 
 #. 다음처럼 + 생략해도 문자열이 결합된다. 
 print("test" "number")
+#. ,를 집어 넣으면 띄어쓰기로 구분됨.
+print("test" "TTT","asdf")
+
+#. String Format 문자열앞에 f를 붙이면 format 적용 가능
+formatNumber = 10
+formatString = "test"
+#. print("number : {????}") 안되는거 알 수 있음.
+print(f"number : {formatNumber}, string : {formatString}")
 
 #. 변수안에 텍스트가 있고 이를 배열형태로 접근가능 +영억은 first부터 시작, -범위는 last부터 시작
-text = "Array Idx Test"
-print(text[0])      #. First
-print(text[-1])     #. Last
+arrayIdxTest = "Array Idx Test"
+print(arrayIdxTest[0])      #. First : A
+print(arrayIdxTest[-1])     #. Last : t
 
 #. 배열 인덱스 안에 :을 사용하면 Range표현이 가능
-print(text[0:2])    #. Idx 0 <= result < 2 
-print(text[-3:])    #. Idx ~ Last -3지점부터 끝까지
-print(text[:-3])    #. First ~ Idx
-print(text[2:500])  #. 범위 넘어서는건 알아서 처리됨. (에러x)
+print(arrayIdxTest[0:2])    #. Idx 0 <= result < 2 : Ar
+print(arrayIdxTest[-3:])    #. Idx ~ Last -3지점부터 끝까지 : est
+print(arrayIdxTest[:-3])    #. First ~ Idx : Array Idx T
+print(arrayIdxTest[2:500])  #. 범위 넘어서는건 알아서 처리됨. (에러x) : ray Idx Test
 
 #. 범위 접근 사용해서 문자열 치환 가능 
 # text[5:] = "TTT"
@@ -70,9 +84,7 @@ numberArray[:] = []
 print(numberArray)
 
 #. 2차원 배열 
-dimensionArray = []
-dimensionArray.append(numberArray)
-dimensionArray.append([1, 2, 3])
+dimensionArray = [numberArray, [1, 2, 3]]
 print(dimensionArray)
 
 #. 2차원 배열에서 내부에 배열이 아닌 일반 값이 들어갈때는?
