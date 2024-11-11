@@ -7,28 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0DC30D2CDB2833009F3A44 /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA32D572AD4ECB500C209FC /* IAssistKit */; };
 		0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */; };
 		0B4271B32AD7E53C0058A98E /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4271B22AD7E53C0058A98E /* Theme.xcassets */; };
+		0B7C008B2CD8B29900B90240 /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7C008A2CD8B29900B90240 /* IAssistKit */; };
 		0B9B71DE2C536A8F000444DC /* LanguageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */; };
 		0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */; };
 		0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D412AD4EB1000C209FC /* SceneDelegate.swift */; };
 		0BA32D472AD4EB1000C209FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA32D452AD4EB1000C209FC /* Main.storyboard */; };
 		0BA32D492AD4EB1100C209FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BA32D482AD4EB1100C209FC /* Assets.xcassets */; };
 		0BA32D4C2AD4EB1100C209FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA32D4A2AD4EB1100C209FC /* LaunchScreen.storyboard */; };
-		0BA32D552AD4EB3B00C209FC /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA32D542AD4EB3B00C209FC /* IAssistKit */; };
-		0BA32D582AD4ECB500C209FC /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA32D572AD4ECB500C209FC /* IAssistKit */; };
-		0BA32D5B2AD4ECFB00C209FC /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA32D5A2AD4ECFB00C209FC /* IAssistKit */; };
 		0BA32D5E2AD503FF00C209FC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D5D2AD503FF00C209FC /* SecondViewController.swift */; };
 		0BC8D53A2AFDAEDF00CE00FD /* test.cer in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5352AFDAEDF00CE00FD /* test.cer */; };
 		0BC8D53B2AFDAEE000CE00FD /* test.pem in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5362AFDAEDF00CE00FD /* test.pem */; };
 		0BC8D53C2AFDAEE000CE00FD /* test.der in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5372AFDAEDF00CE00FD /* test.der */; };
 		0BC8D53D2AFDAEE000CE00FD /* test2.der in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5382AFDAEDF00CE00FD /* test2.der */; };
 		0BC8D53E2AFDAEE000CE00FD /* test2.cer in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5392AFDAEDF00CE00FD /* test2.cer */; };
+		0BFE811C2CCF5F3A0034CB8A /* WebTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFE811B2CCF5F3A0034CB8A /* WebTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SslPinningViewController.swift; sourceTree = "<group>"; };
 		0B4271B22AD7E53C0058A98E /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		0B7C008C2CD8B31700B90240 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTestViewController.swift; sourceTree = "<group>"; };
 		0BA32D3C2AD4EB1000C209FC /* UIKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		0BC8D5382AFDAEDF00CE00FD /* test2.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.der; sourceTree = "<group>"; };
 		0BC8D5392AFDAEDF00CE00FD /* test2.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.cer; sourceTree = "<group>"; };
 		0BC8D53F2AFDFCFA00CE00FD /* UIKitSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitSample.entitlements; sourceTree = "<group>"; };
+		0BFE811B2CCF5F3A0034CB8A /* WebTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BA32D5B2AD4ECFB00C209FC /* IAssistKit in Frameworks */,
-				0BA32D582AD4ECB500C209FC /* IAssistKit in Frameworks */,
-				0BA32D552AD4EB3B00C209FC /* IAssistKit in Frameworks */,
+				0B0DC30D2CDB2833009F3A44 /* IAssistKit in Frameworks */,
+				0B7C008B2CD8B29900B90240 /* IAssistKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +102,7 @@
 				0BA32D4A2AD4EB1100C209FC /* LaunchScreen.storyboard */,
 				0BA32D4D2AD4EB1100C209FC /* Info.plist */,
 				0B4271B22AD7E53C0058A98E /* Theme.xcassets */,
+				0B7C008C2CD8B31700B90240 /* .swiftlint.yml */,
 			);
 			path = UIKitSample;
 			sourceTree = "<group>";
@@ -111,6 +113,7 @@
 				0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */,
 				0BA32D5D2AD503FF00C209FC /* SecondViewController.swift */,
 				0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */,
+				0BFE811B2CCF5F3A0034CB8A /* WebTestViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -122,6 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BA32D502AD4EB1100C209FC /* Build configuration list for PBXNativeTarget "UIKitSample" */;
 			buildPhases = (
+				0B7C00882CD8A14D00B90240 /* SwiftLint */,
 				0BA32D382AD4EB1000C209FC /* Sources */,
 				0BA32D392AD4EB1000C209FC /* Frameworks */,
 				0BA32D3A2AD4EB1000C209FC /* Resources */,
@@ -132,9 +136,8 @@
 			);
 			name = UIKitSample;
 			packageProductDependencies = (
-				0BA32D542AD4EB3B00C209FC /* IAssistKit */,
 				0BA32D572AD4ECB500C209FC /* IAssistKit */,
-				0BA32D5A2AD4ECFB00C209FC /* IAssistKit */,
+				0B7C008A2CD8B29900B90240 /* IAssistKit */,
 			);
 			productName = UIKitSample;
 			productReference = 0BA32D3C2AD4EB1000C209FC /* UIKitSample.app */;
@@ -165,7 +168,7 @@
 			);
 			mainGroup = 0BA32D332AD4EB1000C209FC;
 			packageReferences = (
-				0BA32D592AD4ECFB00C209FC /* XCRemoteSwiftPackageReference "IAssistKit" */,
+				0B7C00892CD8B29900B90240 /* XCRemoteSwiftPackageReference "IAssistKit" */,
 			);
 			productRefGroup = 0BA32D3D2AD4EB1000C209FC /* Products */;
 			projectDirPath = "";
@@ -195,6 +198,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B7C00882CD8A14D00B90240 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0BA32D382AD4EB1000C209FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,6 +228,7 @@
 				0BA32D5E2AD503FF00C209FC /* SecondViewController.swift in Sources */,
 				0B9B71DE2C536A8F000444DC /* LanguageTestViewController.swift in Sources */,
 				0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */,
+				0BFE811C2CCF5F3A0034CB8A /* WebTestViewController.swift in Sources */,
 				0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */,
 				0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */,
 			);
@@ -267,7 +293,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -330,7 +356,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -366,7 +392,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,8 +401,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw.UIKitSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -398,7 +428,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,8 +437,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw.UIKitSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -437,7 +471,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0BA32D592AD4ECFB00C209FC /* XCRemoteSwiftPackageReference "IAssistKit" */ = {
+		0B7C00892CD8B29900B90240 /* XCRemoteSwiftPackageReference "IAssistKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:skyowook/IAssistKit.git";
 			requirement = {
@@ -448,17 +482,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0BA32D542AD4EB3B00C209FC /* IAssistKit */ = {
+		0B7C008A2CD8B29900B90240 /* IAssistKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 0B7C00892CD8B29900B90240 /* XCRemoteSwiftPackageReference "IAssistKit" */;
 			productName = IAssistKit;
 		};
 		0BA32D572AD4ECB500C209FC /* IAssistKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = IAssistKit;
-		};
-		0BA32D5A2AD4ECFB00C209FC /* IAssistKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0BA32D592AD4ECFB00C209FC /* XCRemoteSwiftPackageReference "IAssistKit" */;
 			productName = IAssistKit;
 		};
 /* End XCSwiftPackageProductDependency section */

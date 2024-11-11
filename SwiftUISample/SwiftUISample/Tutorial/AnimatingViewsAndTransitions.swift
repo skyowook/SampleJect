@@ -9,7 +9,10 @@ import SwiftUI
 
 extension AnyTransition {
     static var moveAndFade: AnyTransition {
-        .asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity), removal: .scale.combined(with: .opacity))
+        .asymmetric(
+            insertion: .move(edge: .trailing).combined(with: .opacity),
+            removal: .scale.combined(with: .opacity)
+        )
     }
 }
 
@@ -157,7 +160,7 @@ struct GraphCapsule: View, Equatable {
     }
 }
 
-fileprivate func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
+private func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
     where C.Element == Range<Double> {
     guard !ranges.isEmpty else { return 0..<0 }
     let low = ranges.lazy.map { $0.lowerBound }.min()!
@@ -165,7 +168,7 @@ fileprivate func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
     return low..<high
 }
 
-fileprivate func magnitude(of range: Range<Double>) -> Double {
+private func magnitude(of range: Range<Double>) -> Double {
     range.upperBound - range.lowerBound
 }
 

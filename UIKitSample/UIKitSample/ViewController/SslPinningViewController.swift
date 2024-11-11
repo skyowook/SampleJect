@@ -20,22 +20,17 @@ class PemCertificateModel: Decodable {
 class SslPinningViewController : IAViewController {
     @IBOutlet private weak var webview: WKWebView!
     @IBOutlet private weak var certificateSwitch: UISwitch!
-    
+
     private var sessionManager: Session?
     private var certificates: [SecCertificate] = []
     private var certificateModel: PemCertificateModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         requestCertificateData()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
+
     private func initCertificate(_ pemString: String) {
         // Api통신에 사용될 Session을 만들기위한 Certificate 생성
         certificates = SecCertificate.createCertificatesForPem(pemString)
@@ -71,7 +66,7 @@ class SslPinningViewController : IAViewController {
                 }
             })
     }
-    
+
     @IBAction private func changeSwitch(_ sender: UISwitch) {
         guard let model = certificateModel else { return }
         if sender.isOn {
@@ -80,7 +75,7 @@ class SslPinningViewController : IAViewController {
             initCertificate(model.old)
         }
     }
-    
+
     /// 웹 로드 버튼 터치
     @IBAction private func touchLoadWebBtn(_ sender: UIButton) {
         // SslPinning이 필요한 사이트 접근을 위한 테스트
@@ -89,17 +84,17 @@ class SslPinningViewController : IAViewController {
         webview.navigationDelegate = self
         webview.load(URLRequest(url: url!))
     }
-    
+
     /// Ssl Api 테스트 함수
     @IBAction private func testSslPinningApi(sender: UIButton) {
         let baseUrl = "https://smart.kisb.co.kr"
         let url = "\(baseUrl)/APP010000001.pwkjson"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
-        let trimString = "Content-Type".replacingOccurrences(of: " ", with: "") //2023.07.05 보안취약
+        let trimString = "Content-Type".replacingOccurrences(of: " ", with: "") // 2023.07.05 보안취약
         request.setValue("application/json", forHTTPHeaderField: trimString)
         request.timeoutInterval = 10
-        
+
         let params = ["elData":["REQ_DATA":["OS":"IOS"]]] as Dictionary
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
@@ -121,14 +116,14 @@ class SslPinningViewController : IAViewController {
 }
 
 extension SslPinningViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        
+    private func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+
         guard let serverTrust = challenge.protectionSpace.serverTrust else {
             completionHandler(.performDefaultHandling, nil)
             return
         }
         
-        // TODO: - Host 체크 들어가야함. (해당 URL이 포함될 때 SSL Pinning 진행)
+        // - Host 체크 들어가야함. (해당 URL이 포함될 때 SSL Pinning 진행)
         if challenge.protectionSpace.host.contains("smart.kisb.co.kr") {
             do {
                 let evaluator = PinnedCertificatesTrustEvaluator(certificates: certificates)

@@ -3,7 +3,6 @@
 //  SwiftUISample
 //
 //  Created by skw on 12/11/23.
-//
 
 import SwiftUI
 

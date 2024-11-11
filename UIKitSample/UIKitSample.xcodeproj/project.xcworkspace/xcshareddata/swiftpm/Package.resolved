@@ -1,4 +1,5 @@
 {
+  "originHash" : "b4a3cd8d0d68542746cc197ff3ff7c93d5412910120bf8d36e17eb49fa81a4fb",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -15,7 +16,7 @@
       "location" : "git@github.com:skyowook/IAssistKit.git",
       "state" : {
         "branch" : "main",
-        "revision" : "cac745ac4af89b3439ea29feb45df276b746f06a"
+        "revision" : "f4262bb9d9ec72fc909f8aab2da2e2a30b5ca730"
       }
     },
     {
@@ -28,5 +29,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

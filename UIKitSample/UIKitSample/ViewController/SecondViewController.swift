@@ -10,9 +10,4 @@ import UIKit
 
 class SecondViewController: IAViewController {
     private weak var unwindSegue: UIStoryboardSegue?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 }

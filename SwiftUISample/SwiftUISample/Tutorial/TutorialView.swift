@@ -5,7 +5,6 @@
 //  Created by skw on 5/29/24.
 //
 
-
 import SwiftUI
 import IAssistKit
 
@@ -13,7 +12,8 @@ struct TutorialView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: CreatingAndCombiningViews(data: landMarks.first!, isSel: .constant(false))) {
+                let combineView = CreatingAndCombiningViews(data: landMarks.first!, isSel: .constant(false))
+                NavigationLink(destination: combineView) {
                     Text("CreatingAndCombiningViews")
                 }
                 

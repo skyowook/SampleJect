@@ -119,7 +119,7 @@ class LanguageTestViewController: UIViewController {
         debugPrint(value3.rawValue)
         debugPrint("================")
         
-        var value4: TestParamEnum = .a(index: 20)
+        let value4: TestParamEnum = .a(index: 20)
         debugPrint(value4)
     }
 }

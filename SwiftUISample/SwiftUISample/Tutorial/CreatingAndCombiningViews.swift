@@ -22,7 +22,6 @@ struct CreatingAndCombiningViews: View {
     var data: Landmark
     @Binding var isSel: Bool
     
-    
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack {
@@ -96,15 +95,16 @@ struct CreatingAndCombiningViews: View {
         }
     }
     
-    
     // Use SwiftUI views from other frameworks
-    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
+    @State private var mapPosition = MapCameraPosition.region(
+        MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
-            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        )
+    )
     
     var section05: some View {
-        Map(coordinateRegion: $region)
-            .ignoresSafeArea()
+        Map(position: $mapPosition)
     }
 }
 

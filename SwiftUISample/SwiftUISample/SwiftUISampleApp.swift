@@ -18,7 +18,8 @@ struct SwiftUISampleApp: App {
         WindowGroup {
 //            MainView()
             TutorialView()
-        }.onChange(of: scenePhase) { newPhase in
+        }.onChange(of: scenePhase, { oldPhase, newPhase in
+            debugPrint("old Phase ::: \(oldPhase)")
             switch newPhase {
             case .active:
                 debugPrint("new ::: active")
@@ -29,7 +30,7 @@ struct SwiftUISampleApp: App {
             default:
                 debugPrint("old ::: ??? ")
             }
-        }
+        })
     }
     
     func didBecomeActiveNotification(_ center: NotificationCenter.Publisher.Output) {

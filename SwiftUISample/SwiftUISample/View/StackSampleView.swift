@@ -67,7 +67,7 @@ struct StackSampleView: View {
     }
     
     var borderStack: some View {
-        var test = HStack {
+        let test = HStack {
             Text("Border\nStackView")
                 .multilineTextAlignment(.center)
         }
@@ -79,7 +79,6 @@ struct StackSampleView: View {
             test.border(Color.hex("8000ff00"), width: 5)
         }
     }
-    
     
     var shadowStack: some View {
         return ZStack {

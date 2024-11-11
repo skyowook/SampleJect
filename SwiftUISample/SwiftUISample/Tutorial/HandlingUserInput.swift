@@ -30,7 +30,8 @@ struct HandlingUserInput: View {
                 ZStack {
                     LandmarkRow2(landmark: data)
                     NavigationLink {
-                        CreatingAndCombiningViews(data: data, isSel: $modelData.landMarks[findIdx(data.id)].isFavorite)
+                        let isSel = $modelData.landMarks[findIdx(data.id)].isFavorite
+                        CreatingAndCombiningViews(data: data, isSel: isSel)
                     } label: {
                         EmptyView()
                     }
@@ -68,7 +69,6 @@ struct LandmarkRow2: View {
         }
     }
 }
-
 
 #Preview {
     HandlingUserInput().environment(TutorialModelData())
