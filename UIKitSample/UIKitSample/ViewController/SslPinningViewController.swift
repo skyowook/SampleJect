@@ -24,7 +24,7 @@ class SslPinningViewController : IAViewController {
     private var sessionManager: Session?
     private var certificates: [SecCertificate] = []
     private var certificateModel: PemCertificateModel?
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
