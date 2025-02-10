@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import com.skw.samplejectaos.common.LogTAG
+import com.skw.samplejectaos.common.blockTime
+import com.skw.samplejectaos.common.checkBlockTime
 import com.skw.samplejectaos.databinding.ActivityMainBinding
 import com.skw.samplejectaos.di.HiltTestApi
 import com.skw.samplejectaos.di.TestModuleCase1.*

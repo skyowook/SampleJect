@@ -1,5 +1,6 @@
 package com.skw.samplejectaos.common
 
+import android.util.Log
 import java.io.BufferedInputStream
 import java.io.InputStream
 import java.security.KeyStore
@@ -9,6 +10,13 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManagerFactory
 
 const val LogTAG = "test"
+
+var blockTime: Long = 0
+
+fun checkBlockTime(msg: String) {
+    Log.i(LogTAG, "$msg ${System.currentTimeMillis() - blockTime}")
+    blockTime = System.currentTimeMillis()
+}
 
 fun createTrustManager(pemString: String): TrustManagerFactory {
     val cf: CertificateFactory = CertificateFactory.getInstance("X.509")

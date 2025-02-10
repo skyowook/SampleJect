@@ -3,6 +3,7 @@ package com.skw.samplejectaos
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.skw.samplejectaos.common.blockTime
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.launch
 import retrofit2.await
@@ -20,6 +21,6 @@ class SampleApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        blockTime = System.currentTimeMillis()
     }
 }

@@ -9,6 +9,7 @@ import android.webkit.WebViewDatabase
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
+import com.skw.samplejectaos.common.checkBlockTime
 import com.skw.samplejectaos.common.createTrustManager
 import com.skw.samplejectaos.data.PemCertificateData
 import com.skw.samplejectaos.databinding.ActivitySslTestBinding
@@ -62,6 +63,8 @@ class SSLTestActivity: AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        checkBlockTime("MainAct onCreate")
 
         bind = ActivitySslTestBinding.inflate(layoutInflater)
         setContentView(bind.root)
