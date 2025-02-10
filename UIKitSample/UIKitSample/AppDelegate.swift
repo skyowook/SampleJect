@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    // PR테스트를 위한 수정 Draft Test
+    // PR테스트를 위한 수정 Draft Test add
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
