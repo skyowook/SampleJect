@@ -17,7 +17,7 @@ class PemCertificateModel: Decodable {
 }
 
 // SSL Pinning 테스트 뷰
-class SslPinningViewController : IAViewController {
+class SslPinningViewController: IAViewController {
     @IBOutlet private weak var webview: WKWebView!
     @IBOutlet private weak var certificateSwitch: UISwitch!
 
@@ -36,7 +36,7 @@ class SslPinningViewController : IAViewController {
         certificates = SecCertificate.createCertificatesForPem(pemString)
         let pinnedCertificates = PinnedCertificatesTrustEvaluator(certificates: certificates)
         let certificates = [
-                "smart.kisb.co.kr" : pinnedCertificates
+                "smart.kisb.co.kr": pinnedCertificates
         ]
 
         // Alamofire Session 생성
@@ -51,12 +51,12 @@ class SslPinningViewController : IAViewController {
                 switch response.result {
                 case .success(let model):
                     print(
-                    """
-                    ======= CERTIFICATE_NEW
-                    \(model.new)
-                    ======= CERTIFICATE_OLD
-                    \(model.old)
-                    """
+                        """
+                        ======= CERTIFICATE_NEW
+                        \(model.new)\
+                        ======= CERTIFICATE_OLD
+                        \(model.old)
+                        """
                     )
                     self.certificateModel = model
                     self.initCertificate(model.new)
@@ -69,7 +69,7 @@ class SslPinningViewController : IAViewController {
 
     @IBAction private func changeSwitch(_ sender: UISwitch) {
         guard let model = certificateModel else { return }
-        if sender.isOn {
+        if sender.isOn {            
             initCertificate(model.new)
         } else {
             initCertificate(model.old)
@@ -95,7 +95,14 @@ class SslPinningViewController : IAViewController {
         request.setValue("application/json", forHTTPHeaderField: trimString)
         request.timeoutInterval = 10
 
-        let params = ["elData":["REQ_DATA":["OS":"IOS"]]] as Dictionary
+        let params = [
+            "elData": [
+                "REQ_DATA": [
+                    "OS": "IOS"
+                ]
+            ]
+        ] as Dictionary
+        
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
             sessionManager?.request(request).validate(statusCode: 200..<300).responseString { (response) in

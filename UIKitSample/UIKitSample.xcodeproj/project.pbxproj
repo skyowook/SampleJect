@@ -44,7 +44,6 @@
 		0BC8D5372AFDAEDF00CE00FD /* test.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.der; sourceTree = "<group>"; };
 		0BC8D5382AFDAEDF00CE00FD /* test2.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.der; sourceTree = "<group>"; };
 		0BC8D5392AFDAEDF00CE00FD /* test2.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.cer; sourceTree = "<group>"; };
-		0BC8D53F2AFDFCFA00CE00FD /* UIKitSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitSample.entitlements; sourceTree = "<group>"; };
 		0BFE811B2CCF5F3A0034CB8A /* WebTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				0B63477F2B50F3A3000E5323 /* certificate */,
-				0BC8D53F2AFDFCFA00CE00FD /* UIKitSample.entitlements */,
 				0BA32D5C2AD503E400C209FC /* ViewController */,
 				0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */,
 				0BA32D412AD4EB1000C209FC /* SceneDelegate.swift */,
@@ -382,9 +380,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UIKitSample/UIKitSample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TD6P8S3N25;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TD6P8S3N25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -401,6 +401,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw.UIKitSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = devUIKitSample;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -418,9 +419,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UIKitSample/UIKitSample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TD6P8S3N25;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TD6P8S3N25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -437,6 +440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw.UIKitSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = devUIKitSample;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

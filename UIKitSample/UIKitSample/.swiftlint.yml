@@ -1,8 +1,5 @@
 # By default, SwiftLint uses a set of sensible default rules you can adjust:
 disabled_rules: # rule identifiers turned on by default to exclude from running
-  - colon
-  - comma
-  - control_statement
   - trailing_whitespace
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # find all the available rules by running: `swiftlint rules`
@@ -13,9 +10,9 @@ opt_in_rules: # some rules are turned off by default, so you need to opt-in
 #   - vertical_whitespace
 
 analyzer_rules: # rules run by `swiftlint analyze`
-  - explicit_self
+  - trailing_whitespace
 
-# Case-sensitive paths to include during linting. Directory paths supplied on the
+# Case-sensitive paths to include during liㅎnting. Directory paths supplied on the
 # command line will be ignored.
 included:
   - UIKitSample

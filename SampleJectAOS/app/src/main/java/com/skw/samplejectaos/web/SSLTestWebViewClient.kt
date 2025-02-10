@@ -35,16 +35,18 @@ class SSLTestWebViewClient: WebViewClient() {
             // 인증서 신뢰할 수 없음. 이공간에 체크 로직 필요. 검증 ok proceed, no cancel
             Log.i("test", "SSL_UNTRUSTED")
         } else if (error?.hasError(SslError.SSL_EXPIRED) == true) {
-            Log.i("test", "SSL_EXPIRED")
             // 인증서 만료는 cancel
+            Log.i("test", "SSL_EXPIRED")
+            handler?.cancel()
         } else if (error?.hasError(SslError.SSL_IDMISMATCH) == true) {
             // 도메인 없음. cancel
             Log.i("test", "SSL_IDMISMATCH")
+            handler?.cancel()
         } else if (error?.hasError(SslError.SSL_INVALID) == true) {
             // 인증서가 올바르지 않음 cancel
             Log.i("test", "SSL_INVALID")
+            handler?.cancel()
         } else if (error?.hasError(SslError.SSL_DATE_INVALID) == true) {
-
             Log.i("test", "SSL_DATE_INVALID")
         } else if (error?.hasError(SslError.SSL_NOTYETVALID) == true) {
             Log.i("test", "SSL_NOTYETVALID")
