@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    // PR테스트를 위한 수정 - duplicateTest ㅁㄴㅇㄹ
+    // PR테스트를 위한 수정 - dupl 커밋 단계 테스트
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
