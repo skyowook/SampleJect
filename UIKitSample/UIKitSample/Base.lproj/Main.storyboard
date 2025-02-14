@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="248"/>
+            <point key="canvasLocation" x="593" y="106"/>
         </scene>
         <!--Web Test View Controller-->
         <scene sceneID="UzD-KG-q5x">
@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgL-OZ-SHJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-83" y="987"/>
+            <point key="canvasLocation" x="1889" y="950"/>
         </scene>
         <!--Language Test View Controller-->
         <scene sceneID="v9s-aU-MkK">
@@ -122,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldM-G3-kcL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="987"/>
+            <point key="canvasLocation" x="2967" y="931"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="u5u-Jw-Cb5">
@@ -195,12 +195,52 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="frX-nn-Mq5" kind="relationship" relationship="rootViewController" id="QfB-0L-Nhe"/>
+                        <segue destination="FeM-fe-3Fw" kind="relationship" relationship="rootViewController" id="axg-3c-nxk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNd-yF-TFp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="248"/>
+            <point key="canvasLocation" x="-1158" y="296"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="15Y-wB-54g">
+            <objects>
+                <viewController id="FeM-fe-3Fw" customClass="MainViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y8t-Rj-jYl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22U-NS-OwN">
+                                <rect key="frame" x="26" y="85" width="91" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SSL Test"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="I8V-2V-DKL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC1-sa-XWV">
+                                <rect key="frame" x="26" y="136" width="112" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Test Button"/>
+                                <connections>
+                                    <action selector="touchTestButton:" destination="FeM-fe-3Fw" eventType="touchUpInside" id="iRW-eT-86o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zl4-nJ-JUv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DC1-sa-XWV" firstAttribute="top" secondItem="22U-NS-OwN" secondAttribute="bottom" constant="16" id="3Hu-C2-v5p"/>
+                            <constraint firstItem="DC1-sa-XWV" firstAttribute="leading" secondItem="22U-NS-OwN" secondAttribute="leading" id="KDE-Pk-E9X"/>
+                            <constraint firstItem="22U-NS-OwN" firstAttribute="top" secondItem="Zl4-nJ-JUv" secondAttribute="top" constant="26" id="WYy-Ch-xOY"/>
+                            <constraint firstItem="22U-NS-OwN" firstAttribute="leading" secondItem="Zl4-nJ-JUv" secondAttribute="leading" constant="26" id="lEk-Uh-uv8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nrY-9M-yUL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Lc-qq-odX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="296"/>
         </scene>
     </scenes>
     <resources>

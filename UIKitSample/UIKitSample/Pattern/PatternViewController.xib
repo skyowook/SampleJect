@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PatternViewController" customModule="UIKitSample" customModuleProvider="target">
+            <connections>
+                <outlet property="patternView" destination="d1U-fA-tQS" id="oJf-Js-3fP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1U-fA-tQS" customClass="PatternView" customModule="UIKitSample" customModuleProvider="target">
+                    <rect key="frame" x="16" y="75" width="361" height="361"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="d1U-fA-tQS" secondAttribute="height" multiplier="1:1" id="I2u-eb-6vH"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBl-3a-uoQ">
+                    <rect key="frame" x="168" y="521" width="57" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Test"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="d1U-fA-tQS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2Bm-R9-07T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d1U-fA-tQS" secondAttribute="trailing" constant="16" id="6Ed-2e-2C0"/>
+                <constraint firstItem="EBl-3a-uoQ" firstAttribute="top" secondItem="d1U-fA-tQS" secondAttribute="bottom" constant="85" id="8jL-zh-95C"/>
+                <constraint firstItem="d1U-fA-tQS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="W46-e9-Wy0"/>
+                <constraint firstItem="EBl-3a-uoQ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ftg-FQ-EBW"/>
+            </constraints>
+            <point key="canvasLocation" x="96.946564885496173" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
