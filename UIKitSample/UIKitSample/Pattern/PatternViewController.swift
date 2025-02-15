@@ -35,10 +35,6 @@ class PatternViewController: UIViewController {
         patternView.backgroundColor = .lightGray
     }
     
-    @objc private func resetPattern() {
-        patternView.resetPattern()
-    }
-    
     @objc private func verifyPattern() {
         if patternView.getPattern() == pattern {
             showAlert(message: "Pattern is correct!")

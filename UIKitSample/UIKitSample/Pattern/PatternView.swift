@@ -10,11 +10,10 @@ import UIKit
 /// 패턴 뷰
 class PatternView: UIView {
     // MARK: - Property
-    private let dotSize: CGFloat = 20
+    private var dotSize: CGFloat = 20
     private var dots: [CGPoint] = []
-    private var dotRow = 5
-    private var dotCol = 2
-    private var isSetuped = false
+    private var dotRow = 3
+    private var dotCol = 3
     
     var margin = CGSize(width: 16, height: 16)
     var spacing = CGSize.zero
@@ -23,10 +22,6 @@ class PatternView: UIView {
     var patternDotIdx: [Int] = []
     
     private var originSize = CGSize.zero
-    
-    // 터치 이동 중인 점을 추적
-    private var currentTouchDotIndex: Int?
-    private var lastTouchPoint: CGPoint?
     
     // MARK: - Override Func
     override func layoutSubviews() {
@@ -39,12 +34,10 @@ class PatternView: UIView {
         }
     }
     
+    private var linePath = UIBezierPath()
+    private var movingPath = UIBezierPath()
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
-        if !isSetuped {
-            return
-        }
         
         // 점 그리기
         for dot in dots {
@@ -53,29 +46,11 @@ class PatternView: UIView {
             dotPath.fill()
         }
         
-        // 패턴 그리기 (사용자가 연결한 점들)
-        let linePath = UIBezierPath()
-        linePath.lineWidth = 3
+        UIColor.blue.setStroke()
+        linePath.stroke()
         
-        for (i, dotIdx) in patternDotIdx.enumerated() {
-            if i == patternDotIdx.count - 1 {
-                break
-            }
-            
-            let startDot = dots[dotIdx]
-            let endDot = dots[patternDotIdx[i + 1]]
-            linePath.move(to: startDot)
-            linePath.addLine(to: endDot)
-            linePath.stroke()
-        }
-        
-        // 현재 터치 중인 선 그리기 (사용자가 점을 이동시킬 때)
-        if let lastTouchPoint = lastTouchPoint, let currentTouchDotIndex = currentTouchDotIndex {
-            let startDot = dots[patternDotIdx.last ?? currentTouchDotIndex]
-            linePath.move(to: startDot)
-            linePath.addLine(to: lastTouchPoint)
-            linePath.stroke()
-        }
+        UIColor.green.setStroke()
+        movingPath.stroke()
     }
     
     // 터치 이벤트 처리 (사용자가 점을 연결하는 패턴을 추적)
@@ -83,42 +58,53 @@ class PatternView: UIView {
         guard let touch = touches.first else { return }
         let touchPoint = touch.location(in: self)
         
+        patternDotIdx.removeAll()
+        
         if let touchedDotIndex = getTouchedDotIndex(for: touchPoint), !patternDotIdx.contains(touchedDotIndex) {
             patternDotIdx.append(touchedDotIndex)
+            
+            linePath.move(to: dots[touchedDotIndex])
+            linePath.lineWidth = 3
+            
+            movingPath.move(to: dots[touchedDotIndex])
             setNeedsDisplay()
         }
-        
-        // 터치 시작 시 마지막 터치 포인트 초기화
-        lastTouchPoint = touchPoint
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if patternDotIdx.isEmpty {
+            return
+        }
+        
         guard let touch = touches.first else { return }
         let touchPoint = touch.location(in: self)
         
-        // 점에 닿지 않더라도 선을 그리기 위해 마지막 터치 포인트를 업데이트
-        lastTouchPoint = touchPoint
-        
         if let touchedDotIndex = getTouchedDotIndex(for: touchPoint), !patternDotIdx.contains(touchedDotIndex) {
+            linePath.addLine(to: dots[touchedDotIndex])
             patternDotIdx.append(touchedDotIndex)
         }
         
-        // 터치가 이동 중일 때, 그 이동 중인 점을 추적
-        if let touchedDotIndex = getTouchedDotIndex(for: touchPoint) {
-            currentTouchDotIndex = touchedDotIndex
-        }
+        // 현재 터치 중인 선 그리기 (사용자가 점을 이동시킬 때)
+        movingPath.removeAllPoints()
+        movingPath.move(to: dots[patternDotIdx.last!])
+        movingPath.lineWidth = 3
+        movingPath.addLine(to: touchPoint)
         
         setNeedsDisplay()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        currentTouchDotIndex = nil
-        lastTouchPoint = nil
+        linePath.removeAllPoints()
+        movingPath.removeAllPoints()
+        
+        setNeedsDisplay()
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        currentTouchDotIndex = nil
-        lastTouchPoint = nil
+        linePath.removeAllPoints()
+        movingPath.removeAllPoints()
+        
+        setNeedsDisplay()
     }
     
     // MARK: - Public Func
@@ -128,17 +114,19 @@ class PatternView: UIView {
             partialResult + String(value)
         }
     }
-    // 패턴 초기화
-    func resetPattern() {
-        patternDotIdx.removeAll()
-        setNeedsDisplay()
-    }
     
     // MARK: - Private Func
+    private func initPath() {
+        for dot in dots {
+            let dotPath = UIBezierPath(ovalIn: CGRect(x: dot.x - dotSize / 2, y: dot.y - dotSize / 2, width: dotSize, height: dotSize))
+            UIColor.black.setFill()
+            dotPath.fill()
+        }
+    }
+    
     /// 뷰 크기를 바탕으로 패턴뷰 설정
     private func setupDots() {
         dots.removeAll()
-        isSetuped = true
         
         spacing.width = (originSize.width - margin.width * 2.0 - CGFloat(dotCol) * dotSize) / CGFloat(dotCol - 1)
         spacing.height = (originSize.height - margin.height * 2.0 - CGFloat(dotRow) * dotSize) / CGFloat(dotRow - 1)
