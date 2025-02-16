@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B0DC30D2CDB2833009F3A44 /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA32D572AD4ECB500C209FC /* IAssistKit */; };
 		0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */; };
-		0B7C008B2CD8B29900B90240 /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7C008A2CD8B29900B90240 /* IAssistKit */; };
+		0B558DCD2D623CF8004FB93D /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B558DCC2D623CF8004FB93D /* IAssistKit */; };
+		0B558DD02D62432B004FB93D /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B558DCF2D62432B004FB93D /* IAssistKit */; };
+		0B718B162D5DA4DB0022730C /* PatternViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B718B152D5DA4DB0022730C /* PatternViewController.xib */; };
+		0B718B172D5DA4DB0022730C /* PatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B718B142D5DA4DB0022730C /* PatternViewController.swift */; };
+		0B718B1B2D5DA9AD0022730C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B718B1A2D5DA9AD0022730C /* MainViewController.swift */; };
 		0B9B71DE2C536A8F000444DC /* LanguageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */; };
 		0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */; };
 		0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D412AD4EB1000C209FC /* SceneDelegate.swift */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SslPinningViewController.swift; sourceTree = "<group>"; };
+		0B718B142D5DA4DB0022730C /* PatternViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternViewController.swift; sourceTree = "<group>"; };
+		0B718B152D5DA4DB0022730C /* PatternViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatternViewController.xib; sourceTree = "<group>"; };
+		0B718B1A2D5DA9AD0022730C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0B7C008C2CD8B31700B90240 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTestViewController.swift; sourceTree = "<group>"; };
 		0BA32D3C2AD4EB1000C209FC /* UIKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,8 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B0DC30D2CDB2833009F3A44 /* IAssistKit in Frameworks */,
-				0B7C008B2CD8B29900B90240 /* IAssistKit in Frameworks */,
+				0B558DD02D62432B004FB93D /* IAssistKit in Frameworks */,
+				0B558DCD2D623CF8004FB93D /* IAssistKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +74,15 @@
 				0BC8D5382AFDAEDF00CE00FD /* test2.der */,
 			);
 			path = certificate;
+			sourceTree = "<group>";
+		};
+		0B718B132D5DA4B20022730C /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				0B718B142D5DA4DB0022730C /* PatternViewController.swift */,
+				0B718B152D5DA4DB0022730C /* PatternViewController.xib */,
+			);
+			path = Pattern;
 			sourceTree = "<group>";
 		};
 		0BA32D332AD4EB1000C209FC = {
@@ -89,6 +104,7 @@
 		0BA32D3E2AD4EB1000C209FC /* UIKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				0B718B132D5DA4B20022730C /* Pattern */,
 				0B63477F2B50F3A3000E5323 /* certificate */,
 				0BA32D5C2AD503E400C209FC /* ViewController */,
 				0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */,
@@ -109,6 +125,7 @@
 				0BA32D5D2AD503FF00C209FC /* SecondViewController.swift */,
 				0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */,
 				0BFE811B2CCF5F3A0034CB8A /* WebTestViewController.swift */,
+				0B718B1A2D5DA9AD0022730C /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -131,8 +148,8 @@
 			);
 			name = UIKitSample;
 			packageProductDependencies = (
-				0BA32D572AD4ECB500C209FC /* IAssistKit */,
-				0B7C008A2CD8B29900B90240 /* IAssistKit */,
+				0B558DCC2D623CF8004FB93D /* IAssistKit */,
+				0B558DCF2D62432B004FB93D /* IAssistKit */,
 			);
 			productName = UIKitSample;
 			productReference = 0BA32D3C2AD4EB1000C209FC /* UIKitSample.app */;
@@ -163,7 +180,7 @@
 			);
 			mainGroup = 0BA32D332AD4EB1000C209FC;
 			packageReferences = (
-				0B7C00892CD8B29900B90240 /* XCRemoteSwiftPackageReference "IAssistKit" */,
+				0B558DCE2D62432B004FB93D /* XCRemoteSwiftPackageReference "IAssistKit" */,
 			);
 			productRefGroup = 0BA32D3D2AD4EB1000C209FC /* Products */;
 			projectDirPath = "";
@@ -187,6 +204,7 @@
 				0BC8D53C2AFDAEE000CE00FD /* test.der in Resources */,
 				0BA32D472AD4EB1000C209FC /* Main.storyboard in Resources */,
 				0BC8D53E2AFDAEE000CE00FD /* test2.cer in Resources */,
+				0B718B162D5DA4DB0022730C /* PatternViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +240,9 @@
 				0BA32D5E2AD503FF00C209FC /* SecondViewController.swift in Sources */,
 				0B9B71DE2C536A8F000444DC /* LanguageTestViewController.swift in Sources */,
 				0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */,
+				0B718B172D5DA4DB0022730C /* PatternViewController.swift in Sources */,
 				0BFE811C2CCF5F3A0034CB8A /* WebTestViewController.swift in Sources */,
+				0B718B1B2D5DA9AD0022730C /* MainViewController.swift in Sources */,
 				0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */,
 				0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */,
 			);
@@ -388,7 +408,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,7 +447,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,9 +491,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0B7C00892CD8B29900B90240 /* XCRemoteSwiftPackageReference "IAssistKit" */ = {
+		0B558DCE2D62432B004FB93D /* XCRemoteSwiftPackageReference "IAssistKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:skyowook/IAssistKit.git";
+			repositoryURL = "https://github.com/skyowook/IAssistKit.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -482,13 +502,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B7C008A2CD8B29900B90240 /* IAssistKit */ = {
+		0B558DCC2D623CF8004FB93D /* IAssistKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B7C00892CD8B29900B90240 /* XCRemoteSwiftPackageReference "IAssistKit" */;
 			productName = IAssistKit;
 		};
-		0BA32D572AD4ECB500C209FC /* IAssistKit */ = {
+		0B558DCF2D62432B004FB93D /* IAssistKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 0B558DCE2D62432B004FB93D /* XCRemoteSwiftPackageReference "IAssistKit" */;
 			productName = IAssistKit;
 		};
 /* End XCSwiftPackageProductDependency section */
