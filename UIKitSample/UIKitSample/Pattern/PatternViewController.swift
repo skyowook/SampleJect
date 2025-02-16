@@ -21,7 +21,6 @@ class PatternViewController: UIViewController {
     class func openPattern(from controller: UIViewController) {
         let patternController = PatternViewController.createOfNib()
         patternController.modalPresentationStyle = .fullScreen
-//        patternController.view.layer.speed = 0.1
         controller.present(patternController, animated: true)
     }
 
@@ -36,11 +35,11 @@ class PatternViewController: UIViewController {
     }
     
     @objc private func verifyPattern() {
-        if patternView.getPattern() == pattern {
-            showAlert(message: "Pattern is correct!")
-        } else {
-            showAlert(message: "Pattern is incorrect.")
-        }
+//        if patternView.getPattern() == pattern {
+//            showAlert(message: "Pattern is correct!")
+//        } else {
+//            showAlert(message: "Pattern is incorrect.")
+//        }
     }
     
     private func showAlert(message: String) {

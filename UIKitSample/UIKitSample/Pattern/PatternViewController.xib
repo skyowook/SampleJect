@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1U-fA-tQS" customClass="PatternView" customModule="UIKitSample" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1U-fA-tQS" customClass="PatternView" customModule="IAssistKit">
                     <rect key="frame" x="16" y="75" width="361" height="361"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
