@@ -9,37 +9,24 @@ import UIKit
 import IAssistKit
 
 /// 패턴 컨트롤러
-class PatternViewController: UIViewController {
+class PatternViewController: IABottomPopupController {
     // MARK: - Property
     @IBOutlet private weak var patternView: PatternView!
-//    @IBOutlet private weak var patternSecondView: PatternView!
     
     private var resetButton: UIButton!
     private var pattern: String = "01234"
-    
-    // MARK: - Class Func
-    class func openPattern(from controller: UIViewController) {
-        let patternController = PatternViewController.createOfNib()
-        patternController.modalPresentationStyle = .fullScreen
-        controller.present(patternController, animated: true)
-    }
 
     // MARK: - Override Func
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
-        
         // PatternView 생성 및 설정
         patternView.backgroundColor = .lightGray
+        patternView.delegate = self
     }
     
     @objc private func verifyPattern() {
-//        if patternView.getPattern() == pattern {
-//            showAlert(message: "Pattern is correct!")
-//        } else {
-//            showAlert(message: "Pattern is incorrect.")
-//        }
+        
     }
     
     private func showAlert(message: String) {
@@ -47,5 +34,18 @@ class PatternViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    override func ignoreDismissTouchViews() -> [UIView]? {
+        return [patternView]
+    }
 }
 
+extension PatternViewController: PatternViewDelegate {
+    func patternView(_ view: PatternView, pattern: String) {
+        if patternView.getPattern() == self.pattern {
+            showAlert(message: "Pattern is correct!")
+        } else {
+            showAlert(message: "Pattern is incorrect.")
+        }
+    }
+}

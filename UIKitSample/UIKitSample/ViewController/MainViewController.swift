@@ -6,18 +6,20 @@
 //
 
 import UIKit
+import IAssistKit
 
 /// 메인 테스트용
 class MainViewController: UIViewController {
     // MARK: - Override Func
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        debugPrint("didLoad")
     }
     
     // MARK: - Action Func
     @IBAction private func touchTestButton(_ sender: UIButton) {
-        PatternViewController.openPattern(from: self)
+        FindAddressViewController.open(from: self) { result in
+            debugPrint(result)
+        }
+//        PatternViewController.open(from: self)
     }
 }
