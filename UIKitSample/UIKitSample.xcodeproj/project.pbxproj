@@ -14,6 +14,7 @@
 		0B718B172D5DA4DB0022730C /* PatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B718B142D5DA4DB0022730C /* PatternViewController.swift */; };
 		0B718B1B2D5DA9AD0022730C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B718B1A2D5DA9AD0022730C /* MainViewController.swift */; };
 		0B9B71DE2C536A8F000444DC /* LanguageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */; };
+		0B9E3E912D68021F00A227F0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3E902D68021900A227F0 /* CameraViewController.swift */; };
 		0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */; };
 		0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D412AD4EB1000C209FC /* SceneDelegate.swift */; };
 		0BA32D472AD4EB1000C209FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA32D452AD4EB1000C209FC /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		0B718B1A2D5DA9AD0022730C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0B7C008C2CD8B31700B90240 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTestViewController.swift; sourceTree = "<group>"; };
+		0B9E3E902D68021900A227F0 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0BA32D3C2AD4EB1000C209FC /* UIKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA32D3F2AD4EB1000C209FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA32D412AD4EB1000C209FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		0BA32D5C2AD503E400C209FC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0B9E3E902D68021900A227F0 /* CameraViewController.swift */,
 				0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */,
 				0BA32D5D2AD503FF00C209FC /* SecondViewController.swift */,
 				0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */,
@@ -245,6 +248,7 @@
 				0B718B1B2D5DA9AD0022730C /* MainViewController.swift in Sources */,
 				0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */,
 				0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */,
+				0B9E3E912D68021F00A227F0 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,12 +407,13 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TD6P8S3N25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitSample/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,12 +447,13 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TD6P8S3N25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitSample/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
