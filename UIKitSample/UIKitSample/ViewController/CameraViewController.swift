@@ -12,7 +12,7 @@ import AVFoundation
 /// 카메라 샘플
 class CameraViewController: IAViewController {
     // MARK: - Property
-    @IBOutlet private weak var cameraView: IACameraPreview!
+    @IBOutlet private weak var cameraView: CameraPreview!
     @IBOutlet private weak var captureImageView: UIImageView!
     
     // MARK: - Override Func
