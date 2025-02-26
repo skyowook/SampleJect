@@ -46,6 +46,32 @@ class CameraViewController: IAViewController {
         cameraView.capture(delegate: self)
     }
     
+    @IBAction func touchTest(_ sender: UIButton) {
+//        cameraView.adjustZoomFactor(5.0)
+//        debugPrint("min \(cameraView.captureDevice.minAvailableVideoZoomFactor) max \(cameraView.captureDevice.maxAvailableVideoZoomFactor)")
+        
+        cameraView.adjustZoomFactor(123.0)
+        // 물리적 줌 배율 계산하기 (렌즈 초점 거리 기준)
+        do {
+            try cameraView.captureDevice.lockForConfiguration()
+            
+            // 현재 초점 거리(focal length)와 최소 초점 거리
+            let currentFocalLength = cameraView.captureDevice.lensPosition
+            let minFocalLength = cameraView.captureDevice.minAvailableVideoZoomFactor
+            let maxFocalLength = cameraView.captureDevice.maxAvailableVideoZoomFactor
+            
+            
+            print("현재 초점 거리: \(currentFocalLength)")
+            print("최소 초점 거리: \(minFocalLength)")
+            print("최대 초점 거리: \(maxFocalLength)")
+
+            cameraView.captureDevice.unlockForConfiguration()
+        } catch {
+            print("카메라 설정을 잠글 수 없습니다: \(error)")
+        }
+        
+        
+    }
     
     // MARK: - Private Func
     
