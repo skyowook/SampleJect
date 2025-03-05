@@ -60,7 +60,6 @@ class CameraViewController: IAViewController {
             let minFocalLength = cameraView.captureDevice.minAvailableVideoZoomFactor
             let maxFocalLength = cameraView.captureDevice.maxAvailableVideoZoomFactor
             
-            
             print("현재 초점 거리: \(currentFocalLength)")
             print("최소 초점 거리: \(minFocalLength)")
             print("최대 초점 거리: \(maxFocalLength)")
@@ -69,7 +68,6 @@ class CameraViewController: IAViewController {
         } catch {
             print("카메라 설정을 잠글 수 없습니다: \(error)")
         }
-        
         
     }
     
