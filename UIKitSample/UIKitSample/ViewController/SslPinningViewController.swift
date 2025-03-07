@@ -5,7 +5,7 @@
 //  Created by skw on 10/10/23.
 //
 
-import IAssistKit
+import IACoreKit
 import UIKit
 import Alamofire
 import WebKit

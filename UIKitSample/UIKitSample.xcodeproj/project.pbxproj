@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11DBD52AD5109A0063D8E4 /* SslPinningViewController.swift */; };
-		0B558DCD2D623CF8004FB93D /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B558DCC2D623CF8004FB93D /* IAssistKit */; };
-		0B558DD02D62432B004FB93D /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B558DCF2D62432B004FB93D /* IAssistKit */; };
 		0B718B162D5DA4DB0022730C /* PatternViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B718B152D5DA4DB0022730C /* PatternViewController.xib */; };
 		0B718B172D5DA4DB0022730C /* PatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B718B142D5DA4DB0022730C /* PatternViewController.swift */; };
 		0B718B1B2D5DA9AD0022730C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B718B1A2D5DA9AD0022730C /* MainViewController.swift */; };
@@ -26,6 +24,7 @@
 		0BC8D53C2AFDAEE000CE00FD /* test.der in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5372AFDAEDF00CE00FD /* test.der */; };
 		0BC8D53D2AFDAEE000CE00FD /* test2.der in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5382AFDAEDF00CE00FD /* test2.der */; };
 		0BC8D53E2AFDAEE000CE00FD /* test2.cer in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5392AFDAEDF00CE00FD /* test2.cer */; };
+		0BFB91BD2D7AD17300B35D99 /* IACoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BFB91BC2D7AD17300B35D99 /* IACoreKit */; };
 		0BFE811C2CCF5F3A0034CB8A /* WebTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFE811B2CCF5F3A0034CB8A /* WebTestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B558DD02D62432B004FB93D /* IAssistKit in Frameworks */,
-				0B558DCD2D623CF8004FB93D /* IAssistKit in Frameworks */,
+				0BFB91BD2D7AD17300B35D99 /* IACoreKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +150,7 @@
 			name = UIKitSample;
 			packageProductDependencies = (
 				0B558DCC2D623CF8004FB93D /* IAssistKit */,
-				0B558DCF2D62432B004FB93D /* IAssistKit */,
+				0BFB91BC2D7AD17300B35D99 /* IACoreKit */,
 			);
 			productName = UIKitSample;
 			productReference = 0BA32D3C2AD4EB1000C209FC /* UIKitSample.app */;
@@ -183,7 +181,7 @@
 			);
 			mainGroup = 0BA32D332AD4EB1000C209FC;
 			packageReferences = (
-				0B558DCE2D62432B004FB93D /* XCRemoteSwiftPackageReference "IAssistKit" */,
+				0BFB91BB2D7AD17300B35D99 /* XCRemoteSwiftPackageReference "IACoreKit" */,
 			);
 			productRefGroup = 0BA32D3D2AD4EB1000C209FC /* Products */;
 			projectDirPath = "";
@@ -413,7 +411,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,7 +451,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,11 +495,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0B558DCE2D62432B004FB93D /* XCRemoteSwiftPackageReference "IAssistKit" */ = {
+		0BFB91BB2D7AD17300B35D99 /* XCRemoteSwiftPackageReference "IACoreKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/skyowook/IAssistKit.git";
+			repositoryURL = "https://github.com/skyowook/IACoreKit";
 			requirement = {
-				branch = main;
+				branch = dev;
 				kind = branch;
 			};
 		};
@@ -512,10 +510,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = IAssistKit;
 		};
-		0B558DCF2D62432B004FB93D /* IAssistKit */ = {
+		0BFB91BC2D7AD17300B35D99 /* IACoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B558DCE2D62432B004FB93D /* XCRemoteSwiftPackageReference "IAssistKit" */;
-			productName = IAssistKit;
+			package = 0BFB91BB2D7AD17300B35D99 /* XCRemoteSwiftPackageReference "IACoreKit" */;
+			productName = IACoreKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

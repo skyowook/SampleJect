@@ -5,7 +5,7 @@
 //  Created by skw on 2/21/25.
 //
 
-import IAssistKit
+import IACoreKit
 import UIKit
 import AVFoundation
 

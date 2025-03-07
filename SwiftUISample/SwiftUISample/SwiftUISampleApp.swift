@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import IAssistKit
+import IACoreKit
 
 @main
 struct SwiftUISampleApp: App {

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import IAssistKit
+import IACoreKit
 
 /// 메인 테스트용
 class MainViewController: UIViewController {

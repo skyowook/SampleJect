@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import IAssistKit
+import IACoreKit
 
 struct TutorialView: View {
     var body: some View {

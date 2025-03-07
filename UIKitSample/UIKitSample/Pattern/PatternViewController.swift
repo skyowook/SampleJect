@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import IAssistKit
+import IACoreKit
 
 /// 패턴 컨트롤러
 class PatternViewController: IABottomPopupController {

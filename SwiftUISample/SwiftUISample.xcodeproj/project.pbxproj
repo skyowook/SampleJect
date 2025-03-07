@@ -26,8 +26,8 @@
 		0BC13C882A8DDCB500F7F7CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC13C872A8DDCB500F7F7CD /* Preview Assets.xcassets */; };
 		0BD2B9B92C37A9F70074500C /* AnimatingViewsAndTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2B9B82C37A9F70074500C /* AnimatingViewsAndTransitions.swift */; };
 		0BD2B9BB2C37AAF40074500C /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2B9BA2C37AAF40074500C /* hikeData.json */; };
-		0BE2690A2A9752020039592C /* IAssistKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BE269092A9752020039592C /* IAssistKit */; };
 		0BEDB5FC2B27DEA800261AD4 /* StackSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEDB5FB2B27DEA800261AD4 /* StackSampleView.swift */; };
+		0BFB91C02D7AD18700B35D99 /* IACoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BFB91BF2D7AD18700B35D99 /* IACoreKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BE2690A2A9752020039592C /* IAssistKit in Frameworks */,
+				0BFB91C02D7AD18700B35D99 /* IACoreKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +175,7 @@
 			);
 			name = SwiftUISample;
 			packageProductDependencies = (
-				0BE269092A9752020039592C /* IAssistKit */,
+				0BFB91BF2D7AD18700B35D99 /* IACoreKit */,
 			);
 			productName = SwiftUISample;
 			productReference = 0BC13C7C2A8DDCB300F7F7CD /* SwiftUISample.app */;
@@ -206,7 +206,7 @@
 			);
 			mainGroup = 0BC13C732A8DDCB300F7F7CD;
 			packageReferences = (
-				0BE269082A9752020039592C /* XCRemoteSwiftPackageReference "IAssistKit" */,
+				0BFB91BE2D7AD18700B35D99 /* XCRemoteSwiftPackageReference "IACoreKit" */,
 			);
 			productRefGroup = 0BC13C7D2A8DDCB300F7F7CD /* Products */;
 			projectDirPath = "";
@@ -506,21 +506,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0BE269082A9752020039592C /* XCRemoteSwiftPackageReference "IAssistKit" */ = {
+		0BFB91BE2D7AD18700B35D99 /* XCRemoteSwiftPackageReference "IACoreKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:skyowook/IAssistKit.git";
+			repositoryURL = "https://github.com/skyowook/IACoreKit";
 			requirement = {
-				branch = main;
+				branch = dev;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0BE269092A9752020039592C /* IAssistKit */ = {
+		0BFB91BF2D7AD18700B35D99 /* IACoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0BE269082A9752020039592C /* XCRemoteSwiftPackageReference "IAssistKit" */;
-			productName = IAssistKit;
+			package = 0BFB91BE2D7AD18700B35D99 /* XCRemoteSwiftPackageReference "IACoreKit" */;
+			productName = IACoreKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

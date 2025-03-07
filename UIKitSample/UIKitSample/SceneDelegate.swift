@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import IAssistKit
+import IACoreKit
 
 class SceneDelegate: IASceneDelegate {
     var window: UIWindow?
