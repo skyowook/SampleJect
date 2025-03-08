@@ -149,7 +149,6 @@
 			);
 			name = UIKitSample;
 			packageProductDependencies = (
-				0B558DCC2D623CF8004FB93D /* IAssistKit */,
 				0BFB91BC2D7AD17300B35D99 /* IACoreKit */,
 			);
 			productName = UIKitSample;
@@ -506,10 +505,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B558DCC2D623CF8004FB93D /* IAssistKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = IAssistKit;
-		};
 		0BFB91BC2D7AD17300B35D99 /* IACoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0BFB91BB2D7AD17300B35D99 /* XCRemoteSwiftPackageReference "IACoreKit" */;
