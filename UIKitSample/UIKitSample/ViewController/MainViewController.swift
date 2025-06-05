@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     // MARK: - Override Func
     override func viewDidLoad() {
         super.viewDidLoad()
+        debugPrint(CFUUIDCreateString(nil, CFUUIDCreate(nil))! as String)
     }
     
     // MARK: - Action Func

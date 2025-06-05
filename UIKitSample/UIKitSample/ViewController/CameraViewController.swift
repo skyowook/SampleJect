@@ -15,11 +15,6 @@ class CameraViewController: IAViewController {
     @IBOutlet private weak var cameraView: CameraPreview!
     @IBOutlet private weak var captureImageView: UIImageView!
     
-    // MARK: - Override Func
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // MARK: - Action Func
     // 후면
     @IBAction func touchDualBack(_ sender: UIButton) {
@@ -60,7 +55,7 @@ class CameraViewController: IAViewController {
             let minFocalLength = cameraView.captureDevice.minAvailableVideoZoomFactor
             let maxFocalLength = cameraView.captureDevice.maxAvailableVideoZoomFactor
             
-            print("현재 초점 거리: \(currentFocalLength)")
+            print("현재 초점 거리: \(currentFocalLength)") 
             print("최소 초점 거리: \(minFocalLength)")
             print("최대 초점 거리: \(maxFocalLength)")
 

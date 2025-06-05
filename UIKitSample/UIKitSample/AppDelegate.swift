@@ -6,12 +6,36 @@
 //
 
 import UIKit
+import CoreSpotlight
+import MobileCoreServices
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     // PR테스트를 위한 수정 - duplicateTest 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // spotlight test
+        
+        DispatchQueue.global(qos: .background).async {
+            let attributeSet = CSSearchableItemAttributeSet(contentType: .data)
+            attributeSet.displayName = "test"
+            attributeSet.title = "테스트 이 저기 여기"
+            attributeSet.contentDescription = "테스트 이 저기 여기 설명"
+            attributeSet.keywords = ["이", "저기", "여기"]
+            attributeSet.thumbnailData = UIImage(named: "AppIcon")?.pngData()
+            
+            let item = CSSearchableItem(uniqueIdentifier: "UIKitSample", domainIdentifier: "com.skw", attributeSet: attributeSet)
+            CSSearchableIndex.default().indexSearchableItems([item]) { error in
+                if let error = error {
+                    debugPrint(error.localizedDescription)
+                } else {
+                    debugPrint("인덱싱 성공")
+                }
+            }
+        }
+        // --end
+        
         return true
     }
 
@@ -27,5 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func application(_ application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
+        return true
     }
 }
