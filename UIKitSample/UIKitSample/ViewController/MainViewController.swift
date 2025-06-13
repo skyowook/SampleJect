@@ -10,10 +10,15 @@ import IACoreKit
 
 /// 메인 테스트용
 class MainViewController: UIViewController {
+    
     // MARK: - Override Func
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // UUID Test
         debugPrint(CFUUIDCreateString(nil, CFUUIDCreate(nil))! as String)
+        
+//        testGlass()
     }
     
     // MARK: - Action Func
@@ -21,6 +26,9 @@ class MainViewController: UIViewController {
         FindAddressViewController.open(from: self) { result in
             debugPrint(result)
         }
+        
 //        PatternViewController.open(from: self)
     }
+    
+    
 }

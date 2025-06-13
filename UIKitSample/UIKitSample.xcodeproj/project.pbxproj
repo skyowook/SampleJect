@@ -21,6 +21,7 @@
 		0BA32D492AD4EB1100C209FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BA32D482AD4EB1100C209FC /* Assets.xcassets */; };
 		0BA32D4C2AD4EB1100C209FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA32D4A2AD4EB1100C209FC /* LaunchScreen.storyboard */; };
 		0BA32D5E2AD503FF00C209FC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA32D5D2AD503FF00C209FC /* SecondViewController.swift */; };
+		0BBCE3252DFBDB4F00C41017 /* GlassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBCE3242DFBDB4F00C41017 /* GlassViewController.swift */; };
 		0BC8D53A2AFDAEDF00CE00FD /* test.cer in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5352AFDAEDF00CE00FD /* test.cer */; };
 		0BC8D53B2AFDAEE000CE00FD /* test.pem in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5362AFDAEDF00CE00FD /* test.pem */; };
 		0BC8D53C2AFDAEE000CE00FD /* test.der in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8D5372AFDAEDF00CE00FD /* test.der */; };
@@ -48,6 +49,7 @@
 		0BA32D4B2AD4EB1100C209FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BA32D4D2AD4EB1100C209FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BA32D5D2AD503FF00C209FC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0BBCE3242DFBDB4F00C41017 /* GlassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassViewController.swift; sourceTree = "<group>"; };
 		0BC8D5352AFDAEDF00CE00FD /* test.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.cer; sourceTree = "<group>"; };
 		0BC8D5362AFDAEDF00CE00FD /* test.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.pem; sourceTree = "<group>"; };
 		0BC8D5372AFDAEDF00CE00FD /* test.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.der; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				0B9B71DD2C536A8F000444DC /* LanguageTestViewController.swift */,
 				0BFE811B2CCF5F3A0034CB8A /* WebTestViewController.swift */,
 				0B718B1A2D5DA9AD0022730C /* MainViewController.swift */,
+				0BBCE3242DFBDB4F00C41017 /* GlassViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				0B11DBD62AD5109A0063D8E4 /* SslPinningViewController.swift in Sources */,
 				0B718B172D5DA4DB0022730C /* PatternViewController.swift in Sources */,
 				0BFE811C2CCF5F3A0034CB8A /* WebTestViewController.swift in Sources */,
+				0BBCE3252DFBDB4F00C41017 /* GlassViewController.swift in Sources */,
 				0B718B1B2D5DA9AD0022730C /* MainViewController.swift in Sources */,
 				0BA32D402AD4EB1000C209FC /* AppDelegate.swift in Sources */,
 				0BA32D422AD4EB1000C209FC /* SceneDelegate.swift in Sources */,
