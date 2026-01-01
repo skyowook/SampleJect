@@ -122,4 +122,10 @@ class LanguageTestViewController: UIViewController {
         let value4: TestParamEnum = .a(index: 20)
         debugPrint(value4)
     }
+    
+    func test() {
+        let label = "The width is "
+        let width = 94
+        let widthLabel = label + String(width)
+    }
 }

@@ -10,6 +10,7 @@ import IACoreKit
 
 /// 메인 테스트용
 class MainViewController: UIViewController {
+    @IBOutlet private weak var clipboardLabel: UILabel!
     
     // MARK: - Override Func
     override func viewDidLoad() {
@@ -18,7 +19,8 @@ class MainViewController: UIViewController {
         // UUID Test
         debugPrint(CFUUIDCreateString(nil, CFUUIDCreate(nil))! as String)
         
-//        testGlass()
+        clipboardLabel.text = UIPasteboard.general.string ?? "clipboard is nil"
+        UIPasteboard.general.string = nil
     }
     
     // MARK: - Action Func
@@ -30,5 +32,9 @@ class MainViewController: UIViewController {
 //        PatternViewController.open(from: self)
     }
     
-    
+    @IBAction private func touchUniversalLink(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "https://hosting-4e3b6.firebaseapp.com")!)
+    }
 }
+ 
+

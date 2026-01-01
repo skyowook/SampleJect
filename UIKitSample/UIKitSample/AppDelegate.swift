@@ -15,6 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // 앱 종료 상태에서 universalLink로 진입시
+        if let userActivityDictionary = launchOptions?[.userActivityDictionary] as? [String: Any],
+           let userActivity = userActivityDictionary["UIApplicationLaunchOptionsUserActivityKey"] as? NSUserActivity,
+           userActivity.activityType == NSUserActivityTypeBrowsingWeb, let incomingURL = userActivity.webpageURL {
+            NSLog("test ::: appDelegate ::: \(incomingURL.absoluteString)")
+        }
+        
         // spotlight test
         
         DispatchQueue.global(qos: .background).async {
@@ -54,6 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
+        return true
+    }
+//    ====
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        debugPrint("test ::: appDelegate ::: \(url.absoluteString)")
         return true
     }
 }
