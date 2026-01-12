@@ -1,18 +1,18 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.hilt)
+    alias(libs.plugins.google.ksp)
 }
 
 android {
     namespace = "com.skw.samplejectaos"
-    compileSdk = 33
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.skw.samplejectaos"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -49,22 +49,21 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.activity:activity-ktx:1.7.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
-    implementation("androidx.appcompat:appcompat:1.6.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(libs.core.ktx)
+    implementation(libs.activity.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.constraintlayout)
+    implementation(libs.lifecycle.runtime.ktx)
 
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation(libs.converter.gson)
+    implementation(libs.retrofit)
+    implementation(libs.adapter.rxjava)
+    implementation(libs.okhttp)
 
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }
