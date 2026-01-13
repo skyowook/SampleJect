@@ -1,25 +1,23 @@
 package com.skw.samplejectaos.activity
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
 import androidx.activity.ComponentActivity
-import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts.PickVisualMedia
-import androidx.activity.result.contract.ActivityResultContracts.PickMultipleVisualMedia
 import com.skw.samplejectaos.common.LogTAG
+import com.skw.samplejectaos.compose.ComposeSample
 import com.skw.samplejectaos.databinding.ActivityMainBinding
 import com.skw.samplejectaos.di.HiltTestApi
 import com.skw.samplejectaos.di.TestModuleCase1.*
 import com.skw.samplejectaos.di.TestModuleCase2.*
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.FileInputStream
 import java.io.InputStream
 import javax.inject.Inject
 
@@ -58,6 +56,11 @@ class MainActivity : ComponentActivity() {
 
         binding.btnTestImage.setOnClickListener {
             testPicker()
+        }
+
+        binding.btnCompose.setOnClickListener {
+            val intent = Intent(this, ComposeSample::class.java)
+            startActivity(intent)
         }
     }
 
