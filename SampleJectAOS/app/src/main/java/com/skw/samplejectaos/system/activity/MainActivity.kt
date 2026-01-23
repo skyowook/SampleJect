@@ -1,28 +1,29 @@
-package com.skw.samplejectaos.activity
+package com.skw.samplejectaos.system.activity
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
-import androidx.activity.ComponentActivity
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts.PickVisualMedia
+import androidx.fragment.app.FragmentActivity
 import com.skw.samplejectaos.common.LogTAG
 import com.skw.samplejectaos.compose.ComposeSample
 import com.skw.samplejectaos.databinding.ActivityMainBinding
 import com.skw.samplejectaos.di.HiltTestApi
 import com.skw.samplejectaos.di.TestModuleCase1.*
 import com.skw.samplejectaos.di.TestModuleCase2.*
+import com.skw.samplejectaos.system.fragment.SampleFragment
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class MainActivity : FragmentActivity() {
     @ProvideCase1
     @Inject lateinit var provideCase1: HiltTestApi
     @ProvideCase1
@@ -46,6 +47,14 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val transaction = supportFragmentManager.beginTransaction()
+        val sample = SampleFragment()
+        transaction.add(sample, null)
+        transaction.commit()
+        val transaction1 = supportFragmentManager.beginTransaction()
+        transaction1.remove(sample)
+        transaction1.commit()
 
         hiltTest()
 

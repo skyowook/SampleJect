@@ -10,28 +10,47 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/group_btns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_test_image"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/group_btns"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="TestImage"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintBottom_toTopOf="@id/fragment_container">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_test_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TestImage"
+            tools:ignore="HardcodedText" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_compose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Compose"
-        app:layout_constraintStart_toEndOf="@id/btn_test_image"
-        app:layout_constraintTop_toTopOf="@id/btn_test_image"
-        tools:ignore="HardcodedText" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_compose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Compose"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/group_btns"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
