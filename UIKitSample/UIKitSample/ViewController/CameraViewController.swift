@@ -5,12 +5,12 @@
 //  Created by skw on 2/21/25.
 //
 
-import IACoreKit
+import BloomUIKit
 import UIKit
 import AVFoundation
 
 /// 카메라 샘플
-class CameraViewController: IAViewController {
+class CameraViewController: BloomViewController {
     // MARK: - Property
     @IBOutlet private weak var cameraView: CameraPreview!
     @IBOutlet private weak var captureImageView: UIImageView!

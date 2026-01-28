@@ -126,6 +126,6 @@ class LanguageTestViewController: UIViewController {
     func test() {
         let label = "The width is "
         let width = 94
-        let widthLabel = label + String(width)
+        let _ = label + String(width)
     }
 }

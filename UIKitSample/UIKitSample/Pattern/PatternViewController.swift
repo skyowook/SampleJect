@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import IACoreKit
+import BloomUIKit
 
 /// 패턴 컨트롤러
-class PatternViewController: IABottomPopupController {
+class PatternViewController: BottomPopupController {
     // MARK: - Property
     @IBOutlet private weak var patternView: PatternView!
     

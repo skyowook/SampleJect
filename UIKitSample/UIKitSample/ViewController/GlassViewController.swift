@@ -19,6 +19,7 @@ class GlassViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+#if IOS26
         if #available(iOS 26.0, *) {
             var config = UIButton.Configuration.glass()
             config.subtitle = "First Button"
@@ -39,6 +40,7 @@ class GlassViewController: UIViewController {
                 effectView.effect = glassEffect
             }
         }
+#endif
     }
     
     // MARK: - Private Func
@@ -51,11 +53,13 @@ class GlassViewController: UIViewController {
         effectView.frame = self.view.frame
         self.view.addSubview(effectView)
 
+#if IOS26
         if #available(iOS 26.0, *) {
             let glassEffect = UIGlassEffect()
             UIView.animate {
                 effectView.effect = glassEffect
             }
         }
+#endif        
     }
 }

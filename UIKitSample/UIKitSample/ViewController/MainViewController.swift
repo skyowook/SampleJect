@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import IACoreKit
+import BloomUIKit
 
 /// 메인 테스트용
 class MainViewController: UIViewController {

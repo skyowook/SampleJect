@@ -5,9 +5,9 @@
 //  Created by skw on 10/10/23.
 //
 
-import IACoreKit
+import BloomUIKit
 import UIKit
 
-class SecondViewController: IAViewController {
+class SecondViewController: BloomViewController {
     private weak var unwindSegue: UIStoryboardSegue?
 }

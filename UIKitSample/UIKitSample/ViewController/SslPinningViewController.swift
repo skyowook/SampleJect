@@ -5,7 +5,7 @@
 //  Created by skw on 10/10/23.
 //
 
-import IACoreKit
+import BloomUIKit
 import UIKit
 import Alamofire
 import WebKit
@@ -17,7 +17,7 @@ class PemCertificateModel: Decodable {
 }
 
 // SSL Pinning 테스트 뷰
-class SslPinningViewController: IAViewController {
+class SslPinningViewController: BloomViewController {
     @IBOutlet private weak var webview: WKWebView!
     @IBOutlet private weak var certificateSwitch: UISwitch!
 

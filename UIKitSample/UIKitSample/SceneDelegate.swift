@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import IACoreKit
+import BloomUIKit
 
-class SceneDelegate: IASceneDelegate {
+class SceneDelegate: BloomSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
