@@ -1,7 +1,6 @@
 Keybank
 =======================================================================================================================================
 필수로 확인되어야 하는 부분
-	- 네이티브에서 암호화 하는 알고리즘 AES(ECB, pkcs5)
 	- 패턴에서 사용되는 암호화 (패턴번호 넘어오면 해시암호 한번 감아서 인증 진행)
 		- IOS: SHA512 사용 
 		- AOS: MessageDigest사용해서 SHA-1 사용 (왜이렇게 옛날꺼 사용?)
@@ -15,6 +14,9 @@ Keybank
 		- 안드로이드 연결 30초 호출 30초
 		- IOS는 설정 없기에 디폴트 60초
 		- 프론트에서의 통신은 5분~10분으로 알고있는데 네이티브는 상대적으로 짧은편.
+	- 안드로이드에서 DroidX 사용부가 인스웨이브에서 만든 플러그인이랑 연결되어 있는데 해당 부분 따로 DroidX 문서 활용해서 적용필요해 보임.
+	- 안드로이드는 인스웨이브에서 만든 Plugin의 범위가 제법 상당함. 프로젝트에서 참조하는 플러그인을 정리해서 구현해줘야 하는부분 정리 필요.
+	- 네이티브에서 암호화 하는 알고리즘 AES(ECB, pkcs5)
 
 	*****
 	- IOS Deployment 몇버전으로 할것인가?
@@ -99,78 +101,248 @@ Keybank
 	- kotlin-stdlib (kotlin std)
 	- kotlin-reflect (kotlin refection)
 	- core-ktx (android core kotlin)
-	- core-role (사용하는곳 없음)
 	- coroutines (core, android)
-	- biometric
-	- concurrent-futures
-	- legacy-support-v4
-	- media (androidx)
+	- biometric (생체 인식)
+	- security-crypto (EncryptedSharePreference용으로 사용중)
+
+	// 프로젝트에서는 사용안함 - 없애고 빌드 테스트 해서 확인필요
 	- multidex
+		* 21이상에서는 기본적용이나 이전에 21아래버전에서 서비스 했어서 추가되어있는듯?
+		* multiDexEnabled true 플래그도 제외해보기
+	- concurrent-futures
+	- core-role
 	- room-runtime
 	- room-ktx
-	- security-crypto
-	- work-runtime-ktx
-	- rxjava, rxandroid, rxkotlin
-
-
-	- material
-	- lifecycle-viewmodel
-	- lifecycle-runtime
-	- lifecycle-livedata-ktx
+	- legacy-support-v4
+	- media (androidx)
 	- lifecycle-common-java8
-	- appcompat
-	- constraintlayout
 	- navigation-fragment-ktx
 	- navigation-ui-ktx
+	// End
+	
+	- work-runtime-ktx (DroidX Plugin(인스웨이브)에서 사용)
+		* 이거 빠지면 DroidX 초기화, 실행부 구현 필요
+		* 인스웨이브 플러그인은 제거하고 단독으로 구현필요.
+	
+
+	- material (UI)
+	- lifecycle-viewmodel
+	- lifecycle-runtime
+		* LifeCycleScope
+	- lifecycle-livedata-ktx
+		* 인스웨이브 플러그인
+	
 	- fragment-ktx
+		* 확장 기능 사용. (setFragmentResult 등)
+	- appcompat
+		* 기본 UI 작업에 필요
+	- constraintlayout
+		* ConstraintLayout 사용 위함.
 	- exifinterface 이미지 회전
+		* 카메라에서 사용함. (인스웨이브 플러그인)
 	- webkit
+		* 웹뷰 사용
 	
 
 	Gradle
 	- desugar_jdk_libs
-
+		* 저사양 및 저레벨(OS) 지원 기기에서의 java 하위레벨 호환을 위함.
 
  	Third 
-	- timber
-	- retrofit2 & okhttp
-	- lottie
-	- gson
-	- glide
-	- tedpermission-normal
-	- firebase-crashlytics
-	- firebase-messaging-ktx
-	- firebase-analytics-ktx
-	- commons-io
-	- snakeyaml (yaml)
+	- timber (로그)
+	- retrofit2 & okhttp (통신)
+	- lottie (애니메이션)
+	- gson (파서)
+	- glide (이미지 통신)    
+	- tedpermission-normal (권한 동의 오픈소스 1700 star) 꼭 써야할까? 범위확인해서 제거하고 별로 클래스로 만들어서 써봐도 될듯? (시간되면)
+	- firebase-crashlytics (Firebase 크래시)
+	- firebase-messaging-ktx (Firebase Push)
+	- snakeyaml (웹스퀘어) yaml파일을 쓰기위함이지만 whybridconfig.yaml에만 사용하고 생각보다 큰 내용은 없음.
+		* CI/CD를 구성하고 있는것도 아니고 간단한 config형태로만 사용하고 있는데 제거하고 Config용도를 대체할 방법을 찾아서 수정하면 괜찮을듯?
 	- hilt-android, dagger (DI)
-	- android-retrofuture
-	- kakao-user (v2)
-	- kakao-talk (v2)
-	- kakao-link (v2)
+	- android-retrofuture (star 66짜리? 오픈소스? )
+		* Java9에 있는 CompletableFuture 이걸쓰기위해서 오픈소스를 활용한것 같지만 현재 Java17을 쓰고 있기때문에 제외하고 기본 Java에 있는 CompletableFuture써도 될듯.
+	- kakao-user (v2), kakao-talk (v2), kakao-link (v2)
+		* 카카오
 	- conscrypt-android
+		* 하위 기기 TLS 지원을 위함.
+
+	// 프로젝트에서는 사용안함 - 없애고 빌드 테스트 해서 확인필요
+	- rxjava, rxandroid, rxkotlin
+	- firebase-analytics-ktx (Firebase 선언만 되어 있고 쓰진 않음.)
+	- commons-io
+	- robolectric // 제대로 사용하는곳 없음.
+	// End
+
 =======================================================================================================================================
+Android 권한 정리
 
-테스트에 사용되는 robolectric
+// Apps (고객동의 없이 사용가능한 권한)
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />             // 생체인증
+    <uses-permission android:name="android.permission.INTERNET" />                  // 인터넷 사용
+    <uses-permission android:name="android.permission.GET_TASKS" />                 // api 21에서 deprecated
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />      // 네트워크 활성 상태 체크
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />         // wifi 상태 체크 (네트웍을 사용하기위한 기본 권한)
+
+// 필수
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />   // 저장소 read
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />   // 저장소 write
+    
+    <uses-permission android:name="android.permission.CAMERA" />                // 카메라
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />    // 알림
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />      // Usim 상태 체크
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />    // 핸드폰 번호 권한
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />   // 다른앱 위에 화면 띄우기
+
+// 선택
+    <uses-permission android:name="android.permission.READ_CONTACTS" />         // 이미지 데이터베이스 접근위함. (IssueTrackerPlugin - screenshot)
+
+    // 앱에서는 사용하지 않으나 WebSquare Plugin때문에 존재
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+// 애매함
+    <!-- // 앱활동 추적에 대한 권한. 사용하는 곳이 보이진 않으나, UI까지 연결해서 동의를 얻는걸 보면 어딘가 쓰고는 있을듯? -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />       
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />      // 옵셔널하게 사용하게되어있는데 사용하지 않는걸로 보임. (WebSquare흔적)    
+
+// Other (머지되면서 들어온 - 솔루션, 라이브러리 등)
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <permission
+        android:name="com.koreainvestment.android.keybank.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.koreainvestment.android.keybank.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />     
 
 =======================================================================================================================================
-필수권한
-	- phone state
-	- camera
-	- write external <= Q (29)
-	- read phone number >= O (26)
-	- post notificateions >= TIRAMISU (33)
-	- read external storage < TIRAMISU (33)
+IOS 권한 정리
+// 정해진 범위의 외부링크 접근
+<key>NSAppTransportSecurity</key>
+<dict>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
+	<key>NSExceptionDomains</key>
+	<dict>
+		<key>localhost</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+		</dict>
+		<key>minwon.nhis.or.kr</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSExceptionMinimumTLSVersion</key>
+			<string>TLSv1.0</string>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+		</dict>
+		<key>minwon.nps.or.kr</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSExceptionMinimumTLSVersion</key>
+			<string>TLSv1.0</string>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+		</dict>
+		<key>sgw.coocon.co.kr</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSExceptionMinimumTLSVersion</key>
+			<string>TLSv1.0</string>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+		</dict>
+		<key>si4n.nhis.or.kr</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSExceptionMinimumTLSVersion</key>
+			<string>TLSv1.0</string>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+		</dict>
+		<key>www.nhis.or.kr</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSExceptionMinimumTLSVersion</key>
+			<string>TLSv1.0</string>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+		</dict>
+		<key>www.nps.or.kr</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSExceptionMinimumTLSVersion</key>
+			<string>TLSv1.0</string>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
 
-	폰상태
-	카메라
-	휴대폰번호
-	알림 권한
+// 폰 기능 사용 권한 요청시 필요한 문구
+<key>NSCameraUsageDescription</key>
+<string>신분증촬영, 인증서 복사 시 QR코드 인식을 위해서 사용합니다.</string>
+<key>NSContactsUsageDescription</key>
+<string>연락처 전송을 위해 기기에 저장된 주소록 접근 허용이 필요합니다.</string>
+<key>NSFaceIDUsageDescription</key>
+<string>KEY뱅크 로그인을 위해 사용됩니다.</string>
+<key>NSLocalNetworkUsageDescription</key>
+<string>네트워크 로컬서버에 접근시 사용됩니다.</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>영업점 및 ATM 위치를 찾는데 사용됩니다.</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>영업점 및 ATM 위치를 찾는데 사용됩니다.</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>영업점 및 ATM 위치를 찾는데 사용됩니다.</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>통장사본 저장시 사용됩니다.</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>온라인 서류제출시 사용됩니다.</string>
 
-	이중에서 자동으로 내려감?
+// 다른앱 실행 스키마 권한
+<key>LSApplicationQueriesSchemes</key>
+<array>
+	<string>kakaokompassauth</string>
+	<string>kakaolink</string>
+	<string>tmobileid</string>
+</array>
 
-	테스트폰 등록한다음에 나중에 확인이 한번 필요할거같긴함.
-=======================================================================================================================================
+===
 필요 계정 (SNS 계정 포함)
 	- Google Android
 	- Apple IOS
