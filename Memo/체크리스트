@@ -1,0 +1,55 @@
+=======================================================================================================================================
+체크 해볼 API (*:Require, (-,?): Optional, ???: 체크만)
+Common Thrid
+	Free
+	* Firebase (FCM, Crashlytics, Analytics?)
+	* Lottie
+	B2B
+	* NFilter - NSHC (보안키패드) - 유지
+		:: NFilterPlugin에 암호화 로직 들어있음(솔루션활용) - 알고리즘은 IOS코드 참고했을때 ECC방식 사용하는듯.
+	* NOS - INCA (nProtect 로그 분석 - 비정상 거래 탐지) - 유지
+	* SafeToken - 에잇바이트 - RSA 방식 기반 전자서명 인증 솔루션 - 유지
+	- iSAS - 쿠콘 (스크래핑) - 유지
+		- 위즈베라랑 같이 작업된 흔적 확인됨. (SASWizINDelfino, WizInDelfino)
+	- SevenEye - 한국인식산업 - Face Landmark 특장점 검출 (FacePrint - AOS) - 필요없을듯? 프론트로 완전히 넘어감
+	- DelfinoG10 - 위즈베라  - 공동인증서 - 유지
+	- callgateSDK - 콜게이트 - 보이는 ARS (CQClient - IOS) - 유지?? 상황에 따라 변동가능
+
+=======================================================================================================================================
+Android
+	* Biometric
+	* OneTimeWork
+	* Coroutine
+	* CompletableFuture
+	* Concurrent-futures
+	* Security-crypto - AES(ECB모드, pkcs5), 
+		:: MessageDigest사용해서 SHA-1 사용 (왜이렇게 옛날꺼 사용?)
+	* LifeCycle
+		:: LifeCycleScope
+	* Lifecycle-livedata	
+	* navigation-fragment
+	* webkit
+	- exifinterface
+	- room       
+
+Thrid
+	* Retrofit & okHttp
+	* Glide
+	* Gson
+	* DI - Hilt, Dagger
+	* Timber
+	- tedPermission-normal (개인공통에는 하나 만들어놓는게 좋을듯)
+	- conscrypt-android
+
+	Gradle
+	- desugar_jdk_libs
+		* 저사양 및 저레벨(OS) 지원 기기에서의 java 하위레벨 호환을 위함.	
+
+=======================================================================================================================================
+IOS
+	LocalAuthentication(Biometric)
+	WebKit
+	CommonCrypto - AES(ECB모드, pkcs5), SHA512
+	Alamofire
+
+Thrid

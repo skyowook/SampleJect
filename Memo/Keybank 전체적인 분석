@@ -398,10 +398,11 @@ Android Manifest 확인
 =======================================================================================================================================
 플러그인
 	Android
-	- DelfinoPlugin
+	- DelfinoPlugin (Bridge)
 		* 공동인증서 전용
-	- DroidXPlugin, DroidxPluginWorker
+	- DroidXPlugin, DroidxPluginWorker 
 		* DroidX 전용
+		* 플러그인은 아니고 개별 구현한 클래스
 	- KisbPlugin
 		* 키뱅크에서 필요로 인해 구현한 플러그인
 	- NFilterPlugin
@@ -422,6 +423,7 @@ Android Manifest 확인
 	- WHDelfinoPlugin
 	- WHNFilterPlugin
 =======================================================================================================================================
+
 6월 9월 11월
 6월 스타트 3개월 분석/설계 (6, 7, 8) - 3개월
 9월 개발 스타트 (9, 10) - 2개월
