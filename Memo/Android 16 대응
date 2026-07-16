@@ -1,0 +1,137 @@
+Android 16 대응
+	
+키뱅크 현재 환경
+	Android Studio Ladybug Feature Drop | 2024.2.2 -> Android Studio Quail 1 | 2026.1.1 Patch 2 (OK)
+	AGP 8.1.0 -> AGP 8.9.x+ (OK)
+		- Gradle Plugin 최소 8.9.1
+	Gradle 8.0 -> Gradle 8.11+ (OK)
+		- Gradle 최소 8.11.1
+	target 35 -> target 36 (OK)
+	compile 35 -> compile 36 (OK)
+	JDK 17 -> 17 (유지 OK)
+
+안전한 인텐트 (추후 민간인증서 대응할 때 사용할수도?)
+	<application android:intentMatchingFlags="enforceIntentFilter">
+
+	application 에서 intentMatchingFlags 사용 필요
+		none :::: 수신 인텐트의 모든 특수 일치 규칙을 사용 중지합니다. 여러 플래그를 지정할 때 충돌하는 값은 'none' 플래그에 우선순위를 부여하여 해결됩니다.
+		enforceIntentFilter :::: 수신 인텐트에 더 엄격한 일치를 적용합니다.
+		allowNullAction	:::: 작업이 없는 인텐트가 일치하도록 일치 규칙을 완화합니다. 특정 동작을 달성하기 위해 'enforceIntentFilter'와 함께 사용되는 플래그
+
+
+*************************************************************************************************************************************************************
+******************************************************************** 여기가 제일 큰변화 지금 **********************************************************************
+*************************************************************************************************************************************************************
+	KEYCODE_BACK, BackPressed 16부터 지원 종료
+		사용하고 있는 위치 (KEYCODE_BACK)
+			ActivityKeyEventDispatcher
+			IntroDialog
+			UpdateFragment
+			NfilterPlugin
+
+		OnBackPressed
+			MainActivity
+			SignActivity
+
+			WebViewActivity
+
+			BaseFragment
+			PinFragment
+			PatternFragment
+			PassFragment
+			OtpFragment
+			MOTPFragment
+			FingerFragment
+			CertLoginFragment
+			UsageStatsPermissionDialog
+			UpdateFragment
+			MaxErrorDialogFragment
+			ARSAgreeDialogFragment
+			OverlayPermissionDialog
+
+		isBackPressed
+			BaseActivity
+			IntroDialog
+			ActivityKeyEventDispatcher
+			MainActivity
+			WebViewActivity
+			ARSAgreeDialogFragment
+			MaxErrorDialogFragment
+			OverlayPermissionDialog
+			PopupWebViewFragment
+			UpdateFragment
+			UsageStatsPermissionDialog
+			KISBChromeClient
+
+	뒤로 탐색 예측 업데이트
+		Android 16에서는 홈으로 돌아가기 애니메이션과 같은 동작 탐색에서 뒤로 탐색 예측 시스템 애니메이션을 사용 설정하는 데 도움이 되는 새로운 API를 추가합니다. Android 16에서는 finishAndRemoveTaskCallback() 및 moveTaskToBackCallback도 추가합니다.
+
+	-- 업데이트 해보니 뒤로가기 눌렀을때 팝업이 닫히는게 아니라 Activity전체가 닫히는중 fragment에 대한 뒤로가기 동작도 되지 않고있음.
+	-- 웹에서도 화면별로 뒤로가기 동작 안함
+
+
+	onBackPressed, KeyEvent.KEYCODE_BACK, dispatchKeyEvent 이벤트 더이상 동작 
+	Jetpack Component의 OnBackPressedDispatcher 사용 또는 OnBackInvokedCallback시스템으로 전환 필요
+
+	Android Manifest.xml에서 application태그에 enableOnBackInvokedCallback 해당 플래그 false로 쓰면 뒤로 탐색 예측 사용하지 않고 기존 로직 마이그레이션 가능
+		- 뒤로 탐색 예측을 사용하려면 Jetpack라이브러리도 같이 올려주어야 할듯.
+			androidx.appcompat:appcompat:1.7.0 		// 이것만 올려줘도 동작 잘되는거 같은데?
+			androidx.fragment:fragment-ktx:1.8.5
+			androidx.activity:activity-ktx:1.9.3
+			해당 버전 테스트와 기능 동작 테스트는 별도로 한번 해볼 필요 있을듯.
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // 여기에 뒤로 가기 시 실행할 커스텀 로직 작성
+                Timber.d("test")
+                finish()
+            }
+        })
+
+
+        키뱅크에서는 제일 베스트는 해당 콜백으로 back키 이벤트 받은다음 기존과 동일한 로직으로 돌아갈수 있도록 KeyEvent를 액션과 코드 매칭시켜서 뒤로가기 연동 시켜주는게 베스트일듯.
+        	onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+	            override fun handleOnBackPressed() {
+	            	// 이건 Activity에서 처리 하는 형태
+	                val event = KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK)
+	                dispatchKeyEvent(event)
+
+	                // Fragment나 기타 뒤로가기 부분들은 뒤로가기 동작 그 자체를 심어주면됨.
+	                finish()
+
+	                // 솔루션들 target36대응 왠만하면 존재할거 같고 뒤로가기 처리에 대한 부분 필요할듯. 각 모듈이 Manifest를 가지고 있어서 어차피 앱에 있는 application태그를 볼거라서 플래그로 마이그레이션하면 상관없을거 같긴한데...
+	            }
+	        })
+*************************************************************************************************************************************************************
+*************************************************************************************************************************************************************
+솔루션 체크
+	- NFilter - NSHC (보안키패드)
+	- NOS - INCA (nProtect 로그 분석 - 비정상 거래 탐지)
+	- SafeToken - 에잇바이트 - RSA 방식 기반 전자서명 인증 솔루션
+	- Delfino - 위즈베라  - 공동인증서
+	- iSAS - 쿠콘 (스크래핑) 
+	- callgateSDK - 콜게이트 - 보이는 ARS
+	- 웹스퀘어 - 인스웨이브 - 하이브리드 엔진 및 플러그인
+	- SevenEye - 한국인식산업 - Face Landmark 특장점 검출 (FacePrint - AOS)
+
+오픈 소스 체크 - target36 대응이 필요한 오픈소스 체크
+implementation 'com.google.firebase:firebase-messaging-ktx:24.0.2'
+implementation 'com.google.firebase:firebase-crashlytics-ktx:19.2.0'
+implementation 'com.google.firebase:firebase-analytics-ktx:22.1.2'
+implementation platform('com.google.firebase:firebase-bom:33.4.0')
+
+
+implementation 'com.google.dagger:hilt-android:2.48.1'
+kapt 'com.google.dagger:hilt-compiler:2.48.1'
+		hilt 2.48.1 -> 2.54 (OK)
+
+classpath("com.google.dagger:hilt-android-gradle-plugin:2.48.1")
+		dagger 2.48.1 -> 2.54 (OK)
+
+*************************************************************************************************************************************************************
+빌드하고 폰에 설치시 16kb 워닝이 뜨는이유는 - 주간보고 하면 주간보고에서 전달
+	conscrypt 2.6.0버전쓰면서 하나 해결
+	libcooconv8.so 4kb (arm64-v8a 16kb짜리 필요함.)
+	libnpcf_ma_u.so // 다른형태로 로드될수 있어서 잉카에서 새로 받아야할듯? nprotect
+		libIncaCommon.jar에서 사용하는 libnpcf_ma_u.so 사용하는듯 loadlibrary있음. cooconv8과 동일하게 받아야함.
+	

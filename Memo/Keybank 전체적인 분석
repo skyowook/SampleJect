@@ -42,17 +42,19 @@ Keybank
 사용중인 솔루션 및 라이브러리
 	- NFilter - NSHC (보안키패드) - 유지
 		* NFilterPlugin에 암호화 로직 들어있음(솔루션활용) - 알고리즘은 IOS코드 참고했을때 ECC방식 사용하는듯.
-	- iSAS - 쿠콘 (스크래핑) - 유지
-		- 위즈베라랑 같이 작업된 흔적 확인됨. (SASWizINDelfino, WizInDelfino)
 	- NOS - INCA (nProtect 로그 분석 - 비정상 거래 탐지) - 유지
 	- SafeToken - 에잇바이트 - RSA 방식 기반 전자서명 인증 솔루션 - 유지
-	- SevenEye - 한국인식산업 - Face Landmark 특장점 검출 (FacePrint - AOS) - 필요없을듯? 프론트로 완전히 넘어감
+	- OraX - NSHC (lxShield) - 루팅, 디버거 검증 - 유지
 	- DelfinoG10 - 위즈베라  - 공동인증서 - 유지
+		* 웹스퀘어에 연관있게 붙어있는건 아니고 플러그인 형태 중간 브릿지로만 전환하면될듯.
+	- iSAS - 쿠콘 (스크래핑) - 유지
+		- 위즈베라랑 같이 작업된 흔적 확인됨. (SASWizINDelfino, WizInDelfino)
+
 	- callgateSDK - 콜게이트 - 보이는 ARS (CQClient - IOS) - 유지?? 상황에 따라 변동가능
-	- 웹스퀘어 - 인스웨이브 - 하이브리드 엔진 및 플러그인
+	- 웹스퀘어 - 인스웨이브 - 하이브리드 엔진 및 플러그인 - 차세대 제외
+	- SevenEye - 한국인식산업 - Face Landmark 특장점 검출 (FacePrint - AOS) - 차세대 제외
+	
  only IOS
- 	- OraX - NSHC (lxShield) - 루팅, 디버거 검증
- 	
  	IOS Base SDK
  		UI
  			- UIKit (기본 UI)
@@ -243,117 +245,51 @@ Android 권한 정리
     <uses-permission android:name="com.koreainvestment.android.keybank.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />     
 
 =======================================================================================================================================
-IOS 권한 정리
+IOS 권한 정리 (Info.plist)
 // 정해진 범위의 외부링크 접근
-<key>NSAppTransportSecurity</key>
-<dict>
-	<key>NSAllowsArbitraryLoads</key>
-	<true/>
-	<key>NSExceptionDomains</key>
-	<dict>
-		<key>localhost</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-		</dict>
-		<key>minwon.nhis.or.kr</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-			<key>NSExceptionMinimumTLSVersion</key>
-			<string>TLSv1.0</string>
-			<key>NSExceptionRequiresForwardSecrecy</key>
-			<false/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-		</dict>
-		<key>minwon.nps.or.kr</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-			<key>NSExceptionMinimumTLSVersion</key>
-			<string>TLSv1.0</string>
-			<key>NSExceptionRequiresForwardSecrecy</key>
-			<false/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-		</dict>
-		<key>sgw.coocon.co.kr</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-			<key>NSExceptionMinimumTLSVersion</key>
-			<string>TLSv1.0</string>
-			<key>NSExceptionRequiresForwardSecrecy</key>
-			<false/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-		</dict>
-		<key>si4n.nhis.or.kr</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-			<key>NSExceptionMinimumTLSVersion</key>
-			<string>TLSv1.0</string>
-			<key>NSExceptionRequiresForwardSecrecy</key>
-			<false/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-		</dict>
-		<key>www.nhis.or.kr</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-			<key>NSExceptionMinimumTLSVersion</key>
-			<string>TLSv1.0</string>
-			<key>NSExceptionRequiresForwardSecrecy</key>
-			<false/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-		</dict>
-		<key>www.nps.or.kr</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-			<key>NSExceptionMinimumTLSVersion</key>
-			<string>TLSv1.0</string>
-			<key>NSExceptionRequiresForwardSecrecy</key>
-			<false/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-		</dict>
-	</dict>
-</dict>
+NSAppTransportSecurity
+	- 통신룰이 완전 잘못 잡혀있음. (전체 http허용과 다를바없음.)
+		* 히스토리 확인해서 해당 도메인들 로그? 있으려나?
+	- NPS : 국민연금
+	- NHIS : 건강보험
+	- coocon : 스크래핑
+localhost
+	NSExceptionAllowsInsecureHTTPLoads : true
+
+minwon.nhis.or.kr / minwon.nps.or.kr / sgw.coocon.co.kr / si4n.nhis.or.kr / www.nhis.or.kr / www.nps.or.kr
+	NSExceptionAllowsInsecureHTTPLoads : true
+	NSExceptionMinimumTLSVersion : TLSv1.0
+	NSExceptionRequiresForwardSecrecy : false
+	NSIncludesSubdomains : true
 
 // 폰 기능 사용 권한 요청시 필요한 문구
-<key>NSCameraUsageDescription</key>
-<string>신분증촬영, 인증서 복사 시 QR코드 인식을 위해서 사용합니다.</string>
-<key>NSContactsUsageDescription</key>
-<string>연락처 전송을 위해 기기에 저장된 주소록 접근 허용이 필요합니다.</string>
-<key>NSFaceIDUsageDescription</key>
-<string>KEY뱅크 로그인을 위해 사용됩니다.</string>
-<key>NSLocalNetworkUsageDescription</key>
-<string>네트워크 로컬서버에 접근시 사용됩니다.</string>
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>영업점 및 ATM 위치를 찾는데 사용됩니다.</string>
-<key>NSLocationAlwaysUsageDescription</key>
-<string>영업점 및 ATM 위치를 찾는데 사용됩니다.</string>
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>영업점 및 ATM 위치를 찾는데 사용됩니다.</string>
-<key>NSPhotoLibraryAddUsageDescription</key>
-<string>통장사본 저장시 사용됩니다.</string>
-<key>NSPhotoLibraryUsageDescription</key>
-<string>온라인 서류제출시 사용됩니다.</string>
+NSCameraUsageDescription
+	신분증촬영, 인증서 복사 시 QR코드 인식을 위해서 사용합니다.
+NSContactsUsageDescription
+	연락처 전송을 위해 기기에 저장된 주소록 접근 허용이 필요합니다.
+NSFaceIDUsageDescription
+	KEY뱅크 로그인을 위해 사용됩니다.
+NSLocalNetworkUsageDescription
+	네트워크 로컬서버에 접근시 사용됩니다.
+NSLocationAlwaysAndWhenInUseUsageDescription
+	영업점 및 ATM 위치를 찾는데 사용됩니다.
+NSLocationAlwaysUsageDescription
+	영업점 및 ATM 위치를 찾는데 사용됩니다.
+NSLocationWhenInUseUsageDescription
+	영업점 및 ATM 위치를 찾는데 사용됩니다.
+NSPhotoLibraryAddUsageDescription
+	통장사본 저장시 사용됩니다.
+NSPhotoLibraryUsageDescription
+	온라인 서류제출시 사용됩니다.
 
 // 다른앱 실행 스키마 권한
-<key>LSApplicationQueriesSchemes</key>
-<array>
-	<string>kakaokompassauth</string>
-	<string>kakaolink</string>
-	<string>tmobileid</string>
-</array>
+LSApplicationQueriesSchemes
+	// kakao는 사용하지 않음. (웹 코드 보니까 이제 안쓰는듯)
+	kakaokompassauth
+	kakaolink
 
-===
+	tmobileid
+=======================================================================================================================================
 필요 계정 (SNS 계정 포함)
 	- Google Android
 	- Apple IOS
@@ -381,7 +317,7 @@ API 통신
 	smartkeybank : 실제로 사용하는거 같진 않고 흔적만 존재
 
 	only AOS
-	kakao31774c7e42fc09eb0ca5a4e7f385c10c : 카카오링크에서 앱 실행될때 사용되는듯? ios는 왜 없나? 테스트 필요? 웹 코드 보니까 이제 안쓰는듯
+	kakao31774c7e42fc09eb0ca5a4e7f385c10c : 웹 코드 보니까 이제 안쓰는듯
 =======================================================================================================================================
 Android Manifest 확인
 	Application
@@ -389,7 +325,7 @@ Android Manifest 확인
 	 - networkSecurityConfig xml/network_security_config
 	 - requestLegacyExternalStorage true // target29에서만 적용가능한 옵션이므로 제거되어도 무방
 	 - supportsRtl true 언어를 오른쪽에서 왼쪽으로 읽는 경우 사용되나 키뱅크에서는 필요없을듯.
-	 - usesCleartextTraffic true http 통신을 위한 플래그
+	 - usesCleartextTraffic true http 통신을 위한 플래그 (문제가 될수 있으나 network_security_config.xml에서 인증서를 사용하고 있어서 괜찮은듯?)
 	Activity
 		- MainActivity
 			- configChanges: orientation|keyboardHidden|screenLayout|screenSize|smallestScreenSize|keyboard
@@ -407,13 +343,17 @@ Android Manifest 확인
 		* 키뱅크에서 필요로 인해 구현한 플러그인
 	- NFilterPlugin
 		* NFilter 전용
-	- IssueTrackerPlugin
 	- IntroPlugin
+		* 
 	- NOSPlugin
 	- OCRPlugin
 	- DocumentPlugin
 	- ProgressPlugin
 	- Geolocation
+
+	- IssueTrackerPlugin (사용 X)
+		* 웹에서 호출되는 Plugin이 아님. 플러그인형태로 만들고 
+		 ** 테스트환경에서 왼쪽 상단에 카메라 모양 아이콘 누르면 이슈번호 눌러서 레드마인 이동하는기능 (사용하지 않음)
 
 	IOS
 	- WHNosPlugin

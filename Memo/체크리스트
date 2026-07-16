@@ -30,7 +30,7 @@ Android
 	* navigation-fragment
 	* webkit
 	- exifinterface
-	- room       
+	- room 
 
 Thrid
 	* Retrofit & okHttp
@@ -53,3 +53,31 @@ IOS
 	Alamofire
 
 Thrid
+ 		Crash & FCM
+ 		- Firebase
+ 		- FirebaseMessaging
+ 		- KakaoSDKCommon (카카오 모듈 공통) - KisbPlugin socialMsg 카카오 공유 사용
+ 			* templateId가 있는것으로 보아 카카오 개발자 페이지가 별도로 존재함.
+ 			* 웹 코드 보니 더이상 사용하지 않는듯
+ 		- Lottie (애니메이션)
+ 			* LoadingHUD에 사용중이나 LoadingHUD를 안씀.
+ 			* Guide화면에서 텍스트 뒤로 얼룩덜룩한 컬러 애니메이션에 사용중.
+ 		- Alamofire
+ 			* 구조 없이 사용중이라 swiftyJson 버리고 Codable로 재설계 필요
+ 			// FIXME: Codable 재설계 필요, 통신 구조화도 같이 해야함.
+ 				- 라이브러리 버전업도 필요
+ 				- 클라이언트 타임아웃 따로 안걸려 있어서 Default 60초로 예상.
+ 					** AOS는 연결 30초 호출 30초 걸려있음.
+ 		- SafetokenBiometric
+ 			* 생체인증용 Safetoken
+ 		- SafetokenPattern
+ 			* 패턴용 Safetoken
+ 		- CryptoSwift (AES 암호화)
+ 			// TODO: 암호화 모듈은 하나로 합칠 필요 있음. (CommonCrypto or CryptoSwift)
+
+ 	제외 가능
+ 		- SwiftyJSON (Util에서 API 세군데에서 사용중)
+ 			// TODO: Codable형태의 구조를 잡는다고 했을때 유지보수를 고려해서 중간에 API의 필드가 변경되었을때 문제 없는지 확인필요.
+			ConfirmAccPinEnc (이체비밀번호 확인용)
+			WizveraCertFilterNative 서버에서 인증기관 내려받기 (내려받은 인증기관 나중에 공동인증서 가져오는 플러그인에서 필터해서 반환하는데 사용)
+			APP010000001 (앱업데이트)
