@@ -1,0 +1,65 @@
+간편인증 토큰 확인
+
+대출 진행도중 인증 진행하는 브릿지
+	"sign" (KisbPlugin)
+	브릿지에 들어오는 파라미터
+		type 			// 인증 타입(간편, 패턴, 생체)
+		MSG				// SafeToken에서 사용되는 msg
+		publicKey		// NFilter에서 사용하는 publicKey
+		signType 		// 이건 안쓰는듯
+		serialNumber 	// 공동인증서?
+
+Android
+SignActivity
+	- SafetokenSimpleClient
+
+IOS
+AuthPinViewController
+	- 
+
+// 암호화된 데이터같긴한데... 회원 일련번호 포함되어 있는지 확인 필요
+EM ::: 3735353130303030303030303337393a36623038666634333464643031366130383532666462373633323739346661656432306366373138c0817a6c5a63486f3d6af08e0b68723a4e3fb888cb67846561ddbdf13c64ee81c6812211a67c6c3abc05a5db10080b8c5f1897310e2ac82c8d43fdf1dfbf4a4ca1a5d2e433ac61ba9b70736d6cfe576c85f8be62e067aa9de8714f960beb8fb81e7cfdcf7c29a5f9fa26181b3d5d464d5490370bdac27d8fb6cc0b5b6cee6fd45112560ce5936372bb49db5df2a6566628164e5613c93e4cc13498bd5aec1f96114b832e455a0cbac678c8143af1fc8be2e6e36af8a6a1edd4289c47b483dd4919e410299e1d279d9589e8b7a2ea6db0d4e65596054957c529e21dc7ec53b740ad8640446941ff37c6d4d10bd5ad09eddb79df9fae4e4d8c8df992621204d9b779210dfa252879b64fec4aec4aa716d9c6c68c81bd30ab20f17d16586d78971ea1e6d86d155f06d58f3ab19de1b7e64196f227184c535d1dccd75fdf809cac0063cb4a9b10dc2c1e34a5718cac15d4ae110e56142fb74a91e5c0721abe4f991153a76e6004ca2f7bd36f675c21298fab8418cdb607088a260b2ced0eb0120457a29e777659ac1b51ad84b4f951c7921a72d3786ccb8fe0f719ea3cec76375d875a1bf053e2a480782963b35d7891361a490095bd1fb4e50e1d63ff7150791b656a0917c0a792c4f4cec8cbd384825346a1104c5632080dc19da7bf4254cab6234a5b6460d04fc21b9262bd167de878599fa813003d6530d2e8742c2800e15882715f68f10002
+
+// 검증용
+SSN7 ::: MDIwGhMABBYCBUyivEcjSdtAVqeitpyuHWe54bxIBBTrKI/P0L1Y4fbqA9AXZ2ZOaDgT9Q==TkZfTlVN+GLsenCTf6Yn45KbAQI2XTcMQkj2EHmNlyTd6nyW847BTeEC2o14rgTRhQ== 
+birth ::: 900326
+
+
+브릿지 register로 전달되어 온 EM값을 활용하여 클라이언트의 Safetoken솔루션을 활용해서 EM값을 토큰으로 사용자의 간편비밀번호를 함께 사용해서 등록
+ (클라이언트에 저장시킴.)
+
+로그인 할때 SafeToken에서 가져온 getToken에서 identifier값을 가져오면 아래값이 튕겨 나옴. (튕겨 나온값에 회원일련번호 섞여있음.)
+tokenRef.identifier	"55100000000379:5b4a7284ffb6b62e79d3c67a12aa75e109d8c5f4"
+
+SafeToken에 EM값과 
+isNew값을 바라보고 AuthMemberJoin이냐, AuthRegister냐 분기
+
+
+프론트 로그인
+ scwin.loginApp_submitdone = function(response) {
+    response = response && response.responseJSON || response;
+    
+    if(response){
+        let login_call_back = function() {
+            loggerOptions = {
+                elData: response,
+                DEVICE_PLATFORM: scwin.DEVICE_PLATFORM,
+                LOGIN_MTHD: "01",
+                speed: scwin.data.speed
+            };
+            com.win.init_login(loggerOptions);   // 로그인 프로세스 초기
+        };
+        com.nat.setLoginType({loginType: 0}, login_call_back);
+    }
+};
+
+index.xml
+	LOG010000001.xml
+		getLoginType 있으면 > 간편
+		없으면 > MBR010000001.xml(시작버튼 있는화면)
+
+index.xml > LOG010000001.xml > MBR010000001.xml > checkplus_content9.xml(본인인증) > MBR010000017.xml > COM070100008.xml(약관) > COM070100008_1.xml(약관) > MBR010000003.xml > COM070102001_ML.xml > COM70102001_NICE2.xml > MBR010000004.xml > MBR010000006.xml (패턴) 취소하면 > MBR010000011.xml > 
+
+Global.G_AESKEY	String	"k!bank1f42fde06b"	
+
+location.href = http://test.kisb.co.kr/?MNG-EFM000&insp_no=MjAyNjA0MjQwMDAyNDE%3D

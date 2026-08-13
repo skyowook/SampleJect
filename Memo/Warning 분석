@@ -1,0 +1,24 @@
+Warning 분석
+///////// BundleExt.kt - Line 7 - target33부터 변경됨.
+	- toMap 제네릭 V로 되어 있으나 get(key)가 deprecated되면서 getString을 사용하던 자료형을 명확히 하도록 변경이됨.
+	- 자료형을 명확하게 잡아줘야 하므로 기존의 동적 방식은 자료형까지 체크해야되는 방식으로 변경이 필요함. 하지만 현재 키뱅크에서 사용하는건 string이므로 toStringMap으로 통일 시켜 작업은 가능함.
+	- API자체가 오작동하거나 아직 없어진건 아니므로 일단 사용
+
+///////// FragmentExt.kt - Line 25, 27 - target33부터 변경됨.
+///////// DocumentPlugin.kt - Line 155, 157 - 동일
+///////// OCRPlugin.kt - Line 437, 439, 452, 454 - 동일
+///////// SignActivity.kt - Line 708 - 동일
+///////// BaseFragment.kt - Line 203, 204 - 동일
+///////// IntroPlugin.kt - Line 89 - 동일
+///////// BaseActivity.kt - Line 105 - 동일
+	- getSerializable 위에있는 Bundle이랑 같은 이슈 마찬가지로 동일하게 동작하고 문제 없으니 일단 그대로 사용하는것으로
+	- getParcelable 마찬가지
+	- 굳이 자업을 한다면 사용처에서도 해당 함수 사용하지 않도록 변경이 필요함.
+
+///////// DefaultCameraViewModel.kt - Line 358 - lifecycle-common
+	* 사용처에서 Activity의 lifecycle에 Observer 바인딩이 되어 있으나 2.4.0 이전 버전의 방식 하지만 동작하므로 그냥 사용
+	* 수정해야 한다면 LifecycleObserver가 아니라 DefaultLifecycleObserver를 사용해서 어노테이션 제거하고 생명주기 다시 오버라이딩 하면됨.
+
+///////// MainActivity - Line 496 - onBackPressed
+///////// WebViewActivity - Line 66 - onBackPressed
+	* Android Manifest 플래그로 이전 레거시 기능으로 동작하도록 수정

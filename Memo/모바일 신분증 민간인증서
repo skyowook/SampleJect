@@ -17,10 +17,10 @@ adb shell pm list packages | grep "mobileid"
 	이후 민간 인증서 대응을 위해서 앱 업데이트도 필요.	
 
 
-location.href="intent://verify?mode=direct&clientScheme=#Intent;scheme=mobileid;package=kr.go.mobileid.tbe;end"
-location.href="intent://verify?mode=direct&clientScheme=#Intent;scheme=mobileid;package=kr.go.mobileid.tbe;end"
-
-location.href="mobileid://verify?mode=direct&clientScheme=#Intent;scheme=mobileid;package=kr.go.mobileid;end"
+// clientScheme =돌아올 콜백
+location.href="intent://verify?mode=direct&data=&clientScheme=#Intent;scheme=mobileid;package=kr.go.mobileid.tbe;end"
+location.href="mobileid://verify?mode=direct&data=&clientScheme=#Intent;scheme=mobileid;package=kr.go.mobileid;end"
+https://mobileid.go.kr/verify.html?mode=direct&data=&clientScheme=
 
 // 모바일 신분증 테스트앱
 	AOS
@@ -31,42 +31,23 @@ location.href="mobileid://verify?mode=direct&clientScheme=#Intent;scheme=mobilei
 // 모바일 신분증 앱
 
 
+민간인증서 도입시 처리되어야 할 목록
+	1. iOS/AOS 모두 웹에서 스키마 링크이동 기반의 앱 이동 구현 필요
+		iOS
+			canOpenURL 검증을 위한 스키마 권한 Info.plist에 등록
+			canOpenURL 플래그에 따라 설치 또는 실행 진행
+		AOS
+			매니페스트에서 queries태그 등록
+				<queries>
+					<!-- 모바일 신분증 -->
+					<package android:name="kr.go.mobileid">
+					<!-- 삼성페이 -->
+					<package android:name="com.samsung.android.ssiframework">
+				</queries>
 
-머신러닝 (인간 흉내내기)
-	지도 학습 (Supervised Learning)
-		정답이 있는 데이터를 주고 맞춤
-	비지도 학습 (Unsupervised Learning)
-		정답 없이 데이터만 던져주고 알아서 공통점이나 패턴을 찾게 하는 방식
-	강화 학습 (Reinforcement Learning)
-		행동에 따른 보상을 주면서 데이터 없이 시행착오를 통해 스스로 최적의 방법을 깨닫게 하는 방식
+			val scheme = "mobileid://"
+			val intent = Intent("verify", Uri.parse("mobileid://verify"))
+			intent.setPackage("kr.go.mobieid")
 
-딥러닝 (인간의 뇌를 본뜬)
-	인공신경망 (ANN/MLP)
-		인간의 뉴런 구조를 본떠 만든 가장 기본적인 신경망
-	컴퓨터 비전용 (CNN)
-		이미지의 공간적 정보를 유지하고 특징을 추출하는 신경망, 카메라 기반 앱
-	시계열/텍스트용 (RNN -> Transformer)
-		문맥이나 시간 흐름이 있는 데이터를 다룸, 트랜스포머구조 자연어 처리(NLP)가 필수상식
-
-이미 만들어진 AI를 사용 (파인튜닝, RAG)
-	파인튜닝 (Fine-Tuning)
-		이미 완성된 대형 모델에 내가 가진 특정 데이터셋을 추가로 학습, 만들 앱의 목적에 맞게 뇌 구조를 변경하는 학습
-	RAG (Retrieval-Augmented Generation, 검색 증강 생성)
-		외부에 데이터베이스를 두고 AI가 질문을 받으면 실시간으로 데이터베이스 검색 및 답변
-
-온디바이스 AI
-	양자화
-
-
-
-Apple (iOS 18+ (18, 26, 27))
-	CoreAI (27+)
-	Foundation Models Framework (26+)
-	App Intents (16+)
-	Image Playground  (18.1+)
-	Visual Intelligence (26+)
-
-Android (16/17)
-	AICore
-		Android OS가 Gemini Nano같은 파운데이션 모델을 싱글톤으로 메모리에 한번만 올려놓고 관리
-		ㅇGoogle AI Edge SDK사용
+			val component = intent.resolveActivity(context.packageManager)
+			component가 null이면 설치 X

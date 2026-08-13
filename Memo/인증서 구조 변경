@@ -1,0 +1,51 @@
+■ 체인 구조 변경 예시
+[기존 체인 구조]
+End Entity Certificate (example.com)
+→ GCC R3 DV TLS CA 2020
+→ GlobalSign Root R3
+
+[변경 후 체인 구조 - 일반 환경]
+End Entity Certificate (example.com)
+→ GCC R46 DV TLS CA 2025
+→ GlobalSign Root R46
+
+[변경 후 체인 구조 - 구형 환경 호환(Cross Certificate 사용 시)]
+End Entity Certificate (example.com)
+→ GCC R46 DV TLS CA 2025
+→ GlobalSign Root R46 (Cross)
+→ GlobalSign Root R3
+
+
+
+인증서 상황 공유
+
+유서트에서 공지로 수신된 메일을 바탕으로 내용 공유 드립니다.
+
+이슈 확인 전 참고 내용
+
+	AS-IS 
+		Root - R3
+		Chain - GlobalSign RSA OV SSL CA 2018
+		도메인 인증서 - GlobalSign RSA OV SSL CA 2018 
+
+	TO-BE
+		Root - R46
+		Chain - R46
+		도메인 인증서 - 아직 발급되지 않은듯 확인됨.
+
+** 키뱅크 앱은 피닝을 위해서 루트, 체인, 도메인 세가지 인증서가 빌드에 포함되어 있습니다. **
+
+
+체크해야되는 이슈 2가지
+	1. 도메인 인증서를 포함 시킬것인가?
+		기존 도메인 인증서는 1년 주기이지만 브라우저 정책이 바뀌어서 새로 발급된 도메인 인증서는 90일로 예상됩니다.
+		90일마다 앱을 업데이트 할것인지? 아니면 체인과 루트만 포함 시켜서 긴 주기로 업데이트를 진행 할지 결정이 필요합니다.
+	2. R3 -> R46으로 바뀌면서 생기는 이슈
+		기존 키뱅크 앱의 경우 R3, 체인, 도메인 세개의 인증서가 들어있으므로 이중 하나라도 인증 할수 있도록 Root_R3 인증서가 서버에 포함되어 있어야 업데이트 하지 않은 고객들에게 SSL예외가 발생하지 않습니다.
+
+		IOS앱에서는 인증서의 바이트를 비교하여 피닝처리가 되어 있어서 R3-R46 크로스 인증서 외에도 반드시 기존의 Root_R3인증서가 서버에 포함되어야 합니다. Root_R3가 포함되어 있지 않으면 매칭할수 있는 인증서가 없어서 업데이트 하지 않은 고객들이 통신이 되지 않는 문제(SSL 예외발생)가 발생합니다. 
+
+인증서의 형태와 방식이 변경된 만큼 테스트가 중요한 상황이어서 개발서버에 빠른시일내 반영이 필요해보입니다.
+
+
+
