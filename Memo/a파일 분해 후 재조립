@@ -1,0 +1,12 @@
+정적라이브러리 .o 파일 분해후 재조립
+// 라이브러리 내부 아키텍처 정보 뽑기
+lipo -info libSecuLogMaster.a
+
+// arm64 만 따로 추출
+lipo libSecuLogMaster.a -thin arm64 -output libSecuLogMaster_arm64.a
+
+// .o로 해체 한다음 8바이트 정렬로 재조합
+mkdir temp_arm64 && cd temp_arm64
+ar -x ../libSecuLogMaster_arm64.a
+libtool -static -o ../libSecuLogMaster_fixed.a *.o
+cd .. && rm -rf temp_arm64
