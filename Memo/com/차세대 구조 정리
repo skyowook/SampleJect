@@ -1,0 +1,28 @@
+차세대 구조 정리 (AS-IS와 다른부분)
+
+1. 솔루션
+	- 신분증 진위확인 ::: Nice -> 알체라 
+	- 기본 엔진 ::: WebSquare -> 제거
+	- 보안 키패드 ::: NFilter -> 유지 (NSHC)
+	- 모바일 백신 ::: DroidX -> 유지 (NSHC)
+	- 악성앱 탐지 ::: FakeFinder -> 유지 (에버스핀)
+	- 간편인증 ::: SafeToken -> 유지 (8byte)
+	- 이상거래 탐지 ::: nProtect -> Dfinder FDS (인터리젠)
+	- 보이는 ARS ::: Callgate -> 유지 (콜게이트)
+		** 보이는 ARS에 표시되는 웹은 어디를 바라보고 있는지 확인 필요
+		** 기능 활용시 푸시로 날라오는 데이터 확인하면 나타날지도?
+	- 공동인증서 ::: Delfino -> 유지 (Wizvera)
+	- 스크래핑 ::: i-Sas -> 유지 (Coocon)
+	- 위변조 탐지 ::: FxShield, LxShield -> 유지 (NSHC)
+
+2. UI
+	- 디버그 메뉴 ::: 실행시 초기화면 -> 버튼 눌러서 호출
+
+3. Architecture
+	1) Android
+		- 모듈 파편 -> app모듈 하나
+			* 하이브리드앱으로 도메인기능이 많지 않으므로 파편화보단 app 모듈 하나로
+		- Kotlin 2.3.21
+		- Android SystemView -> Jetpack Compose
+		- MVVM -> dbwl 
+	2) iOS		

@@ -22,7 +22,6 @@ EM ::: 3735353130303030303030303337393a36623038666634333464643031366130383532666
 
 // 검증용
 SSN7 ::: MDIwGhMABBYCBUyivEcjSdtAVqeitpyuHWe54bxIBBTrKI/P0L1Y4fbqA9AXZ2ZOaDgT9Q==TkZfTlVN+GLsenCTf6Yn45KbAQI2XTcMQkj2EHmNlyTd6nyW847BTeEC2o14rgTRhQ== 
-birth ::: 900326
 
 
 브릿지 register로 전달되어 온 EM값을 활용하여 클라이언트의 Safetoken솔루션을 활용해서 EM값을 토큰으로 사용자의 간편비밀번호를 함께 사용해서 등록
